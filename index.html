@@ -1,0 +1,3173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Koala Keys Car Hire Pty Ltd | Rent & Buy Cars in Australia</title>
+  <meta name="description" content="Koala Keys Car Hire Pty Ltd is an Australian car rental and used-car sales website concept for rentals, car sales, trade-ins, and local vehicle enquiries." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #4A90D9;
+      --primary-dark: #2e73bb;
+      --primary-soft: #eaf4ff;
+      --ink: #1f2933;
+      --ink-soft: #506174;
+      --white: #ffffff;
+      --surface: #f5f5f5;
+      --surface-strong: #ebeff3;
+      --border: #d7dfe7;
+      --shadow: 0 22px 60px rgba(31, 41, 51, 0.12);
+      --shadow-soft: 0 14px 32px rgba(31, 41, 51, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --content-width: 1180px;
+      --transition: 0.28s ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #edf2f7;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .site {
+      min-height: 100vh;
+      background: var(--white);
+    }
+
+    section[id],
+    footer[id],
+    header[id] {
+      scroll-margin-top: 96px;
+    }
+
+    .container {
+      width: min(var(--content-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 36px 0;
+    }
+
+    .section.alt {
+      background: var(--surface);
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+
+    h2 {
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p,
+    .copy {
+      margin-top: 10px;
+      color: var(--ink-soft);
+      line-height: 1.68;
+      font-size: 0.96rem;
+    }
+
+    .button,
+    .nav-toggle,
+    .tab-button,
+    .faq-question {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button.primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(74, 144, 217, 0.28);
+    }
+
+    .button.primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 18px 38px rgba(74, 144, 217, 0.34);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(16px);
+    }
+
+    .button.secondary.light {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--border);
+      backdrop-filter: none;
+    }
+
+    .button.secondary.light:hover {
+      background: var(--surface);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid rgba(215, 223, 231, 0.9);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 76px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 10px 24px rgba(74, 144, 217, 0.2);
+    }
+
+    .brand-text {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-text strong {
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .brand-text span {
+      color: var(--ink-soft);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+      margin-left: auto;
+      font-size: 0.93rem;
+      font-weight: 700;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: #2e4256;
+      padding: 8px 0;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: var(--primary);
+      transition: transform var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(120deg, rgba(17, 26, 35, 0.7), rgba(17, 26, 35, 0.24)),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%236aa9e6'/%3E%3Cstop offset='0.58' stop-color='%234A90D9'/%3E%3Cstop offset='1' stop-color='%231f3d5c'/%3E%3C/linearGradient%3E%3ClinearGradient id='ground' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop stop-color='%23698bb1'/%3E%3Cstop offset='1' stop-color='%23263342'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1600' height='1000' fill='url(%23sky)'/%3E%3Ccircle cx='1260' cy='210' r='88' fill='rgba(255,255,255,0.9)'/%3E%3Cpath d='M0 620c120-40 280-60 430 10 180 85 310 98 478 31 112-45 220-94 377-65 103 20 202 69 315 136v268H0Z' fill='rgba(255,255,255,0.2)'/%3E%3Cpath d='M0 700c133-55 297-78 479 10 159 77 310 101 493 21 115-50 233-98 356-83 112 13 187 54 272 112v240H0Z' fill='url(%23ground)'/%3E%3Cpath d='M520 1000 845 565 1100 1000Z' fill='%2324313d'/%3E%3Cpath d='M790 1000 990 720 1146 1000Z' fill='rgba(255,255,255,0.12)'/%3E%3Cpath d='M1060 1000 1235 740 1400 1000Z' fill='rgba(255,255,255,0.08)'/%3E%3Cpath d='M210 1000 666 476 928 1000Z' fill='%23172231'/%3E%3Cpath d='M0 1000 0 760c160-18 286-4 398 41 136 54 274 65 418 18 80-27 148-66 212-86 80-26 157-32 225-22 95 15 168 55 347 179v110Z' fill='%23131d27'/%3E%3Cpath d='M607 1000 807 615 915 1000Z' fill='rgba(255,255,255,0.08)'/%3E%3Cpath d='M560 1000 820 586 1038 1000Z' fill='%23303d4d'/%3E%3Cpath d='M0 865c177 13 315-29 438-97 104-58 178-133 252-191 63-49 135-96 236-102 141-7 228 66 346 138 104 64 210 115 328 95v292H0Z' fill='rgba(9,14,20,0.38)'/%3E%3Cpath d='M0 1000v-134c247-87 440-178 598-307 45-37 91-72 145-91 56-20 120-20 177 3 63 26 116 76 180 122 110 78 213 127 350 157v250Z' fill='%2311181f'/%3E%3Cpath d='M597 1000 781 732 933 1000Z' fill='%234A90D9' fill-opacity='0.16'/%3E%3C/svg%3E") center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.24), transparent 24%),
+        radial-gradient(circle at 82% 26%, rgba(255, 255, 255, 0.14), transparent 22%),
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(12,17,24,0.26));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 76px;
+      right: 9%;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(255, 212, 122, 0.92) 0%, rgba(255, 187, 87, 0.58) 46%, rgba(255, 187, 87, 0) 72%);
+      filter: blur(2px);
+      pointer-events: none;
+      opacity: 0.95;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 44px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      justify-items: center;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      font-size: clamp(2.45rem, 5.8vw, 4.3rem);
+      line-height: 0.97;
+      letter-spacing: -0.07em;
+    }
+
+    .hero-subtext {
+      max-width: 720px;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.56;
+      font-size: 0.94rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .hero-search {
+      width: min(100%, 1080px);
+      margin: 16px auto 0;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-search-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .hero-search-top p {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 0.95rem;
+    }
+
+    .tab-switch {
+      display: inline-flex;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border);
+    }
+
+    .tab-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: transparent;
+      color: var(--ink-soft);
+      font-weight: 800;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+    }
+
+    .tab-button.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 10px 24px rgba(74, 144, 217, 0.2);
+    }
+
+    .hero-search .tab-switch {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-search .tab-button {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-search .tab-button.active {
+      background: var(--white);
+      color: var(--ink);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr 1fr auto;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .field label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #58718b;
+    }
+
+    .field input {
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      padding: 0;
+      outline: none;
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .search-button {
+      min-width: 160px;
+    }
+
+    .search-status {
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.92rem;
+    }
+
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat-card {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .stat-card span {
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .services-tabs {
+      display: grid;
+      gap: 22px;
+    }
+
+    .services-panels {
+      position: relative;
+    }
+
+    .service-panel {
+      display: none;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .service-panel.active {
+      display: grid;
+    }
+
+    .panel-card,
+    .info-card,
+    .car-card,
+    .feature-card,
+    .step-card,
+    .review-card,
+    .location-card,
+    .faq-item,
+    .footer-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .panel-card {
+      padding: 26px;
+    }
+
+    .panel-card h3 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .panel-card p {
+      margin-top: 12px;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+
+    .panel-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .panel-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--ink);
+      line-height: 1.65;
+      list-style: none;
+    }
+
+    .panel-list li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      flex-shrink: 0;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .panel-aside {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-card {
+      padding: 24px;
+    }
+
+    .info-card h4 {
+      font-size: 1.12rem;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-stats div {
+      padding: 16px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .mini-stats strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1.1rem;
+    }
+
+    .mini-stats span {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .sell-callout {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #1f3d5c, #4A90D9);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .sell-callout h4 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .sell-callout p {
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      align-items: stretch;
+      grid-auto-rows: 1fr;
+    }
+
+    .car-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      box-shadow: 0 16px 34px rgba(31, 41, 51, 0.08);
+    }
+
+    .car-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(31, 41, 51, 0.14);
+      border-color: rgba(74, 144, 217, 0.2);
+    }
+
+    .card-media {
+      display: grid;
+      place-items: center;
+      height: 190px;
+      background: linear-gradient(180deg, #dfe5ea, #cfd8df);
+      color: #748290;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-media::before {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px dashed rgba(116, 130, 144, 0.5);
+      border-radius: 20px;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-media.has-photo::before {
+      display: none;
+    }
+
+    .card-media svg {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 10px;
+      z-index: 1;
+    }
+
+    .card-media span {
+      position: relative;
+      z-index: 1;
+      display: block;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .car-gallery {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .car-gallery-main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .car-gallery-main img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transform: scale(1.02);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+
+    .car-gallery-main img.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 34px;
+      height: 34px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 900;
+      cursor: pointer;
+      display: inline-grid;
+      place-items: center;
+      box-shadow: 0 8px 18px rgba(17, 26, 35, 0.2);
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .gallery-arrow:hover {
+      background: var(--white);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .gallery-count {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(17, 26, 35, 0.74);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .gallery-arrow.prev { left: 12px; }
+    .gallery-arrow.next { right: 12px; }
+
+    .gallery-thumbs {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      z-index: 2;
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .gallery-thumb {
+      width: 42px;
+      height: 28px;
+      padding: 0;
+      border-radius: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.82);
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.96);
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(17, 26, 35, 0.18);
+    }
+
+    .gallery-thumb.active {
+      border-color: var(--primary);
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body > .button {
+      margin-top: auto;
+    }
+
+    .card-body h3 {
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .card-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .price-tag {
+      color: var(--primary);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .card-meta,
+    .sale-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0 16px;
+    }
+
+    .card-meta span,
+    .sale-meta span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      color: #42576b;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .card-body p {
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-details {
+      display: none;
+      margin-top: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    .card-details.show {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .toggle-details {
+      background: none;
+      border: 0;
+      padding: 0;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .toggle-details:hover {
+      text-decoration: underline;
+    }
+
+    .card-body .button.primary {
+      padding: 10px 16px;
+      min-height: 40px;
+      font-size: 0.9rem;
+    }
+
+    .rental-note {
+      color: var(--ink-soft);
+      line-height: 1.55;
+      font-size: 0.92rem;
+      margin: -6px 0 18px;
+      min-height: 0;
+    }
+
+    .coming-soon-card {
+      padding: 34px;
+      border-radius: calc(var(--radius-xl) + 2px);
+      border: 1px solid rgba(74, 144, 217, 0.2);
+      background: linear-gradient(135deg, rgba(74, 144, 217, 0.12), rgba(74, 144, 217, 0.04));
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+    }
+
+    .coming-soon-card strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--primary-dark);
+      font-size: 0.9rem;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(74, 144, 217, 0.16);
+    }
+
+    .coming-soon-card p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: var(--ink-soft);
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    .feature-grid,
+    .steps-grid,
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card,
+    .step-card,
+    .review-card {
+      padding: 22px;
+    }
+
+    .feature-icon,
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 1rem;
+    }
+
+    .feature-card h3,
+    .step-card h3,
+    .review-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .feature-card p,
+    .step-card p,
+    .review-card p {
+      color: var(--ink-soft);
+      line-height: 1.65;
+      font-size: 0.94rem;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      font-size: 1rem;
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .payment-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .payment-summary,
+    .checkout-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .payment-summary h3,
+    .checkout-card h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .payment-summary p,
+    .checkout-note {
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .payment-options-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0 18px;
+    }
+
+    .payment-option-card {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, #ffffff, #f7fafc);
+      min-height: 100%;
+    }
+
+    .payment-option-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.98rem;
+      letter-spacing: -0.02em;
+    }
+
+    .payment-option-card span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .payment-points {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .payment-points li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #42576b;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+
+    .payment-points li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .payment-methods {
+      display: flex;
+      width: 100%;
+      margin: 22px 0 20px;
+    }
+
+    .payment-methods .tab-button {
+      flex: 1 1 0;
+    }
+
+    .payment-panel {
+      display: none;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .payment-panel.active {
+      display: block;
+    }
+
+    .payment-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 18px;
+    }
+
+    .payment-button {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .payment-button.paypal {
+      background: #0070BA;
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(0, 112, 186, 0.28);
+    }
+
+    .payment-button.paypal:hover {
+      background: #005ea6;
+      box-shadow: 0 18px 38px rgba(0, 112, 186, 0.34);
+    }
+
+    .payment-button.stripe {
+      background: #635BFF;
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(99, 91, 255, 0.28);
+    }
+
+    .payment-button.stripe:hover {
+      background: #5147ff;
+      box-shadow: 0 18px 38px rgba(99, 91, 255, 0.34);
+    }
+
+    .payment-button svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+
+    .bank-details {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .bank-details p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .bank-details strong {
+      color: var(--ink);
+    }
+
+    .payment-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .payment-badges span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .booking-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .booking-form .field {
+      background: var(--surface);
+      box-shadow: none;
+      border: 1px solid var(--border);
+    }
+
+    .booking-form .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      outline: none;
+      font: inherit;
+      resize: vertical;
+      padding: 0;
+    }
+
+    .booking-form textarea {
+      min-height: 110px;
+      line-height: 1.7;
+    }
+
+    .booking-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 4px;
+    }
+
+    .booking-help {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .booking-confirmation {
+      display: none;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .booking-confirmation.show {
+      display: block;
+    }
+
+    .confirmation-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 24px 28px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+    }
+
+    .confirmation-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .confirmation-brand img {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      object-fit: cover;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: 0 10px 24px rgba(17, 26, 35, 0.18);
+    }
+
+    .confirmation-brand h3,
+    .confirmation-meta h4 {
+      margin: 0;
+      color: inherit;
+    }
+
+    .confirmation-brand p,
+    .confirmation-meta p {
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+    }
+
+    .confirmation-meta {
+      text-align: right;
+    }
+
+    .confirmation-body {
+      padding: 28px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .confirmation-panel {
+      padding: 20px 22px;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .confirmation-panel h4 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .confirmation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 18px;
+    }
+
+    .confirmation-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .confirmation-item span,
+    .confirmation-panel p {
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .confirmation-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .confirmation-message {
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      background: #ecf8f0;
+      border: 1px solid #b9dfc6;
+      color: #245a35;
+      line-height: 1.7;
+      font-weight: 700;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .site-header,
+      .site > section:not(#payment),
+      .site-footer,
+      .payment-summary,
+      #bookingFormWrap,
+      .confirmation-actions {
+        display: none !important;
+      }
+
+      #payment {
+        background: #fff !important;
+        padding: 0 !important;
+      }
+
+      #payment .container,
+      .payment-grid,
+      .checkout-card {
+        width: 100% !important;
+        max-width: none !important;
+        display: block !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        box-shadow: none !important;
+      }
+
+      .booking-confirmation {
+        display: block !important;
+        box-shadow: none !important;
+        border: 0 !important;
+      }
+
+      .confirmation-header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    .review-stars {
+      margin-bottom: 16px;
+      color: #f4b740;
+      letter-spacing: 0.24em;
+      font-size: 1rem;
+    }
+
+    .review-form-card {
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      max-width: 820px;
+      width: min(100%, 820px);
+      margin: 0 auto;
+    }
+
+    .review-form-card p {
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    .review-form {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .review-form .field {
+      background: var(--surface);
+      box-shadow: none;
+      border: 1px solid var(--border);
+    }
+
+    .review-form textarea {
+      width: 100%;
+      min-height: 150px;
+      border: 0;
+      resize: vertical;
+      background: transparent;
+      color: var(--ink);
+      outline: none;
+      font: inherit;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    .star-rating {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .star-button {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--white);
+      color: #c0cad5;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform var(--transition), border-color var(--transition), color var(--transition), background var(--transition);
+    }
+
+    .star-button:hover,
+    .star-button.active {
+      color: #f4b740;
+      border-color: rgba(244, 183, 64, 0.5);
+      background: #fff8e6;
+      transform: translateY(-2px);
+    }
+
+    .review-meta {
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .review-confirmation {
+      display: none;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: var(--radius-md);
+      background: #ecf8f0;
+      border: 1px solid #b9dfc6;
+      color: #245a35;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+    .review-confirmation.show {
+      display: block;
+    }
+
+    .review-note {
+      margin-top: 18px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .location-grid {
+      display: block;
+    }
+
+    .map-placeholder {
+      min-height: 400px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    .location-card {
+      padding: 30px;
+    }
+
+    .location-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .detail-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .detail-item strong {
+      color: var(--ink);
+      display: block;
+    }
+
+    .detail-badge {
+      display: inline-grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      border-radius: 22px;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .faq-question span:last-child {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--primary);
+      font-size: 1rem;
+      transition: transform var(--transition), background var(--transition);
+      flex-shrink: 0;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.32s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 18px 16px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    .faq-item.open .faq-question span:last-child {
+      transform: rotate(45deg);
+      background: var(--primary-soft);
+    }
+
+    .cta-banner {
+      padding: 42px;
+      border-radius: calc(var(--radius-xl) + 4px);
+      background: linear-gradient(135deg, #1f3d5c, #4A90D9);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-banner h2 {
+      max-width: 560px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .cta-banner p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.75;
+      max-width: 620px;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .site-footer {
+      padding: 20px 0 24px;
+      background: #f0f4f8;
+      border-top: 1px solid rgba(215, 223, 231, 0.95);
+    }
+
+    .footer-card {
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: minmax(220px, 0.9fr) minmax(260px, 1.1fr) auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(74, 144, 217, 0.18);
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: 1.08rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-brand span,
+    .footer-copy,
+    .footer-meta p {
+      color: var(--ink-soft);
+      line-height: 1.55;
+      font-size: 0.88rem;
+    }
+
+    .footer-meta {
+      display: grid;
+      gap: 8px;
+      align-content: start;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .social-pill {
+      width: 36px;
+      height: 36px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--surface);
+      color: #5a6d80;
+      font-weight: 800;
+      border: 1px solid var(--border);
+    }
+
+    .footer-bottom {
+      margin-top: 18px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .service-panel,
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 960px) {
+      .search-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .search-button {
+        width: 100%;
+        min-width: 0;
+        grid-column: span 2;
+      }
+
+      .feature-grid,
+      .steps-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-card {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .socials {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-wrap {
+        min-height: 68px;
+      }
+
+      .site-header .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 16px;
+        right: 16px;
+        display: grid;
+        gap: 4px;
+        padding: 12px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+        max-height: calc(100vh - 96px);
+        overflow: auto;
+      }
+
+      .site-header.menu-open .nav-links {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        padding: 14px 16px;
+        border-radius: 16px;
+      }
+
+      .nav-links a:hover {
+        background: var(--surface);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-inner {
+        padding-top: 56px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 40px 0;
+      }
+
+      .container {
+        width: min(var(--content-width), calc(100% - 24px));
+      }
+
+      .brand img {
+        width: 48px;
+        height: 48px;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero-inner {
+        padding: 32px 0 24px;
+      }
+
+      .hero-copy {
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 11vw, 3rem);
+      }
+
+      .hero-subtext {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+        min-height: 50px;
+      }
+
+      .hero-search {
+        padding: 16px;
+        border-radius: 22px;
+      }
+
+      .hero-search-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .tab-switch {
+        width: 100%;
+      }
+
+      .tab-button {
+        flex: 1 1 0;
+        text-align: center;
+      }
+
+      .search-form,
+      .booking-form-grid,
+      .confirmation-grid,
+      .payment-grid,
+      .cards-grid,
+      .reviews-grid,
+      .mini-stats,
+      .footer-card,
+      .stats-bar,
+      .payment-options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .search-button {
+        grid-column: auto;
+      }
+
+      .feature-grid,
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .panel-card,
+      .info-card,
+      .feature-card,
+      .step-card,
+      .review-card,
+      .cta-banner,
+      .footer-card,
+      .payment-summary,
+      .checkout-card,
+      .review-form-card {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .faq-question {
+        padding: 18px;
+        font-size: 1rem;
+      }
+
+      .faq-answer p {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .cta-banner {
+        padding-top: 32px;
+        padding-bottom: 32px;
+      }
+
+      .card-media {
+        height: 220px;
+      }
+
+      .card-body h3 {
+        font-size: 1.2rem;
+      }
+
+      .card-body .button.primary {
+        min-height: 44px;
+        width: 100%;
+      }
+
+      .map-placeholder {
+        min-height: 340px;
+      }
+
+      .map-placeholder iframe {
+        height: 340px;
+      }
+
+      .field input,
+      .review-form textarea {
+        font-size: 16px;
+      }
+
+      .footer-card,
+      .socials {
+        justify-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .footer-bottom {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="site-header" id="home">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home" aria-label="Koala Keys home">
+          <img src="koala-keys-logo.jpg" alt="Koala Keys koala mascot logo" />
+          <span class="brand-text">
+            <strong>Koala Keys</strong>
+            <span>Darwin car rental & sales</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+          <a href="#rent">Rent</a>
+          <a href="#buy">Buy</a>
+          <a href="#sell">Sell Your Car</a>
+          <a href="#fleet">Fleet</a>
+          <a href="#locations">Locations</a>
+          <a href="#trust">Trust</a>
+          <a href="#payment">Pay & Invoice</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" id="navToggle">
+          ☰
+          <span class="sr-only">Open navigation menu</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Homepage hero">
+      <div class="container hero-inner">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Koala Keys Car Hire Pty Ltd</span>
+            <h1>Rent, buy, or sell a car in Australia</h1>
+            <p class="hero-subtext">Koala Keys helps Australian drivers rent reliable vehicles, browse quality used cars, and enquire about selling or trading in their vehicle — all through a simple local-first experience.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#fleet">Rent a Car</a>
+              <a class="button secondary" href="#cars-for-sale">Browse Cars for Sale</a>
+            </div>
+          </div>
+
+          <div class="hero-search">
+            <div class="hero-search-top">
+              <div>
+                <p id="searchHeading">Search Koala Keys rentals across Darwin and beyond.</p>
+              </div>
+              <div class="tab-switch" role="tablist" aria-label="Search mode tabs">
+                <button class="tab-button active" type="button" data-mode="rent" data-tab-group="mode" role="tab" aria-selected="true">Rent</button>
+                <button class="tab-button" type="button" data-mode="buy" data-tab-group="mode" role="tab" aria-selected="false">Buy</button>
+              </div>
+            </div>
+
+            <form class="search-form" id="searchForm">
+              <div class="field">
+                <label for="location">Location</label>
+                <input id="location" name="location" type="text" placeholder="Darwin City, NT" required />
+              </div>
+              <div class="field">
+                <label for="pickupDate">Pick-up Date</label>
+                <input id="pickupDate" name="pickupDate" type="date" required />
+              </div>
+              <div class="field">
+                <label for="dropoffDate">Drop-off Date</label>
+                <input id="dropoffDate" name="dropoffDate" type="date" required />
+              </div>
+              <button class="button primary search-button" type="submit" id="searchButton">Search Rentals</button>
+            </form>
+            <p class="search-status" id="searchStatus">Switch between rent and buy to preview the experience. Use the payment section below to complete a booking with PayPal, card, or bank transfer.</p>
+          </div>
+
+          <div class="stats-bar" aria-label="Koala Keys service highlights">
+            <div class="stat-card"><strong>Australia ready</strong><span>Built around Darwin now, with room to add Sydney, Melbourne, Brisbane, Perth, Adelaide, and airport pickup pages.</span></div>
+            <div class="stat-card"><strong>Rent or buy</strong><span>Find practical hire vehicles and cars for sale in one place.</span></div>
+            <div class="stat-card"><strong>Simple enquiry</strong><span>Reach out online or call 0467 474 180 for fast help.</span></div>
+            <div class="stat-card"><strong>Sales-ready</strong><span>Rental and sale cards are structured for real inventory, finance notes, and booking integrations.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="rent">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Rent & buy tabs</span>
+          <h2>Choose the path that matches your next move.</h2>
+          <p>Whether customers need short-term hire, a used vehicle, or a simple way to sell their car, the website gives each journey a clear next step.</p>
+        </div>
+
+        <div class="services-tabs">
+          <div class="tab-switch" role="tablist" aria-label="Service tabs">
+            <button class="tab-button active" type="button" data-mode="rent" data-tab-group="service" role="tab" aria-selected="true">Rent</button>
+            <button class="tab-button" type="button" data-mode="buy" data-tab-group="service" role="tab" aria-selected="false">Buy</button>
+          </div>
+
+          <div class="services-panels">
+            <div class="service-panel active" data-panel="rent">
+              <article class="panel-card">
+                <h3>Flexible rentals for city driving, airport arrivals, work trips, and weekend escapes.</h3>
+                <p>Koala Keys keeps the rental process simple with practical options, transparent daily rates, and local support for Australian drivers.</p>
+                <ul class="panel-list">
+                  <li>Choose from compact city cars, family-friendly options, and sturdy utes.</li>
+                  <li>Start with a quick online search, then confirm details by phone or enquiry.</li>
+                  <li>Ideal for city visits, airport pickup, local business use, and Northern Territory road trips.</li>
+                </ul>
+                <a class="button primary" href="#fleet">View Featured Rental Cars</a>
+              </article>
+              <aside class="panel-aside">
+                <div class="info-card">
+                  <h4>Rental snapshot</h4>
+                  <p>Designed for convenience, with clear vehicle choices and a smooth path from search to pickup.</p>
+                  <div class="mini-stats">
+                    <div><strong>Daily rates</strong><span>Entry-level and premium options for different budgets.</span></div>
+                    <div><strong>Local pickup</strong><span>Darwin City location for easy collection.</span></div>
+                  </div>
+                </div>
+                <div class="info-card">
+                  <h4>Need help deciding?</h4>
+                  <p>Tell the team how many people are travelling, where you are going, and how long you need the vehicle for.</p>
+                </div>
+              </aside>
+            </div>
+
+            <div class="service-panel" data-panel="buy" id="buy">
+              <article class="panel-card">
+                <h3>Browse cars for sale with clear details and easy local enquiries.</h3>
+                <p>Koala Keys is expanding beyond rental into vehicle sales, giving drivers a simple place to compare listings and speak directly with a local Darwin business.</p>
+                <ul class="panel-list">
+                  <li>See key details like year, price, and mileage at a glance.</li>
+                  <li>Use placeholder cards today, then drop in real inventory photos later.</li>
+                  <li>Enquire quickly when a vehicle fits your needs or budget.</li>
+                </ul>
+                <a class="button primary" href="#cars-for-sale">Browse Cars for Sale</a>
+              </article>
+              <aside class="panel-aside">
+                <div class="info-card">
+                  <h4>Buying snapshot</h4>
+                  <p>Professional presentation for stock listings, ready for real vehicle photos, finance information, warranty notes, and enquiry details.</p>
+                  <div class="mini-stats">
+                    <div><strong>Sales-ready</strong><span>Card layout built for stock updates and future inventory growth.</span></div>
+                    <div><strong>Local trust</strong><span>Speak to a real Darwin operator, not a faceless marketplace.</span></div>
+                  </div>
+                </div>
+                <div class="info-card">
+                  <h4>Future inventory</h4>
+                  <p>Real car images, specifications, finance calculators, PPSR checks, and warranty notes can be added without changing the page structure.</p>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <div class="sell-callout" id="sell">
+            <h4>Sell your car through Koala Keys</h4>
+            <p>Have a vehicle to move on? Koala Keys can collect trade-in enquiries, display car details professionally, and guide the next sale conversation.</p>
+            <a class="button secondary" href="#faq">Learn how selling works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Featured rental cars</span>
+          <h2>Simple rental choices for everyday Australian drivers.</h2>
+          <p>These rental cards are structured for real photos, live availability, booking links, and clear daily pricing.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="car-card">
+            <div class="card-media has-photo" aria-label="Mazda CX-3 2017 rental photo gallery">
+              <div class="car-gallery" data-gallery>
+                <span class="gallery-count">4 photos</span>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous Mazda CX-3 photo">‹</button>
+                <div class="car-gallery-main">
+                  <img class="active" src="assets/img_v3_02155_ac0979b3-2646-4513-941c-514bd2dd59ix.jpg" alt="Mazda CX-3 2017 exterior view photo 1" />
+                  <img src="assets/img_v3_02155_de81b658-6204-4996-a228-4281f618acix.jpg" alt="Mazda CX-3 2017 exterior view photo 2" />
+                  <img src="assets/img_v3_02155_287dcee5-f4af-4a9f-beaf-45f8299023ix.jpg" alt="Mazda CX-3 2017 exterior view photo 3" />
+                  <img src="assets/img_v3_02155_4456e585-a610-4dce-816f-f584549d42ix.jpg" alt="Mazda CX-3 2017 exterior view photo 4" />
+                </div>
+                <button class="gallery-arrow next" type="button" aria-label="Next Mazda CX-3 photo">›</button>
+                <div class="gallery-thumbs" aria-label="Mazda CX-3 photo thumbnails">
+                  <button class="gallery-thumb active" type="button" aria-label="Show Mazda CX-3 photo 1"><img src="assets/img_v3_02155_ac0979b3-2646-4513-941c-514bd2dd59ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mazda CX-3 photo 2"><img src="assets/img_v3_02155_de81b658-6204-4996-a228-4281f618acix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mazda CX-3 photo 3"><img src="assets/img_v3_02155_287dcee5-f4af-4a9f-beaf-45f8299023ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mazda CX-3 photo 4"><img src="assets/img_v3_02155_4456e585-a610-4dce-816f-f584549d42ix.jpg" alt="" /></button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-topline">
+                <h3>Mazda CX-3 2017</h3>
+                <span class="price-tag">$300/week</span>
+              </div>
+              <p>Compact SUV with a sporty drive and easy city handling.</p>
+              <div class="card-meta"><span>Manual</span><span>Petrol</span><span>Compact SUV</span><span>Cold A/C</span></div>
+              <button class="toggle-details" type="button" aria-expanded="false" aria-controls="details-mazda">View Details</button>
+              <div class="card-details" id="details-mazda">Available this week · minimum 2 days preferred · sporty drive · comfortable interior</div>
+              <a class="button primary" href="#payment">Book Now</a>
+            </div>
+          </article>
+
+          <article class="car-card">
+            <div class="card-media has-photo" aria-label="Ford Ranger 2019 rental photo gallery">
+              <div class="car-gallery" data-gallery>
+                <span class="gallery-count">3 photos</span>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous Ford Ranger photo">‹</button>
+                <div class="car-gallery-main">
+                  <img class="active" src="assets/img_v3_02155_040430db-bb4f-4781-90fa-a9c5ced991ix.jpg" alt="Ford Ranger 2019 exterior view photo 1" />
+                  <img src="assets/img_v3_02155_f2189a3d-3c23-4130-868f-46461b94eeix.jpg" alt="Ford Ranger 2019 exterior view photo 2" />
+                  <img src="assets/img_v3_02155_0ea4d99d-1144-47b4-af39-d1668b8232ix.jpg" alt="Ford Ranger 2019 exterior view photo 3" />
+                </div>
+                <button class="gallery-arrow next" type="button" aria-label="Next Ford Ranger photo">›</button>
+                <div class="gallery-thumbs" aria-label="Ford Ranger photo thumbnails">
+                  <button class="gallery-thumb active" type="button" aria-label="Show Ford Ranger photo 1"><img src="assets/img_v3_02155_040430db-bb4f-4781-90fa-a9c5ced991ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Ford Ranger photo 2"><img src="assets/img_v3_02155_f2189a3d-3c23-4130-868f-46461b94eeix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Ford Ranger photo 3"><img src="assets/img_v3_02155_0ea4d99d-1144-47b4-af39-d1668b8232ix.jpg" alt="" /></button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-topline">
+                <h3>Ford Ranger 2019</h3>
+                <span class="price-tag">$95/day or $500/week</span>
+              </div>
+              <p>Strong dual-cab ute for work, weekend trips, and Darwin driving.</p>
+              <div class="card-meta"><span>Automatic</span><span>Diesel</span><span>Dual Cab</span><span>Cold A/C</span></div>
+              <button class="toggle-details" type="button" aria-expanded="false" aria-controls="details-ranger">View Details</button>
+              <div class="card-details" id="details-ranger">200km/day included · minimum 1 week · 10% off for 4+ weeks · flexible pickup available</div>
+              <a class="button primary" href="#payment">Book Now</a>
+            </div>
+          </article>
+
+          <article class="car-card">
+            <div class="card-media has-photo" aria-label="2018 Hyundai Elantra Sedan rental photo gallery">
+              <div class="car-gallery" data-gallery>
+                <span class="gallery-count">4 photos</span>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous Hyundai Elantra photo">‹</button>
+                <div class="car-gallery-main">
+                  <img class="active" src="assets/img_v3_02155_9d0814f4-4c30-494d-890e-906f950297ix.jpg" alt="2018 Hyundai Elantra Sedan exterior view photo 1" />
+                  <img src="assets/img_v3_02155_d3a26200-12c0-461a-8a4a-017c811f0dix.jpg" alt="2018 Hyundai Elantra Sedan exterior view photo 2" />
+                  <img src="assets/img_v3_02155_34fb5af3-048b-45b5-9be7-1e89c6aa72ix.jpg" alt="2018 Hyundai Elantra Sedan exterior view photo 3" />
+                  <img src="assets/img_v3_02155_04cfcf45-17b0-4a10-8745-e59b227202ix.jpg" alt="2018 Hyundai Elantra Sedan exterior view photo 4" />
+                </div>
+                <button class="gallery-arrow next" type="button" aria-label="Next Hyundai Elantra photo">›</button>
+                <div class="gallery-thumbs" aria-label="Hyundai Elantra photo thumbnails">
+                  <button class="gallery-thumb active" type="button" aria-label="Show Hyundai Elantra photo 1"><img src="assets/img_v3_02155_9d0814f4-4c30-494d-890e-906f950297ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Hyundai Elantra photo 2"><img src="assets/img_v3_02155_d3a26200-12c0-461a-8a4a-017c811f0dix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Hyundai Elantra photo 3"><img src="assets/img_v3_02155_34fb5af3-048b-45b5-9be7-1e89c6aa72ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Hyundai Elantra photo 4"><img src="assets/img_v3_02155_04cfcf45-17b0-4a10-8745-e59b227202ix.jpg" alt="" /></button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-topline">
+                <h3>2018 Hyundai Elantra Sedan</h3>
+                <span class="price-tag">$45/day or $300/week</span>
+              </div>
+              <p>Comfortable fuel-efficient sedan for commuting and airport runs.</p>
+              <div class="card-meta"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="toggle-details" type="button" aria-expanded="false" aria-controls="details-elantra">View Details</button>
+              <div class="card-details" id="details-elantra">178,000 km · reverse camera · Bluetooth · insurance included · lower excess · minimum 1 week preferred</div>
+              <a class="button primary" href="#payment">Book Now</a>
+            </div>
+          </article>
+
+          <article class="car-card">
+            <div class="card-media has-photo" aria-label="2026 Haval Jolion rental photo gallery">
+              <div class="car-gallery" data-gallery>
+                <span class="gallery-count">6 photos</span>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous Haval Jolion photo">‹</button>
+                <div class="car-gallery-main">
+                  <img class="active" src="assets/img_v3_02155_e7997d9a-9b4d-4808-bb98-08e85cb9f5ix.jpg" alt="2026 Haval Jolion exterior view photo 1" />
+                  <img src="assets/img_v3_02155_a45b280f-0e45-4522-b9fd-cc26899089ix.jpg" alt="2026 Haval Jolion exterior view photo 2" />
+                  <img src="assets/img_v3_02155_63254ffb-af50-4d2b-b51b-fe97744bf6ix.jpg" alt="2026 Haval Jolion exterior view photo 3" />
+                  <img src="assets/img_v3_02155_fc395b76-1a65-4312-8667-dd75770d5eix.jpg" alt="2026 Haval Jolion exterior view photo 4" />
+                  <img src="assets/img_v3_02155_cb1e365b-aef6-4bec-9a2e-3a0686130dix.jpg" alt="2026 Haval Jolion exterior view photo 5" />
+                  <img src="assets/img_v3_02155_11d62847-afc0-418a-91d9-7afa042441ix.jpg" alt="2026 Haval Jolion exterior view photo 6" />
+                </div>
+                <button class="gallery-arrow next" type="button" aria-label="Next Haval Jolion photo">›</button>
+                <div class="gallery-thumbs" aria-label="Haval Jolion photo thumbnails">
+                  <button class="gallery-thumb active" type="button" aria-label="Show Haval Jolion photo 1"><img src="assets/img_v3_02155_e7997d9a-9b4d-4808-bb98-08e85cb9f5ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Haval Jolion photo 2"><img src="assets/img_v3_02155_a45b280f-0e45-4522-b9fd-cc26899089ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Haval Jolion photo 3"><img src="assets/img_v3_02155_63254ffb-af50-4d2b-b51b-fe97744bf6ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Haval Jolion photo 4"><img src="assets/img_v3_02155_fc395b76-1a65-4312-8667-dd75770d5eix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Haval Jolion photo 5"><img src="assets/img_v3_02155_cb1e365b-aef6-4bec-9a2e-3a0686130dix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Haval Jolion photo 6"><img src="assets/img_v3_02155_11d62847-afc0-418a-91d9-7afa042441ix.jpg" alt="" /></button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-topline">
+                <h3>2026 Haval Jolion</h3>
+                <span class="price-tag">$65/day or $450/week</span>
+              </div>
+              <p>Modern SUV with easy tech, comfort, and clean everyday practicality.</p>
+              <div class="card-meta"><span>Automatic</span><span>Petrol</span><span>5-Seater SUV</span><span>Cold A/C</span></div>
+              <button class="toggle-details" type="button" aria-expanded="false" aria-controls="details-jolion">View Details</button>
+              <div class="card-details" id="details-jolion">Insurance included · lower excess · 1 week preferred · Apple CarPlay & Android Auto</div>
+              <a class="button primary" href="#payment">Book Now</a>
+            </div>
+          </article>
+
+          <article class="car-card">
+            <div class="card-media has-photo" aria-label="2018 Mitsubishi Eclipse Cross rental photo gallery">
+              <div class="car-gallery" data-gallery>
+                <span class="gallery-count">5 photos</span>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous Mitsubishi Eclipse Cross photo">‹</button>
+                <div class="car-gallery-main">
+                  <img class="active" src="assets/img_v3_02155_b7c4d97b-a00f-4c80-8711-6c8c4d5546ix.jpg" alt="2018 Mitsubishi Eclipse Cross exterior view photo 1" />
+                  <img src="assets/img_v3_02155_dd9fbbd1-c7c6-4be6-81e8-7f1ace64f3ix.jpg" alt="2018 Mitsubishi Eclipse Cross exterior view photo 2" />
+                  <img src="assets/img_v3_02155_48da6a55-b8d9-4b09-8daa-e715e061c3ix.jpg" alt="2018 Mitsubishi Eclipse Cross exterior view photo 3" />
+                  <img src="assets/img_v3_02155_267d9fc6-3fac-465c-a3c7-12b8c7dca7ix.jpg" alt="2018 Mitsubishi Eclipse Cross exterior view photo 4" />
+                  <img src="assets/img_v3_02155_7321c03a-ddbe-44f5-b1ce-6eb3497134ix.jpg" alt="2018 Mitsubishi Eclipse Cross exterior view photo 5" />
+                </div>
+                <button class="gallery-arrow next" type="button" aria-label="Next Mitsubishi Eclipse Cross photo">›</button>
+                <div class="gallery-thumbs" aria-label="Mitsubishi Eclipse Cross photo thumbnails">
+                  <button class="gallery-thumb active" type="button" aria-label="Show Mitsubishi Eclipse Cross photo 1"><img src="assets/img_v3_02155_b7c4d97b-a00f-4c80-8711-6c8c4d5546ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mitsubishi Eclipse Cross photo 2"><img src="assets/img_v3_02155_dd9fbbd1-c7c6-4be6-81e8-7f1ace64f3ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mitsubishi Eclipse Cross photo 3"><img src="assets/img_v3_02155_48da6a55-b8d9-4b09-8daa-e715e061c3ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mitsubishi Eclipse Cross photo 4"><img src="assets/img_v3_02155_267d9fc6-3fac-465c-a3c7-12b8c7dca7ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Mitsubishi Eclipse Cross photo 5"><img src="assets/img_v3_02155_7321c03a-ddbe-44f5-b1ce-6eb3497134ix.jpg" alt="" /></button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-topline">
+                <h3>Mitsubishi Eclipse Cross 2018</h3>
+                <span class="price-tag">$85/day or $450/week</span>
+              </div>
+              <p>Spacious SUV with a stylish look and comfortable road-trip feel.</p>
+              <div class="card-meta"><span>Automatic</span><span>Petrol</span><span>SUV</span><span>Cold A/C</span></div>
+              <button class="toggle-details" type="button" aria-expanded="false" aria-controls="details-eclipse">View Details</button>
+              <div class="card-details" id="details-eclipse">200km/day · $400 refundable bond · 1 week preferred · 10% off for 4+ weeks</div>
+              <a class="button primary" href="#payment">Book Now</a>
+            </div>
+          </article>
+
+          <article class="car-card">
+            <div class="card-media has-photo" aria-label="2019 Volkswagen Polo rental photo gallery">
+              <div class="car-gallery" data-gallery>
+                <span class="gallery-count">4 photos</span>
+                <button class="gallery-arrow prev" type="button" aria-label="Previous Volkswagen Polo photo">‹</button>
+                <div class="car-gallery-main">
+                  <img class="active" src="assets/img_v3_02155_d2352941-92a8-44fa-8357-f6f3789cb4ix.jpg" alt="2019 Volkswagen Polo exterior view photo 1" />
+                  <img src="assets/img_v3_02155_c020a08a-eb5e-4769-aee1-8cac5b6b35ix.jpg" alt="2019 Volkswagen Polo exterior view photo 2" />
+                  <img src="assets/img_v3_02155_e81b4921-84a9-465f-adbf-2c65ba7facix.jpg" alt="2019 Volkswagen Polo exterior view photo 3" />
+                  <img src="assets/img_v3_02155_42a470c8-d9c4-4b40-92b1-64fb2fc69cix.jpg" alt="2019 Volkswagen Polo exterior view photo 4" />
+                </div>
+                <button class="gallery-arrow next" type="button" aria-label="Next Volkswagen Polo photo">›</button>
+                <div class="gallery-thumbs" aria-label="Volkswagen Polo photo thumbnails">
+                  <button class="gallery-thumb active" type="button" aria-label="Show Volkswagen Polo photo 1"><img src="assets/img_v3_02155_d2352941-92a8-44fa-8357-f6f3789cb4ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Volkswagen Polo photo 2"><img src="assets/img_v3_02155_c020a08a-eb5e-4769-aee1-8cac5b6b35ix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Volkswagen Polo photo 3"><img src="assets/img_v3_02155_e81b4921-84a9-465f-adbf-2c65ba7facix.jpg" alt="" /></button>
+                  <button class="gallery-thumb" type="button" aria-label="Show Volkswagen Polo photo 4"><img src="assets/img_v3_02155_42a470c8-d9c4-4b40-92b1-64fb2fc69cix.jpg" alt="" /></button>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-topline">
+                <h3>2019 Volkswagen Polo</h3>
+                <span class="price-tag">$35/day or $250/week</span>
+              </div>
+              <p>Economical hatchback that is easy to park and ideal for city use.</p>
+              <div class="card-meta"><span>Automatic</span><span>1.0L Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="toggle-details" type="button" aria-expanded="false" aria-controls="details-polo">View Details</button>
+              <div class="card-details" id="details-polo">50,810 km · insurance included · clean PPSR · 1 week preferred</div>
+              <a class="button primary" href="#payment">Book Now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="cars-for-sale">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Featured cars for sale</span>
+          <h2>Cars for sale coming soon.</h2>
+          <p>Koala Keys is currently focused on rentals. Check back soon for great deals on quality vehicles when the for-sale lineup is ready.</p>
+        </div>
+
+        <div class="coming-soon-card">
+          <strong>🚘 Cars for sale coming soon</strong>
+          <p>Great deals on quality vehicles will be added here later. For now, explore our rental fleet or get in touch if you have questions about upcoming availability.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why choose us</span>
+          <h2>A practical Australian automotive business with a professional online experience.</h2>
+          <p>Koala Keys combines rental, sales, and sell-your-car journeys in one clean structure, helping visitors find the right action without confusion.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">$</div>
+            <h3>Affordable Rates</h3>
+            <p>Clear, accessible pricing designed to feel approachable for everyday drivers and practical travel needs.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🚘</div>
+            <h3>Wide Selection</h3>
+            <p>From compact city options to tougher vehicles, the structure is ready to support both rental and sales stock.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Easy Booking</h3>
+            <p>Simple search, direct calls to action, and a clean enquiry flow help visitors move quickly.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Local Australian Support</h3>
+            <p>A local-first business experience with clear contact details, direct phone support, and room to grow into more Australian locations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="trust">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Trust & compliance</span>
+          <h2>Built to answer buyer and renter questions before they call.</h2>
+          <p>Australian automotive customers expect clarity. This section gives Koala Keys space to show policies, checks, and support details that reduce hesitation.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3>Clear pricing</h3>
+            <p>Show daily rental rates, deposits, kilometre limits, sale prices, and optional extras in plain language.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🛡</div>
+            <h3>Insurance guidance</h3>
+            <p>Give renters a simple summary of cover, excess, roadside assistance, and what to confirm before pickup.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Vehicle checks</h3>
+            <p>Add service history, PPSR status, odometer notes, and warranty information for cars listed for sale.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📞</div>
+            <h3>Fast local contact</h3>
+            <p>Phone, email, address, and enquiry CTAs stay visible so visitors can quickly move from browsing to action.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>Three easy steps from search to ignition.</h2>
+          <p>The customer journey stays simple whether someone is hiring a car, buying a used vehicle, or starting a sell-your-car enquiry.</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Choose your car</h3>
+            <p>Browse the featured rentals or sale listings and narrow down the vehicle that fits the trip or budget.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Book and pay online</h3>
+            <p>Confirm your dates and details, then pay the booking deposit or full rental amount through secure checkout.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Receive your invoice</h3>
+            <p>Get booking confirmation and a numbered tax invoice by email, then collect your vehicle in Darwin City.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">4</div>
+            <h3>Collect and drive</h3>
+            <p>Meet the Koala Keys team, complete the final handover, and get on the road with clear pickup instructions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="payment">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Online payment & invoicing</span>
+          <h2>Book, pay securely, and receive an invoice immediately.</h2>
+          <p>Customers can confirm a rental online, pay the required deposit or full amount, and receive a tax invoice by email as soon as payment is approved.</p>
+        </div>
+
+        <div class="payment-grid">
+          <article class="payment-summary">
+            <h3>A complete booking-to-invoice flow</h3>
+            <p>Choose the payment method that suits you best and follow the secure hosted checkout or transfer instructions below.</p>
+            <div class="payment-options-grid" aria-label="Payment options overview">
+              <div class="payment-option-card">
+                <strong>Stripe Card Checkout</strong>
+                <span>Fast hosted card payments for customers who want instant confirmation.</span>
+              </div>
+              <div class="payment-option-card">
+                <strong>PayPal</strong>
+                <span>Convenient wallet payments with a familiar checkout flow for local and international travellers.</span>
+              </div>
+              <div class="payment-option-card">
+                <strong>Bank Transfer</strong>
+                <span>Direct transfer for customers who prefer manual payment with a booking reference.</span>
+              </div>
+            </div>
+            <ul class="payment-points">
+              <li>Pay securely online with a hosted Stripe card checkout link.</li>
+              <li>Use PayPal for a quick payment option with an Australian business account.</li>
+              <li>Choose direct bank transfer if you prefer to pay from your Australian bank.</li>
+              <li>Use your booking reference so Koala Keys can match your payment quickly.</li>
+              <li>Email confirmation after transfer if you use bank deposit instead of online checkout.</li>
+            </ul>
+            <div class="payment-badges" aria-label="Payment flow highlights">
+              <span>Secure checkout</span><span>GST invoice</span><span>Email receipt</span><span>AUD payments</span>
+            </div>
+          </article>
+
+          <article class="checkout-card">
+            <div id="bookingFormWrap">
+              <h3>Booking Request Form</h3>
+              <p class="checkout-note">Complete your booking details below and we will generate your booking confirmation instantly on this page.</p>
+
+              <form class="booking-form" id="bookingForm">
+                <div class="booking-form-grid">
+                  <div class="field">
+                    <label for="bookingName">Customer name</label>
+                    <input id="bookingName" name="bookingName" type="text" placeholder="Your full name" required />
+                  </div>
+                  <div class="field">
+                    <label for="bookingEmail">Email</label>
+                    <input id="bookingEmail" name="bookingEmail" type="email" placeholder="you@example.com" required />
+                  </div>
+                  <div class="field">
+                    <label for="bookingPhone">Phone</label>
+                    <input id="bookingPhone" name="bookingPhone" type="tel" placeholder="0467 474 180" required />
+                  </div>
+                  <div class="field">
+                    <label for="bookingCar">Selected car</label>
+                    <select id="bookingCar" name="bookingCar" required>
+                      <option value="">Choose a rental car</option>
+                      <option>Mazda CX-3 2017</option>
+                      <option>Ford Ranger 2019</option>
+                      <option>2018 Hyundai Elantra Sedan</option>
+                      <option>2026 Haval Jolion</option>
+                      <option>Mitsubishi Eclipse Cross 2018</option>
+                      <option>2019 Volkswagen Polo</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="pickupDateBooking">Pickup date</label>
+                    <input id="pickupDateBooking" name="pickupDateBooking" type="date" required />
+                  </div>
+                  <div class="field">
+                    <label for="returnDateBooking">Return date</label>
+                    <input id="returnDateBooking" name="returnDateBooking" type="date" required />
+                  </div>
+                  <div class="field full">
+                    <label for="bookingNotes">Notes</label>
+                    <textarea id="bookingNotes" name="bookingNotes" placeholder="Add any pickup timing, flight details, child seats, or other booking notes."></textarea>
+                  </div>
+                </div>
+
+                <div class="booking-actions">
+                  <button class="button primary" type="submit">Submit Booking</button>
+                  <span class="booking-help">A booking confirmation will be generated instantly and sent to the team by email.</span>
+                </div>
+              </form>
+            </div>
+
+            <div class="booking-confirmation" id="bookingConfirmation">
+              <div class="confirmation-header">
+                <div class="confirmation-brand">
+                  <img src="koala-keys-logo.jpg" alt="Koala Keys Car Hire logo" />
+                  <div>
+                    <h3>Booking Confirmation</h3>
+                    <p>Koala Keys Car Hire Pty Ltd</p>
+                  </div>
+                </div>
+                <div class="confirmation-meta">
+                  <h4 id="confirmationReference">KK-2026-0001</h4>
+                  <p id="confirmationDate">Date: 02 Sep 2026</p>
+                </div>
+              </div>
+
+              <div class="confirmation-body">
+                <div class="confirmation-message">Your booking request has been received! We will contact you within 24 hours to confirm availability and finalise your rental.</div>
+
+                <div class="confirmation-panel">
+                  <h4>Customer details</h4>
+                  <div class="confirmation-grid">
+                    <div class="confirmation-item"><strong>Name</strong><span id="confirmName">—</span></div>
+                    <div class="confirmation-item"><strong>Email</strong><span id="confirmEmail">—</span></div>
+                    <div class="confirmation-item"><strong>Phone</strong><span id="confirmPhone">—</span></div>
+                    <div class="confirmation-item"><strong>Booking reference</strong><span id="confirmReferenceInline">—</span></div>
+                  </div>
+                </div>
+
+                <div class="confirmation-panel">
+                  <h4>Rental details</h4>
+                  <div class="confirmation-grid">
+                    <div class="confirmation-item"><strong>Selected car</strong><span id="confirmCar">—</span></div>
+                    <div class="confirmation-item"><strong>Pickup date</strong><span id="confirmPickup">—</span></div>
+                    <div class="confirmation-item"><strong>Return date</strong><span id="confirmReturn">—</span></div>
+                    <div class="confirmation-item"><strong>Notes</strong><span id="confirmNotes">No notes added</span></div>
+                  </div>
+                </div>
+
+                <div class="confirmation-panel">
+                  <h4>Payment instructions</h4>
+                  <p><strong>PayPal:</strong> paypal.me/KoalaKeysCarhire</p>
+                  <p><strong>Bank Transfer:</strong> Account Name: Koala Keys Car Hire Pty Ltd | BSB: [XXX-XXX] | Account: [XXXXXXXX]</p>
+                  <p><strong>Payment reference:</strong> Use your booking reference as payment reference.</p>
+                </div>
+
+                <div class="confirmation-panel">
+                  <h4>Contact</h4>
+                  <p>0467 474 180 | hello@koalakeys.com.au</p>
+                </div>
+
+                <div class="confirmation-actions">
+                  <button class="button primary" type="button" id="printConfirmationButton">Print / Save as PDF</button>
+                  <button class="button secondary light" type="button" id="resetBookingButton">Make Another Booking</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Reviews</span>
+          <h2>Professional, local, and easy to deal with.</h2>
+          <p>We'd love to hear about your experience! Leave a review below.</p>
+        </div>
+
+        <div class="review-form-card">
+          <p>Share a quick note about your rental experience with Koala Keys. Your review will be sent directly to the team for verification before publishing.</p>
+
+          <form class="review-form" id="reviewForm">
+            <div class="field">
+              <label for="reviewName">Name</label>
+              <input id="reviewName" name="reviewName" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label>Star rating</label>
+              <div class="star-rating" id="starRating" aria-label="Select a star rating">
+                <button class="star-button" type="button" data-rating="1" aria-label="1 star">★</button>
+                <button class="star-button" type="button" data-rating="2" aria-label="2 stars">★</button>
+                <button class="star-button" type="button" data-rating="3" aria-label="3 stars">★</button>
+                <button class="star-button" type="button" data-rating="4" aria-label="4 stars">★</button>
+                <button class="star-button" type="button" data-rating="5" aria-label="5 stars">★</button>
+              </div>
+              <input id="reviewRating" name="reviewRating" type="hidden" required />
+              <div class="review-meta" id="reviewRatingLabel">Select your rating</div>
+            </div>
+
+            <div class="field">
+              <label for="reviewMessage">Your review</label>
+              <textarea id="reviewMessage" name="reviewMessage" placeholder="Tell us about your experience with Koala Keys..." required></textarea>
+            </div>
+
+            <button class="button primary" type="submit">Submit Review</button>
+          </form>
+
+          <div class="review-confirmation" id="reviewConfirmation" role="status" aria-live="polite"></div>
+          <p class="review-note">Reviews are verified and published within 24 hours.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="locations">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Locations</span>
+          <h2>Darwin pickup today, Australia-wide expansion ready.</h2>
+          <p>The page starts with a clear Darwin location and is ready for extra suburb, city, airport, and state landing pages as the business expands.</p>
+        </div>
+
+        <div class="location-grid">
+          <div class="map-placeholder" aria-label="Google map showing 75 Mcminn Street, Darwin City, NT, Australia">
+            <iframe
+              src="https://maps.google.com/maps?hl=en&q=75+Mcminn+Street+Darwin+City+NT+Australia&output=embed"
+              title="Koala Keys location map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Answers to the most common questions.</h2>
+          <p>These accordion items keep the page practical and informative, while giving space for future policy details and service updates.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do you offer long-term rentals?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Koala Keys can discuss longer rental arrangements depending on vehicle availability and the type of use you need.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can I pay online and get an invoice straight away?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The booking flow is structured so customers can complete secure payment and receive a numbered tax invoice by email immediately after payment succeeds.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What documents do I need?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most customers should expect to provide a valid driver licence, contact details, and any booking information needed to confirm the hire or enquiry.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do you buy used cars?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Koala Keys is expanding into vehicle sales and used car conversations. Reach out with your vehicle details to discuss the next step.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is insurance included?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Insurance terms can vary by vehicle and rental agreement, so it is best to confirm the current coverage details directly when booking.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How do I sell my car through Koala Keys?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Start by contacting the team with your vehicle make, model, year, mileage, and general condition. The page structure is already prepared for future sales support.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="cta-banner">
+          <div>
+            <h2>Ready to get on the road?</h2>
+            <p>Choose whether you want to rent, buy, or sell, then contact Koala Keys for the next step.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button primary" href="#payment">Book & Pay Online</a>
+            <a class="button secondary light" href="#cars-for-sale">View Cars for Sale</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-card">
+          <div class="footer-brand">
+            <img src="koala-keys-logo.jpg" alt="Koala Keys Car Hire logo" />
+            <div>
+              <strong>Koala Keys Car Hire Pty Ltd</strong>
+              <span>ABN 72 687 919 811</span>
+            </div>
+          </div>
+
+          <div class="footer-meta">
+            <p>75 Mcminn Street, Darwin City, NT</p>
+            <p><a href="tel:0467474180">0467 474 180</a> · <a href="mailto:hello@koalakeys.com.au">hello@koalakeys.com.au</a></p>
+            <p class="footer-copy">Australian car rentals, used-car sales, trade-in enquiries, and local vehicle support from one polished single-page website.</p>
+          </div>
+
+          <div class="socials" aria-label="Koala Keys social links">
+            <a class="social-pill" href="https://www.facebook.com/share/1EqHC7QZ9P/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Koala Keys Facebook">f</a>
+            <a class="social-pill" href="https://www.instagram.com/koalakeyscarhire/" target="_blank" rel="noopener" aria-label="Koala Keys Instagram">ig</a>
+          </div>
+        </div>
+        <p class="footer-bottom">© 2025 - <span id="currentYear">2026</span> Koala Keys Car Hire Pty Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var currentMode = 'rent';
+      var header = document.querySelector('.site-header');
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.querySelectorAll('.nav-links a');
+      var modeButtons = document.querySelectorAll('[data-mode]');
+      var panels = document.querySelectorAll('.service-panel');
+      var searchHeading = document.getElementById('searchHeading');
+      var searchButton = document.getElementById('searchButton');
+      var searchStatus = document.getElementById('searchStatus');
+      var searchForm = document.getElementById('searchForm');
+      var faqItems = document.querySelectorAll('.faq-item');
+      var paymentButtons = document.querySelectorAll('[data-payment]');
+      var paymentPanels = document.querySelectorAll('.payment-panel');
+      var galleries = document.querySelectorAll('[data-gallery]');
+      var bookingForm = document.getElementById('bookingForm');
+      var bookingFormWrap = document.getElementById('bookingFormWrap');
+      var bookingConfirmation = document.getElementById('bookingConfirmation');
+      var confirmationReference = document.getElementById('confirmationReference');
+      var confirmationDate = document.getElementById('confirmationDate');
+      var currentYearSpan = document.getElementById('currentYear');
+
+      if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+      }
+      var confirmName = document.getElementById('confirmName');
+      var confirmEmail = document.getElementById('confirmEmail');
+      var confirmPhone = document.getElementById('confirmPhone');
+      var confirmReferenceInline = document.getElementById('confirmReferenceInline');
+      var confirmCar = document.getElementById('confirmCar');
+      var confirmPickup = document.getElementById('confirmPickup');
+      var confirmReturn = document.getElementById('confirmReturn');
+      var confirmNotes = document.getElementById('confirmNotes');
+      var printConfirmationButton = document.getElementById('printConfirmationButton');
+      var resetBookingButton = document.getElementById('resetBookingButton');
+      var reviewForm = document.getElementById('reviewForm');
+      var reviewRating = document.getElementById('reviewRating');
+      var reviewRatingLabel = document.getElementById('reviewRatingLabel');
+      var reviewConfirmation = document.getElementById('reviewConfirmation');
+      var starButtons = document.querySelectorAll('.star-button');
+      var detailToggles = document.querySelectorAll('.toggle-details');
+
+      function updateMode(mode) {
+        currentMode = mode;
+
+        modeButtons.forEach(function (button) {
+          var active = button.getAttribute('data-mode') === mode;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-selected', String(active));
+        });
+
+        panels.forEach(function (panel) {
+          panel.classList.toggle('active', panel.getAttribute('data-panel') === mode);
+        });
+
+        if (searchHeading) {
+          searchHeading.textContent = mode === 'rent'
+            ? 'Search Koala Keys rentals across Darwin and beyond.'
+            : 'Search future Koala Keys sale listings and local buying options.';
+        }
+
+        if (searchButton) {
+          searchButton.textContent = mode === 'rent' ? 'Search Rentals' : 'Search Cars for Sale';
+        }
+
+        if (searchStatus) {
+          searchStatus.textContent = mode === 'rent'
+            ? 'Switch between rent and buy to preview the experience. Use the payment section below to complete a booking with PayPal, card, or bank transfer.'
+            : 'You are viewing the buy mode. This search UI is ready for future inventory browsing, deposits, and sales enquiries.';
+        }
+      }
+
+      modeButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          updateMode(button.getAttribute('data-mode'));
+        });
+      });
+
+      if (searchForm) {
+        searchForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          var location = document.getElementById('location');
+          var place = location && location.value ? location.value : 'Darwin City';
+          searchStatus.textContent = currentMode === 'rent'
+            ? 'Rental search preview: showing ' + place + ' results. Continue to the payment section below to pay by PayPal, card, or bank transfer.'
+            : 'Buy search preview: showing sale options near ' + place + '. Connect this form to your inventory or enquiry workflow later.';
+        });
+      }
+
+      paymentButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var method = button.getAttribute('data-payment');
+
+          paymentButtons.forEach(function (otherButton) {
+            var active = otherButton === button;
+            otherButton.classList.toggle('active', active);
+            otherButton.setAttribute('aria-selected', String(active));
+          });
+
+          paymentPanels.forEach(function (panel) {
+            panel.classList.toggle('active', panel.id === 'payment-' + method);
+          });
+        });
+      });
+
+      galleries.forEach(function (gallery) {
+        var images = gallery.querySelectorAll('.car-gallery-main img');
+        var thumbs = gallery.querySelectorAll('.gallery-thumb');
+        var prev = gallery.querySelector('.gallery-arrow.prev');
+        var next = gallery.querySelector('.gallery-arrow.next');
+        var currentIndex = 0;
+
+        function showImage(index) {
+          currentIndex = (index + images.length) % images.length;
+          images.forEach(function (image, imageIndex) {
+            image.classList.toggle('active', imageIndex === currentIndex);
+          });
+          thumbs.forEach(function (thumb, thumbIndex) {
+            thumb.classList.toggle('active', thumbIndex === currentIndex);
+          });
+        }
+
+        thumbs.forEach(function (thumb, thumbIndex) {
+          thumb.addEventListener('click', function () {
+            showImage(thumbIndex);
+          });
+        });
+
+        if (prev) {
+          prev.addEventListener('click', function () {
+            showImage(currentIndex - 1);
+          });
+        }
+
+        if (next) {
+          next.addEventListener('click', function () {
+            showImage(currentIndex + 1);
+          });
+        }
+      });
+
+      detailToggles.forEach(function (toggle) {
+        toggle.addEventListener('click', function () {
+          var detailsId = toggle.getAttribute('aria-controls');
+          var details = detailsId ? document.getElementById(detailsId) : null;
+          if (!details) return;
+          var open = details.classList.toggle('show');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.textContent = open ? 'Hide Details' : 'View Details';
+        });
+      });
+
+      function formatDisplayDate(value) {
+        if (!value) return '—';
+        var date = new Date(value + 'T00:00:00');
+        return date.toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' });
+      }
+
+      function resetBookingFlow() {
+        if (bookingForm) {
+          bookingForm.reset();
+        }
+        if (bookingFormWrap) {
+          bookingFormWrap.style.display = 'block';
+        }
+        if (bookingConfirmation) {
+          bookingConfirmation.classList.remove('show');
+        }
+      }
+
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          var bookingName = document.getElementById('bookingName');
+          var bookingEmail = document.getElementById('bookingEmail');
+          var bookingPhone = document.getElementById('bookingPhone');
+          var bookingCar = document.getElementById('bookingCar');
+          var pickupDateBooking = document.getElementById('pickupDateBooking');
+          var returnDateBooking = document.getElementById('returnDateBooking');
+          var bookingNotes = document.getElementById('bookingNotes');
+          var now = new Date();
+          var bookingRef = 'KK-' + now.getFullYear() + '-' + String(Math.floor(1000 + Math.random() * 9000));
+          var todayLabel = now.toLocaleDateString('en-AU', { day: '2-digit', month: 'short', year: 'numeric' });
+          var name = bookingName ? bookingName.value.trim() : '';
+          var email = bookingEmail ? bookingEmail.value.trim() : '';
+          var phone = bookingPhone ? bookingPhone.value.trim() : '';
+          var car = bookingCar ? bookingCar.value : '';
+          var pickup = pickupDateBooking ? pickupDateBooking.value : '';
+          var dropoff = returnDateBooking ? returnDateBooking.value : '';
+          var notes = bookingNotes && bookingNotes.value.trim() ? bookingNotes.value.trim() : 'No notes added';
+
+          if (!name || !email || !phone || !car || !pickup || !dropoff) {
+            return;
+          }
+
+          if (confirmationReference) {
+            confirmationReference.textContent = bookingRef;
+          }
+          if (confirmationDate) {
+            confirmationDate.textContent = 'Date: ' + todayLabel;
+          }
+          if (confirmName) confirmName.textContent = name;
+          if (confirmEmail) confirmEmail.textContent = email;
+          if (confirmPhone) confirmPhone.textContent = phone;
+          if (confirmReferenceInline) confirmReferenceInline.textContent = bookingRef;
+          if (confirmCar) confirmCar.textContent = car;
+          if (confirmPickup) confirmPickup.textContent = formatDisplayDate(pickup);
+          if (confirmReturn) confirmReturn.textContent = formatDisplayDate(dropoff);
+          if (confirmNotes) confirmNotes.textContent = notes;
+
+          if (bookingFormWrap) {
+            bookingFormWrap.style.display = 'none';
+          }
+          if (bookingConfirmation) {
+            bookingConfirmation.classList.add('show');
+          }
+
+          var body = [
+            'New Koala Keys booking request',
+            '',
+            'Booking reference: ' + bookingRef,
+            'Date: ' + todayLabel,
+            '',
+            'Customer details',
+            'Name: ' + name,
+            'Email: ' + email,
+            'Phone: ' + phone,
+            '',
+            'Rental details',
+            'Car: ' + car,
+            'Pickup date: ' + formatDisplayDate(pickup),
+            'Return date: ' + formatDisplayDate(dropoff),
+            'Notes: ' + notes
+          ].join('\n');
+          window.location.href = 'mailto:hello@koalakeys.com.au?subject=' + encodeURIComponent('New Booking Request ' + bookingRef) + '&body=' + encodeURIComponent(body);
+        });
+      }
+
+      if (printConfirmationButton) {
+        printConfirmationButton.addEventListener('click', function () {
+          window.print();
+        });
+      }
+
+      if (resetBookingButton) {
+        resetBookingButton.addEventListener('click', function () {
+          resetBookingFlow();
+        });
+      }
+
+      starButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var selectedRating = Number(button.getAttribute('data-rating'));
+          if (reviewRating) {
+            reviewRating.value = String(selectedRating);
+          }
+          starButtons.forEach(function (starButton) {
+            var starValue = Number(starButton.getAttribute('data-rating'));
+            starButton.classList.toggle('active', starValue <= selectedRating);
+          });
+          if (reviewRatingLabel) {
+            reviewRatingLabel.textContent = selectedRating + ' star' + (selectedRating === 1 ? '' : 's') + ' selected';
+          }
+        });
+      });
+
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          var reviewName = document.getElementById('reviewName');
+          var reviewMessage = document.getElementById('reviewMessage');
+          var name = reviewName && reviewName.value ? reviewName.value.trim() : '';
+          var rating = reviewRating && reviewRating.value ? reviewRating.value : '';
+          var message = reviewMessage && reviewMessage.value ? reviewMessage.value.trim() : '';
+
+          if (!name || !rating || !message) {
+            if (reviewConfirmation) {
+              reviewConfirmation.classList.add('show');
+              reviewConfirmation.style.background = '#fff4e8';
+              reviewConfirmation.style.borderColor = '#f4c88c';
+              reviewConfirmation.style.color = '#8a4b12';
+              reviewConfirmation.textContent = 'Please complete your name, star rating, and review before submitting.';
+            }
+            return;
+          }
+
+          var subject = 'Koala Keys Review from ' + name;
+          var body = [
+            'Name: ' + name,
+            'Star rating: ' + rating + '/5',
+            '',
+            'Review:',
+            message
+          ].join('\n');
+          window.location.href = 'mailto:hello@koalakeys.com.au?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+          if (reviewConfirmation) {
+            reviewConfirmation.classList.add('show');
+            reviewConfirmation.style.background = '#ecf8f0';
+            reviewConfirmation.style.borderColor = '#b9dfc6';
+            reviewConfirmation.style.color = '#245a35';
+            reviewConfirmation.textContent = 'Thank you! Your review has been received and will be checked within 24 hours.';
+          }
+
+          reviewForm.reset();
+          if (reviewRating) {
+            reviewRating.value = '';
+          }
+          if (reviewRatingLabel) {
+            reviewRatingLabel.textContent = 'Select your rating';
+          }
+          starButtons.forEach(function (starButton) {
+            starButton.classList.remove('active');
+          });
+        });
+      }
+
+      function closeMobileNav() {
+        if (header) {
+          header.classList.remove('menu-open');
+        }
+        if (navToggle) {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.innerHTML = '☰<span class="sr-only">Open navigation menu</span>';
+        }
+      }
+
+      if (navToggle && header) {
+        navToggle.addEventListener('click', function () {
+          var open = header.classList.toggle('menu-open');
+          navToggle.setAttribute('aria-expanded', String(open));
+          navToggle.innerHTML = (open ? '✕' : '☰') + '<span class="sr-only">Toggle navigation menu</span>';
+        });
+
+        document.addEventListener('click', function (event) {
+          if (!header.classList.contains('menu-open')) return;
+          if (header.contains(event.target)) return;
+          closeMobileNav();
+        });
+
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 860) {
+            closeMobileNav();
+          }
+        });
+      }
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          var target = link.getAttribute('href');
+          if (target === '#buy') {
+            updateMode('buy');
+          }
+          if (target === '#rent') {
+            updateMode('rent');
+          }
+
+          closeMobileNav();
+        });
+      });
+
+      if (window.location.hash === '#buy') {
+        updateMode('buy');
+      }
+
+      faqItems.forEach(function (item) {
+        var question = item.querySelector('.faq-question');
+        var answer = item.querySelector('.faq-answer');
+        if (!question || !answer) return;
+
+        question.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+
+          faqItems.forEach(function (otherItem) {
+            otherItem.classList.remove('open');
+            var otherAnswer = otherItem.querySelector('.faq-answer');
+            var otherQuestion = otherItem.querySelector('.faq-question');
+            if (otherAnswer) otherAnswer.style.maxHeight = '0px';
+            if (otherQuestion) otherQuestion.setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            question.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      updateMode(currentMode);
+    })();
+  </script>
+</body>
+</html>
