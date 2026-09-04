@@ -237,8 +237,28 @@
     }
 
     .hero {
+      position: relative;
       background: linear-gradient(180deg, #f6fbff 0%, #ffffff 100%);
       border-bottom: 1px solid rgba(217, 226, 234, 0.85);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 800px;
+      height: 100%;
+      min-height: 800px;
+      transform: translate(-50%, -50%);
+      background: url('koala-keys-logo.jpg') no-repeat center center;
+      background-size: contain;
+      opacity: 0.08;
+      z-index: -1;
+      pointer-events: none;
     }
 
     .hero-inner {
@@ -528,14 +548,11 @@
     }
 
     .booking-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: 24px;
-      align-items: start;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .booking-card,
-    .booking-aside,
     .map-wrap,
     .footer-shell {
       border: 1px solid var(--line);
@@ -544,8 +561,7 @@
       box-shadow: var(--shadow);
     }
 
-    .booking-card,
-    .booking-aside {
+    .booking-card {
       padding: 28px;
     }
 
@@ -870,7 +886,6 @@
 
       .hero-bar,
       .booking-card,
-      .booking-aside,
       .footer-shell {
         border-radius: 22px;
       }
@@ -967,7 +982,6 @@
         </div>
 
         <div class="hero-meta">
-          <span><strong>Address:</strong> 75 Mcminn Street, Darwin City, NT</span>
           <span><strong>Phone:</strong> 0467 474 180</span>
           <span><strong>Email:</strong> info@koalakeyscarhire.com.au</span>
         </div>
@@ -979,7 +993,7 @@
         <div class="section-head">
           <span class="eyebrow">Rental fleet</span>
           <h2>Choose from six real rental vehicles.</h2>
-          <p>Each listing keeps things simple: a real car photo, clear daily pricing, and one-click access to the booking form below. Subject to availability — contact us to confirm.</p>
+          <p>Ready to hit the road? Explore the Koala Keys Car Hire fleet and find the perfect vehicle for your trip. From compact cars for city adventures to spacious SUVs for family getaways, we've got a ride to suit your needs. Choose your car. Pack your bags. Let the adventure begin!</p>
         </div>
 
         <div class="fleet-grid">
@@ -1120,7 +1134,7 @@
           <article class="minimal-card">
             <div class="minimal-icon">📍</div>
             <h3>Darwin local</h3>
-            <p>Pick up from 75 Mcminn Street, Darwin City with direct local contact details.</p>
+            <p>Pick up from our central Darwin City location with direct local contact details.</p>
           </article>
           <article class="minimal-card">
             <div class="minimal-icon">🚗</div>
@@ -1212,33 +1226,6 @@
               </div>
             </div>
           </div>
-
-          <aside class="booking-aside">
-            <h3>Need help before booking?</h3>
-            <p class="copy">Koala Keys is a local Darwin business, so customers can speak directly with the team instead of dealing with a complicated call centre flow.</p>
-            <div class="support-list">
-              <div class="support-item">
-                <strong>Business</strong>
-                <span>Koala Keys Car Hire Pty Ltd</span>
-              </div>
-              <div class="support-item">
-                <strong>Phone</strong>
-                <span><a href="tel:0467474180">0467 474 180</a></span>
-              </div>
-              <div class="support-item">
-                <strong>Email</strong>
-                <span><a href="mailto:info@koalakeyscarhire.com.au">info@koalakeyscarhire.com.au</a></span>
-              </div>
-              <div class="support-item">
-                <strong>Address</strong>
-                <span>75 Mcminn Street, Darwin City, NT</span>
-              </div>
-              <div class="support-item">
-                <strong>ABN</strong>
-                <span>72 687 919 811</span>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
     </section>
@@ -1248,7 +1235,7 @@
         <div class="section-head">
           <span class="eyebrow">Location</span>
           <h2>Easy Darwin pickup.</h2>
-          <p>Koala Keys is based at 75 Mcminn Street, Darwin City, NT. The live Google Map stays on the page so customers can confirm the location before they book.</p>
+          <p>The live Google Map stays on the page so customers can confirm the pickup location before they book.</p>
         </div>
         <div class="map-wrap">
           <iframe
