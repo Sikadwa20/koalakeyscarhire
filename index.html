@@ -381,8 +381,9 @@
 
     .fleet-tabs {
       display: inline-flex;
+      flex-wrap: nowrap;
       gap: 8px;
-      margin: 0 auto 28px;
+      margin: 0 auto;
       padding: 6px;
       border: 1px solid rgba(74, 144, 217, 0.2);
       border-radius: 999px;
@@ -391,11 +392,19 @@
     }
 
     .fleet-tabs-wrap {
+      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: center;
+      width: 100%;
+      margin: 0 0 28px;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
     }
 
     .fleet-tab {
+      flex: 0 0 auto;
       min-width: 128px;
       padding: 11px 18px;
       border: 0;
@@ -1099,7 +1108,6 @@
     <section class="section" id="fleet">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Rental fleet</span>
           <h2>Choose from our fleet.</h2>
           <p>Ready to hit the road? Explore the Koala Keys Car Hire fleet and find the perfect vehicle for your trip. From compact cars for city adventures to spacious SUVs for family getaways, we've got a ride to suit your needs. Choose your car. Pack your bags. Let the adventure begin!</p>
         </div>
