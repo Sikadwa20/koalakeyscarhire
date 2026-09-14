@@ -1,0 +1,2462 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Koala Keys Car Hire Pty Ltd | Darwin Car Hire</title>
+  <meta name="description" content="Koala Keys Car Hire Pty Ltd offers simple local car hire in Darwin with a clean booking experience, real fleet photos, and direct local support." />
+  <link rel="icon" type="image/jpeg" href="koala-keys-logo.jpg" />
+  <link rel="apple-touch-icon" href="koala-keys-logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #3378B4;
+      --primary-dark: #2860A0;
+      --primary-soft: #E8F1FA;
+      --ink: #182431;
+      --ink-soft: #5a6a78;
+      --line: #d9e2ea;
+      --surface: #F5F8FB;
+      --white: #ffffff;
+      --shadow: 0 18px 42px rgba(16, 36, 56, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --content: 1180px;
+      --transition: 0.25s ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+
+    section[id],
+    footer[id],
+    header[id] {
+      scroll-margin-top: 92px;
+    }
+
+    .container {
+      width: min(var(--content), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section.alt {
+      background: var(--surface);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.25rem);
+      line-height: 1;
+      letter-spacing: -0.06em;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .section-head p,
+    .copy,
+    .muted {
+      margin-top: 12px;
+      color: var(--ink-soft);
+      line-height: 1.68;
+      font-size: 0.98rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform var(--transition), background var(--transition), color var(--transition), box-shadow var(--transition);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(74, 144, 217, 0.28);
+    }
+
+    .button-secondary {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .button-small {
+      min-height: 42px;
+      padding: 0 16px;
+      font-size: 0.92rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(217, 226, 234, 0.9);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: relative;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #E8F1FA;
+      box-shadow: 0 10px 22px rgba(74, 144, 217, 0.18);
+      flex-shrink: 0;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 2px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 1.02rem;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: auto;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      color: #324657;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      flex-shrink: 0;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--white);
+      cursor: pointer;
+      font-size: 1.15rem;
+    }
+
+    .hero {
+      position: relative;
+      background: linear-gradient(180deg, #F6FBFF 0%, #ffffff 100%);
+      border-bottom: 1px solid rgba(217, 226, 234, 0.85);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 800px;
+      height: 100%;
+      min-height: 800px;
+      transform: translate(-50%, -50%);
+      background: url('koala-keys-logo.jpg') no-repeat center center;
+      background-size: contain;
+      opacity: 0.08;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      padding: 56px 0 64px;
+      display: grid;
+      gap: 20px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .hero-copy {
+      max-width: 860px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.4vw, 4rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.048em;
+    }
+
+    .hero-subheading {
+      margin-top: 14px;
+      color: var(--primary-dark);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtext {
+      margin-top: 16px;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .hero-tagline,
+    .hero-cta-line {
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .hero-cta-line {
+      color: var(--primary-dark);
+    }
+
+    .hero-bar {
+      width: min(100%, 1040px);
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-form {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr auto;
+      gap: 12px;
+      align-items: end;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--white);
+    }
+
+    .field label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 0;
+      border: 0;
+      outline: none;
+      color: var(--ink);
+      background: transparent;
+      font-size: 1rem;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .search-status {
+      margin-top: 12px;
+      min-height: 22px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .hero-meta strong {
+      color: var(--ink);
+    }
+
+    .fleet-tabs {
+      display: inline-flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin: 0 auto;
+      padding: 6px;
+      border: 1px solid rgba(74, 144, 217, 0.2);
+      border-radius: 999px;
+      background: var(--white);
+      box-shadow: 0 10px 24px rgba(16, 36, 56, 0.06);
+    }
+
+    .fleet-tabs-wrap {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 0 28px;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .fleet-tab {
+      flex: 0 0 auto;
+      min-width: 128px;
+      padding: 11px 18px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink-soft);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 800;
+      transition: color var(--transition), background var(--transition), box-shadow var(--transition);
+    }
+
+    .fleet-tab.active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 10px 22px rgba(74, 144, 217, 0.25);
+    }
+
+    .fleet-panel[hidden] {
+      display: none;
+    }
+
+    .fleet-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .fleet-category {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px 14px;
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+    }
+
+    .fleet-category:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .fleet-category h3 {
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .fleet-category p {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+    }
+
+    .fleet-category-suv { order: 1; }
+    .fleet-category-sedan { order: 5; }
+    .fleet-category-ute { order: 8; }
+
+    .category-suv { order: 2; }
+    .category-sedan { order: 6; }
+    .category-ute { order: 9; }
+
+    .buy-coming-soon {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px;
+      border: 1px solid rgba(74, 144, 217, 0.22);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #ffffff 0%, #eef6ff 100%);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .buy-coming-soon .minimal-icon {
+      margin: 0 auto 18px;
+    }
+
+    .buy-coming-soon h3 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: -0.05em;
+    }
+
+    .buy-coming-soon p {
+      max-width: 620px;
+      margin: 14px auto 0;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .buy-coming-soon .button {
+      margin-top: 22px;
+    }
+
+    .vehicle-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(16, 36, 56, 0.07);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .vehicle-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(16, 36, 56, 0.11);
+      border-color: rgba(74, 144, 217, 0.25);
+    }
+
+    .vehicle-media {
+      aspect-ratio: 16 / 10;
+      min-height: 0;
+      background: linear-gradient(180deg, #DCE9F5 0%, #B7CFE4 100%);
+      overflow: hidden;
+    }
+
+    .vehicle-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .vehicle-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 16px 16px 18px;
+      gap: 12px;
+    }
+
+    .vehicle-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .vehicle-head h3 {
+      font-size: 1.14rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .rate {
+      text-align: right;
+      white-space: nowrap;
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 0.98rem;
+    }
+
+    .rate small {
+      display: block;
+      margin-top: 3px;
+      color: var(--ink-soft);
+      font-weight: 600;
+      font-size: 0.76rem;
+    }
+
+    .vehicle-body p {
+      color: var(--ink-soft);
+      line-height: 1.55;
+      font-size: 0.93rem;
+    }
+
+    .card-meta {
+      display: grid;
+      gap: 6px;
+    }
+
+    .category-badge {
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .similar-note {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0 0 4px;
+    }
+
+    .tags span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--surface);
+      color: #405565;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .vehicle-body .button {
+      margin-top: auto;
+    }
+
+    .minimal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .minimal-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: 0 10px 26px rgba(16, 36, 56, 0.05);
+    }
+
+    .minimal-icon {
+      width: 46px;
+      height: 46px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .minimal-card h3 {
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
+
+    .minimal-card p {
+      margin-top: 10px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      font-size: 0.94rem;
+    }
+
+    .why-tagline {
+      margin-top: 24px;
+      text-align: center;
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .booking-layout {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .booking-card,
+    .map-wrap,
+    .footer-shell {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .booking-card {
+      padding: 28px;
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .booking-form .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .booking-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .support-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .support-item {
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .support-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .support-item span,
+    .support-item p {
+      color: var(--ink-soft);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    .booking-confirmation {
+      display: none;
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: #f4fbf6;
+      border: 1px solid #bfe2cb;
+    }
+
+    .booking-confirmation.show {
+      display: block;
+    }
+
+    .confirmation-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .confirmation-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #dff3e5;
+      color: #22643a;
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .confirmation-ref {
+      color: var(--primary-dark);
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
+
+    .confirmation-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .confirmation-item {
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: var(--white);
+      border: 1px solid rgba(191, 226, 203, 0.92);
+    }
+
+    .confirmation-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .confirmation-item span {
+      color: var(--ink);
+      line-height: 1.5;
+      font-size: 0.96rem;
+      word-break: break-word;
+    }
+
+    .map-wrap {
+      overflow: hidden;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+      display: block;
+    }
+
+    .site-footer {
+      padding: 0 0 28px;
+      background: #F9FBFD;
+      border-top: 1px solid rgba(217, 226, 234, 0.9);
+    }
+
+    .footer-shell {
+      padding: 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) minmax(260px, 1fr) auto;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-brand span,
+    .footer-copy,
+    .footer-meta p {
+      color: var(--ink-soft);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    .footer-meta {
+      display: grid;
+      gap: 8px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .social-pill {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-size: 0.92rem;
+      font-weight: 800;
+      transition: transform var(--transition), background var(--transition), color var(--transition);
+    }
+
+    .social-pill:hover {
+      transform: translateY(-1px);
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .fleet-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .minimal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .booking-layout,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .socials {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-form .button {
+        width: 100%;
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 52px 0;
+      }
+
+      .container {
+        width: min(var(--content), calc(100% - 24px));
+      }
+
+      .site-header .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        right: 0;
+        display: grid;
+        gap: 2px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: var(--shadow);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity var(--transition), transform var(--transition), visibility var(--transition);
+      }
+
+      .site-header.menu-open .nav-links {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .nav-links a {
+        padding: 14px 16px;
+        border-radius: 14px;
+      }
+
+      .nav-links a:hover {
+        background: var(--surface);
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-inner {
+        padding: 42px 0 50px;
+        text-align: left;
+      }
+
+      .hero-copy,
+      .hero-inner {
+        justify-items: stretch;
+      }
+
+      .hero-copy {
+        text-align: left;
+      }
+
+      .hero-form,
+      .booking-form,
+      .confirmation-grid,
+      .fleet-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-form .button {
+        grid-column: auto;
+      }
+
+      .hero-bar,
+      .booking-card,
+      .footer-shell {
+        border-radius: 22px;
+      }
+
+      .minimal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .vehicle-media {
+        aspect-ratio: 16 / 10;
+      }
+
+      .map-wrap iframe {
+        height: 340px;
+      }
+
+      .field input,
+      .field textarea,
+      .field select {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .brand-copy span { display: none; }
+      .brand-mark {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+      }
+      .hero-meta { justify-content: flex-start; }
+      .minimal-grid { grid-template-columns: 1fr; }
+      .button { width: 100%; }
+      .booking-actions { flex-direction: column; }
+      .vehicle-head { flex-direction: column; }
+      .rate { text-align: left; }
+      .section-head { margin-bottom: 24px; }
+    }
+  
+    /* ---- Carousel & availability additions ---- */
+    .vehicle-media { position: relative; overflow: hidden; }
+    .vehicle-media .carousel-slides { position: relative; width: 100%; height: 100%; }
+    .vehicle-media .carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .35s ease; pointer-events: none; }
+    .vehicle-media .carousel-slide.active { opacity: 1; pointer-events: auto; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.92); color: var(--primary-dark); border: none; width: 34px; height: 34px; border-radius: 999px; cursor: pointer; font-size: 22px; line-height: 1; display: grid; place-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.18); transition: background .15s ease, transform .15s ease; z-index: 2; }
+    .carousel-btn:hover { background: #fff; transform: translateY(-50%) scale(1.05); }
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+    .carousel-dots { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 2; }
+    .carousel-dots .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.55); border: none; padding: 0; cursor: pointer; transition: background .15s ease, transform .15s ease; }
+    .carousel-dots .dot.active { background: #fff; transform: scale(1.25); }
+
+    .availability-badge { position: absolute; top: 12px; left: 12px; z-index: 3; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; box-shadow: 0 2px 8px rgba(0,0,0,0.18); text-transform: uppercase; max-width: calc(100% - 24px); line-height: 1.15; }
+    .availability-badge.available { background: #14b075; color: #fff; }
+    .availability-badge.booked { background: #c0392b; color: #fff; text-transform: none; }
+    .availability-badge.in_service { background: #e07a1f; color: #fff; }
+    .availability-badge.manual_unavailable { background: #6b7280; color: #fff; }
+
+    .vehicle-card.is-unavailable { opacity: 0.6; filter: grayscale(0.55); }
+    .vehicle-card.is-unavailable .vehicle-book { background: #94a3b8 !important; color: #fff !important; cursor: not-allowed; pointer-events: none; }
+
+    .form-error { color: #c0392b; font-size: 14px; margin-top: 6px; display: none; }
+    .form-error.show { display: block; }
+
+    .form-status { display: none; padding: 12px 16px; border-radius: 10px; font-size: 14px; margin-bottom: 8px; }
+    .form-status.show { display: block; }
+    .form-status.success { background: #e6f6ee; color: #14733e; border: 1px solid #a8e0c1; }
+    .form-status.error { background: #fdecea; color: #8f1a10; border: 1px solid #f4b8b0; }
+    .form-status.loading { background: #E8F1FA; color: #2860A0; border: 1px solid #B8D3F0; }
+
+    /* Footer copyright easter egg cursor */
+    .footer-bottom { cursor: default; }
+    .footer-bottom .egg-trigger { cursor: pointer; user-select: none; }
+
+    /* ---- Admin modal ---- */
+    .admin-backdrop { position: fixed; inset: 0; background: rgba(15,32,64,0.55); z-index: 900; display: none; justify-content: center; align-items: flex-start; padding: 24px; overflow-y: auto; }
+    .admin-backdrop.show { display: flex; }
+    .admin-modal { background: #fff; border-radius: 16px; width: 100%; max-width: 1080px; box-shadow: 0 30px 60px rgba(0,0,0,0.25); overflow: hidden; display: flex; flex-direction: column; max-height: calc(100vh - 48px); }
+    .admin-head { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; background: var(--primary); color: #fff; }
+    .admin-head h2 { margin: 0; font-size: 20px; font-weight: 800; }
+    .admin-head .admin-close { background: rgba(255,255,255,0.15); color: #fff; border: none; width: 34px; height: 34px; border-radius: 999px; cursor: pointer; font-size: 20px; line-height: 1; display: grid; place-items: center; }
+    .admin-head .admin-close:hover { background: rgba(255,255,255,0.28); }
+    .admin-tabs { display: flex; gap: 4px; padding: 12px 12px 0; background: #f5f8fb; border-bottom: 1px solid #e2e8f0; overflow-x: auto; }
+    .admin-tab { flex-shrink: 0; padding: 10px 18px; background: transparent; color: #475569; border: none; border-radius: 8px 8px 0 0; cursor: pointer; font-weight: 600; font-size: 14px; transition: background .15s ease, color .15s ease; }
+    .admin-tab.active { background: #fff; color: var(--primary-dark); border-bottom: 2px solid var(--primary); }
+    .admin-tab:hover:not(.active) { background: #e2e8f0; color: var(--primary-dark); }
+    .admin-body { padding: 20px 24px; overflow-y: auto; flex: 1; }
+    .admin-view.hidden { display: none; }
+
+    .admin-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; padding: 16px; background: #f8fafc; border-radius: 12px; border: 1px solid #e2e8f0; }
+    .admin-form.wide-notes { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .admin-form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #475569; text-transform: uppercase; letter-spacing: 0.03em; }
+    .admin-form label span.optional { text-transform: none; color: #94a3b8; font-weight: 500; letter-spacing: 0; }
+    .admin-form input, .admin-form select, .admin-form textarea { padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; font-family: inherit; background: #fff; }
+    .admin-form input:focus, .admin-form select:focus, .admin-form textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-soft); }
+    .admin-form textarea { resize: vertical; min-height: 60px; }
+    .admin-form .admin-submit { grid-column: 1 / -1; }
+    .admin-form button[type=submit] { background: var(--primary); color: #fff; padding: 10px 20px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 14px; }
+    .admin-form button[type=submit]:hover { background: var(--primary-dark); }
+
+    .admin-table-wrap { overflow-x: auto; margin-bottom: 16px; border-radius: 10px; border: 1px solid #e2e8f0; }
+    .admin-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .admin-table th { background: #f1f5f9; text-align: left; padding: 10px 12px; font-weight: 700; color: #334155; border-bottom: 1px solid #e2e8f0; white-space: nowrap; }
+    .admin-table td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: top; color: #1e293b; }
+    .admin-table tr:last-child td { border-bottom: none; }
+    .admin-table .row-status { font-weight: 700; text-transform: uppercase; font-size: 11px; letter-spacing: 0.03em; padding: 3px 8px; border-radius: 999px; display: inline-block; }
+    .admin-table .row-status.active { background: #e0f2fe; color: #075985; }
+    .admin-table .row-status.completed { background: #dcfce7; color: #14532d; }
+    .admin-table .row-status.cancelled { background: #fee2e2; color: #7f1d1d; }
+    .admin-table .actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .admin-table .btn-mini { padding: 4px 8px; font-size: 12px; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; background: #fff; color: #475569; font-weight: 600; }
+    .admin-table .btn-mini:hover { background: #f1f5f9; }
+    .admin-table .btn-mini.primary { border-color: var(--primary); color: var(--primary-dark); }
+    .admin-table .btn-mini.danger { border-color: #fca5a5; color: #b91c1c; }
+    .admin-table .btn-mini.danger:hover { background: #fef2f2; }
+    .admin-empty { padding: 24px; text-align: center; color: #64748b; font-style: italic; background: #f8fafc; border-radius: 10px; border: 1px dashed #cbd5e1; }
+
+    .fleet-status-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+    .fleet-status-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .fleet-status-card h4 { margin: 0; font-size: 15px; color: #1e293b; }
+    .fleet-status-card .fsc-state { font-size: 12px; text-transform: uppercase; font-weight: 700; padding: 3px 10px; border-radius: 999px; align-self: flex-start; letter-spacing: 0.03em; }
+    .fleet-status-card .fsc-state.available { background: #dcfce7; color: #14532d; }
+    .fleet-status-card .fsc-state.booked { background: #fee2e2; color: #7f1d1d; }
+    .fleet-status-card .fsc-state.in_service { background: #ffedd5; color: #7c2d12; }
+    .fleet-status-card .fsc-state.manual_unavailable { background: #e2e8f0; color: #334155; }
+    .fleet-status-card .fsc-detail { font-size: 12px; color: #64748b; }
+    .fleet-status-card .fsc-toggle { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 8px; border-top: 1px dashed #e2e8f0; font-size: 12px; color: #475569; }
+    .fleet-status-card .toggle { position: relative; width: 40px; height: 22px; background: #cbd5e1; border-radius: 999px; cursor: pointer; transition: background .2s ease; flex-shrink: 0; border: none; padding: 0; }
+    .fleet-status-card .toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; background: #fff; border-radius: 50%; transition: left .2s ease; }
+    .fleet-status-card .toggle.on { background: #14b075; }
+    .fleet-status-card .toggle.on::after { left: 20px; }
+
+    @media (max-width: 600px) {
+      .admin-backdrop { padding: 0; }
+      .admin-modal { border-radius: 0; max-height: 100vh; height: 100vh; }
+      .admin-body { padding: 16px; }
+      .admin-form { padding: 12px; }
+      .admin-table th, .admin-table td { padding: 8px; }
+    }
+    /* ---- end additions ---- */
+
+  </style>
+</head>
+<body>
+  <header class="site-header" id="home">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Koala Keys home">
+        <span class="brand-mark"><img src="koala-keys-logo.jpg" alt="Koala Keys logo" /></span>
+        <span class="brand-copy">
+          <strong>Koala Keys Car Hire</strong>
+          <span>Simple local car hire in Darwin</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
+        <a href="#fleet">Fleet</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#booking">Booking</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="button button-primary button-small nav-cta" href="#booking">Book Now</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        ☰
+        <span class="sr-only">Open navigation</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Koala Keys hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1>KOALA KEYS CAR HIRE PTY LTD</h1>
+          <p class="hero-subheading">Your journey starts here.</p>
+          <p class="hero-subtext">At Koala Keys Car Hire, we make getting on the road simple, affordable and stress-free. Whether you're exploring the local sights, heading away for the weekend, visiting family, or need a reliable vehicle while yours is off the road, we're here to help. With friendly service, reliable vehicles and flexible hire options, you can pick up the keys and enjoy the freedom of the road.</p>
+          <p class="hero-tagline">Reliable cars. Easy hire. Friendly service. 🚗</p>
+          <p class="hero-cta-line">Book your vehicle today and let Koala Keys take you where you need to go!</p>
+        </div>
+
+        <div class="hero-bar">
+          <form class="hero-form" id="searchForm">
+            <div class="field">
+              <label for="searchLocation">Pick-up location</label>
+              <input id="searchLocation" name="searchLocation" type="text" value="Darwin City, NT" required />
+            </div>
+            <div class="field">
+              <label for="searchPickup">Pick-up date</label>
+              <input id="searchPickup" name="searchPickup" type="date" required />
+            </div>
+            <div class="field">
+              <label for="searchCarType">Car type</label>
+              <select id="searchCarType" name="searchCarType">
+                <option value="all">Any car</option>
+                <option value="suv">SUV</option>
+                <option value="sedan">Sedan / Hatchback</option>
+                <option value="ute">Ute / 4WD</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="searchReturn">Return date</label>
+              <input id="searchReturn" name="searchReturn" type="date" required />
+            </div>
+            <button class="button button-primary" type="submit" id="heroSearchBtn">Find My Car</button>
+          </form>
+          <p class="search-status" id="searchStatus" aria-live="polite"></p>
+        </div>
+
+        <div class="hero-meta">
+          <span><strong>Phone:</strong> 0467 474 180</span>
+          <span><strong>Email:</strong> info@koalakeyscarhire.com.au</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fleet">
+      <div class="container">
+        <div class="section-head">
+          <h2>Choose from our fleet.</h2>
+          <p>Ready to hit the road? Explore the Koala Keys Car Hire fleet and find the perfect vehicle for your trip. From compact cars for city adventures to spacious SUVs for family getaways, we've got a ride to suit your needs. Choose your car. Pack your bags. Let the adventure begin!</p>
+        </div>
+
+        <div class="fleet-tabs-wrap" role="tablist" aria-label="Fleet options">
+          <button class="fleet-tab active" type="button" role="tab" aria-selected="true" aria-controls="rentPanel" data-fleet-tab="rent">Rental Fleet</button>
+          <button class="fleet-tab" type="button" role="tab" aria-selected="false" aria-controls="buyPanel" data-fleet-tab="buy">Sales Fleet</button>
+        </div>
+
+        <div class="fleet-panel" id="rentPanel" role="tabpanel">
+          <div class="fleet-grid">
+          <div class="fleet-category fleet-category-suv">
+            <h3>SUVs (5- to 7-seater)</h3>
+            <p>Compare compact, mid-size and family-friendly SUV options if one vehicle is already booked offline.</p>
+          </div>
+
+          <div class="fleet-category fleet-category-sedan">
+            <h3>Sedans / Hatchbacks (5-seater)</h3>
+            <p>Prefer a passenger car? Check the sedan and hatchback options in this category.</p>
+          </div>
+
+          <div class="fleet-category fleet-category-ute">
+            <h3>Utes / 4WD (5-seater)</h3>
+            <p>Need a more capable utility option? This category highlights the dual cab 4WD choice.</p>
+          </div>
+
+          <article class="vehicle-card category-ute" data-car-id="ford-ranger-2019">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_040430db-bb4f-4781-90fa-a9c5ced991ix.jpg" alt="Ford Ranger 2019 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_0ea4d99d-1144-47b4-af39-d1668b8232ix.jpg" alt="Ford Ranger 2019 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_f2189a3d-3c23-4130-868f-46461b94eeix.jpg" alt="Ford Ranger 2019 or similar photo 3" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Ford Ranger 2019 or similar</h3>
+                <div class="rate">$95/day<small>$500/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Ute / 4WD · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Dual cab ute with a spacious cabin and 4WD-ready capability, great for families or outback adventures.</p>
+              <div class="tags"><span>Automatic</span><span>Diesel</span><span>Dual Cab</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Ford Ranger 2019">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="suzuki-vitara-2019">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_c2124434-84e7-4f97-a081-535db0ea74ix.jpg" alt="2019 Suzuki Vitara or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_4a34aedf-0b53-40f9-a01b-1409a4d5fbix.jpg" alt="2019 Suzuki Vitara or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_2251b332-614b-4e5a-ae6d-914c2c3a4bix.jpg" alt="2019 Suzuki Vitara or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_3b2ec53f-8c7d-41c9-88d7-4218c8be33ix.jpg" alt="2019 Suzuki Vitara or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_3a9bf179-1385-4967-a88f-548782d997ix.jpg" alt="2019 Suzuki Vitara or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>2019 Suzuki Vitara or similar</h3>
+                <div class="rate">$60/day<small>$370/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · 5 seats · 200 km/day</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Stylish, comfortable and fuel-efficient SUV. Perfect for city driving, airport transfers, road trips or weekend getaways around Darwin.</p>
+              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>1.6L Petrol</span><span>Cold A/C</span><span>Large Boot</span><span>Insurance Included</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="2019 Suzuki Vitara">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="mazda-cx3-2017">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_ac0979b3-2646-4513-941c-514bd2dd59ix.jpg" alt="Mazda CX-3 2017 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_287dcee5-f4af-4a9f-beaf-45f8299023ix.jpg" alt="Mazda CX-3 2017 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_4456e585-a610-4dce-816f-f584549d42ix.jpg" alt="Mazda CX-3 2017 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_de81b658-6204-4996-a228-4281f618acix.jpg" alt="Mazda CX-3 2017 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Mazda CX-3 2017 or similar</h3>
+                <div class="rate">$43/day<small>$300/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · Compact · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Fuel-efficient compact SUV that is easy to drive and ideal for getting around Darwin city.</p>
+              <div class="tags"><span>Manual</span><span>Petrol</span><span>Compact SUV</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mazda CX-3 2017">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-sedan" data-car-id="mitsubishi-mirage-2017">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_54c13696-6829-4d5d-916c-3fe75f2f30ix.jpg" alt="2017 Mitsubishi Mirage or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_dabbd5e0-9f06-45ad-beea-c0ed7a2beeix.jpg" alt="2017 Mitsubishi Mirage or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_8496cc31-89dd-48b8-8f6d-06a84511e5ix.jpg" alt="2017 Mitsubishi Mirage or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_3a528aff-d958-4109-94af-9366b0ad3dix.jpg" alt="2017 Mitsubishi Mirage or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_7d0d5944-27ca-40e8-bbba-39b1d0f677ix.jpg" alt="2017 Mitsubishi Mirage or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>2017 Mitsubishi Mirage or similar</h3>
+                <div class="rate">$30/day<small>$210/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Hatchback · 5 seats · Unlimited km within Darwin</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Compact, economical and easy to drive. Perfect for city driving, daily errands, or weekend trips around Darwin.</p>
+              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>1.2L Petrol</span><span>Cold A/C</span><span>Easy to Park</span><span>Insurance Included</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="2017 Mitsubishi Mirage">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-sedan" data-car-id="hyundai-i20-2012">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_dc6e7842-709f-44c0-9756-61f724378dix.jpg" alt="2012 Hyundai i20 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_936e1b64-0e8b-448d-a318-543c6cd60cix.jpg" alt="2012 Hyundai i20 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_d0c6f6b3-e790-4ee9-988e-0c2a533380ix.jpg" alt="2012 Hyundai i20 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_dc972483-a1dc-4aaa-8d21-fd659d593bix.jpg" alt="2012 Hyundai i20 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>2012 Hyundai i20 or similar</h3>
+                <div class="rate">$35/day<small>$230/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Hatchback · 5 seats · 200 km/day</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Reliable, economical and easy to drive. Great for city driving, airport transfers, daily commuting or weekend trips around Darwin.</p>
+              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>1.4L Petrol</span><span>Cold A/C</span><span>Easy to Park</span><span>Insurance Included</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="2012 Hyundai i20">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-sedan" data-car-id="citroen-c4-cactus-2018">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_5419a875-11dc-4eb4-a3ee-533687817aix.jpg" alt="2018 Citroën C4 Cactus or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_795ca66f-ef11-4f53-ab52-3b4a92f6bdix.jpg" alt="2018 Citroën C4 Cactus or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_05d9288c-8fa2-4462-9a9c-f90d71d116ix.jpg" alt="2018 Citroën C4 Cactus or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_843e73b4-c39d-48a3-b170-469e46c1c8ix.jpg" alt="2018 Citroën C4 Cactus or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_b4e2148c-33c1-41e5-9ac1-e7858f2e68ix.jpg" alt="2018 Citroën C4 Cactus or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>2018 Citroën C4 Cactus or similar</h3>
+                <div class="rate">$45/day<small>$300/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Hatchback · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Reliable, comfortable and economical. Great for city driving, airport transfers, road trips or weekend getaways around Darwin.</p>
+              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>Cold A/C</span><span>Reverse Camera</span><span>Cruise Control</span><span>Insurance Included</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="2018 Citroën C4 Cactus">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-sedan" data-car-id="hyundai-elantra-2018">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_9d0814f4-4c30-494d-890e-906f950297ix.jpg" alt="Hyundai Elantra 2018 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_04cfcf45-17b0-4a10-8745-e59b227202ix.jpg" alt="Hyundai Elantra 2018 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_34fb5af3-048b-45b5-9be7-1e89c6aa72ix.jpg" alt="Hyundai Elantra 2018 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_d3a26200-12c0-461a-8a4a-017c811f0dix.jpg" alt="Hyundai Elantra 2018 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Hyundai Elantra 2018 or similar</h3>
+                <div class="rate">$45/day<small>$300/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Sedan · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Comfortable sedan with a smooth ride, well suited to business trips or relaxed leisure driving.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Hyundai Elantra 2018">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="haval-jolion-2026">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_e7997d9a-9b4d-4808-bb98-08e85cb9f5ix.jpg" alt="Haval Jolion 2026 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_11d62847-afc0-418a-91d9-7afa042441ix.jpg" alt="Haval Jolion 2026 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_267d9fc6-3fac-465c-a3c7-12b8c7dca7ix.jpg" alt="Haval Jolion 2026 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_63254ffb-af50-4d2b-b51b-fe97744bf6ix.jpg" alt="Haval Jolion 2026 or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_a45b280f-0e45-4522-b9fd-cc26899089ix.jpg" alt="Haval Jolion 2026 or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Haval Jolion 2026 or similar</h3>
+                <div class="rate">$65/day<small>$450/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · Mid-size · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Modern SUV with the latest features, a spacious interior, and strong value for everyday rental use.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>SUV</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Haval Jolion 2026">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="mitsubishi-eclipse-cross-2018">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_b7c4d97b-a00f-4c80-8711-6c8c4d5546ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_48da6a55-b8d9-4b09-8daa-e715e061c3ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_7321c03a-ddbe-44f5-b1ce-6eb3497134ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_dd9fbbd1-c7c6-4be6-81e8-7f1ace64f3ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Mitsubishi Eclipse Cross 2018 or similar</h3>
+                <div class="rate">$85/day<small>$450/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · Mid-size · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Stylish SUV that feels comfortable for couples or small families on local drives and short getaways.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>SUV</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mitsubishi Eclipse Cross 2018">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-sedan" data-car-id="volkswagen-polo-2019">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_42a470c8-d9c4-4b40-92b1-64fb2fc69cix.jpg" alt="Volkswagen Polo 2019 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_c020a08a-eb5e-4769-aee1-8cac5b6b35ix.jpg" alt="Volkswagen Polo 2019 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_d2352941-92a8-44fa-8357-f6f3789cb4ix.jpg" alt="Volkswagen Polo 2019 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_e81b4921-84a9-465f-adbf-2c65ba7facix.jpg" alt="Volkswagen Polo 2019 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Volkswagen Polo 2019 or similar</h3>
+                <div class="rate">$35/day<small>$250/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Hatchback · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Compact hatchback with great fuel economy, easy parking, and simple practicality for city use.</p>
+              <div class="tags"><span>Automatic</span><span>1.0L Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Volkswagen Polo 2019">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="mitsubishi-outlander-7-seater">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/outlander-1.jpg" alt="Mitsubishi Outlander 7-Seater photo 1" class="carousel-slide active"><img src="assets/outlander-2.jpg" alt="Mitsubishi Outlander 7-Seater photo 2" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Mitsubishi Outlander 7-Seater</h3>
+                <div class="rate">$65/day<small>$395/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · 7 seats · 200 km/day</span>
+                <span class="similar-note">Minimum 1 week preferred. Flexible pickup and competitive rates for longer hires.</span>
+              </div>
+              <p>Spacious family-friendly SUV with cold A/C, a large cargo area and insurance included, making it a strong option for longer Darwin stays.</p>
+              <div class="tags"><span>Automatic (CVT)</span><span>2.0L Petrol</span><span>7 Seats</span><span>Large Cargo Area</span><span>Insurance Included</span><span>Lower Excess</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mitsubishi Outlander 7-Seater">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="haval-h6-suv">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/haval-h6-1.jpg" alt="Haval H6 SUV photo 1" class="carousel-slide active"><img src="assets/haval-h6-2.jpg" alt="Haval H6 SUV photo 2" class="carousel-slide" loading="lazy"><img src="assets/haval-h6-3.jpg" alt="Haval H6 SUV photo 3" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Haval H6 SUV</h3>
+                <div class="rate">$100/day<small>$450/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · 5 seats · 200 km/day</span>
+                <span class="similar-note">$400 refundable bond. Discount available for extended bookings with flexible pickup.</span>
+              </div>
+              <p>Well-maintained SUV with a smooth drive, cold A/C and a roomy interior and cargo area for airport runs, family travel or longer bookings.</p>
+              <div class="tags"><span>Automatic</span><span>Fuel-Efficient Petrol</span><span>5 Seats</span><span>Spacious Interior</span><span>Cold A/C</span><span>$400 Bond</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Haval H6 SUV">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-suv" data-car-id="holden-captiva-7-seater">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/captiva-1.jpg" alt="Holden Captiva 7-Seater photo 1" class="carousel-slide active"><img src="assets/captiva-2.jpg" alt="Holden Captiva 7-Seater photo 2" class="carousel-slide" loading="lazy"><img src="assets/captiva-3.jpg" alt="Holden Captiva 7-Seater photo 3" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Holden Captiva 7-Seater</h3>
+                <div class="rate">$400/week<small>Minimum 1 week preferred</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">SUV · 7 seats · 200 km/day</span>
+                <span class="similar-note">$400 refundable bond. Flexible pickup with better weekly and longer-term rates.</span>
+              </div>
+              <p>Comfortable 7-seater with full leather seats, cold A/C, generous interior space and ample cargo room, with insurance included and a lower excess.</p>
+              <div class="tags"><span>Automatic</span><span>2.0L Turbo Diesel</span><span>7 Seats</span><span>Full Leather Seats</span><span>Insurance Included</span><span>Lower Excess</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Holden Captiva 7-Seater">Book Now</button>
+            </div>
+          </article>
+          </div>
+        </div>
+
+        <div class="fleet-panel" id="buyPanel" role="tabpanel" hidden>
+          <div class="buy-coming-soon">
+            <div class="minimal-icon">🚘</div>
+            <h3>Cars for Sale — Coming Soon!</h3>
+            <p>We're expanding our services. Check back soon for vehicles available for purchase.</p>
+            <p>If you're looking for a vehicle now, contact Koala Keys and we'll let you know when buying options become available.</p>
+            <a class="button button-primary" href="mailto:info@koalakeyscarhire.com.au">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="why-us">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Why choose us</span>
+          <h2>Why Choose Koala Keys?</h2>
+          <p>At Koala Keys Car Hire, we make car hire simple, reliable and stress-free.</p>
+        </div>
+
+        <div class="minimal-grid">
+          <article class="minimal-card">
+            <div class="minimal-icon">🚗</div>
+            <h3>Quality Vehicles</h3>
+            <p>Clean, well-maintained cars ready for your journey.</p>
+          </article>
+          <article class="minimal-card">
+            <div class="minimal-icon">💵</div>
+            <h3>Affordable Rates</h3>
+            <p>Great value without compromising on quality.</p>
+          </article>
+          <article class="minimal-card">
+            <div class="minimal-icon">📝</div>
+            <h3>Easy Booking</h3>
+            <p>A straightforward booking process with no unnecessary hassle.</p>
+          </article>
+          <article class="minimal-card">
+            <div class="minimal-icon">🔑</div>
+            <h3>Flexible Options</h3>
+            <p>Vehicles to suit solo travellers, couples, families and groups.</p>
+          </article>
+          <article class="minimal-card">
+            <div class="minimal-icon">🤝</div>
+            <h3>Friendly Service</h3>
+            <p>Local, personal service from a team that cares about your experience.</p>
+          </article>
+          <article class="minimal-card">
+            <div class="minimal-icon">🛡️</div>
+            <h3>Peace of Mind</h3>
+            <p>We're here to make your journey smooth from pickup to drop-off.</p>
+          </article>
+        </div>
+
+        <p class="why-tagline">Koala Keys Car Hire — Reliable rides. Great value. Easy journeys. 🐨</p>
+      </div>
+    </section>
+
+    <section class="section" id="booking">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Booking</span>
+          <h2>Send a booking request and receive a reference instantly.</h2>
+          <p>Choose your car, confirm your dates, and Koala Keys will receive your booking request by email with an auto-generated reference number.</p>
+        </div>
+
+        <div class="booking-layout">
+          <div class="booking-card">
+            <h3>Booking request</h3>
+            <p class="copy">Complete the form below. A confirmation reference is generated instantly and your request is sent to Koala Keys — no email app required.</p>
+
+            <form class="booking-form" id="bookingForm" action="https://formspree.io/f/xpznvkod" method="POST" novalidate>
+              <div class="field">
+                <label for="bookingName">Full name</label>
+                <input id="bookingName" name="bookingName" type="text" placeholder="Your full name" required />
+              </div>
+              <div class="field">
+                <label for="bookingEmail">Email</label>
+                <input id="bookingEmail" name="bookingEmail" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="field">
+                <label for="bookingPhone">Phone</label>
+                <input id="bookingPhone" name="bookingPhone" type="tel" placeholder="04xx xxx xxx" required />
+              </div>
+              <div class="field">
+                <label for="bookingCar">Selected car</label>
+                <select id="bookingCar" name="bookingCar" required>
+                  <option value="">Select a car</option>
+                  <option>Ford Ranger 2019</option>
+                  <option>2019 Suzuki Vitara</option>
+                  <option>Mazda CX-3 2017</option>
+                  <option>2017 Mitsubishi Mirage</option>
+                  <option>2012 Hyundai i20</option>
+                  <option>2018 Citroën C4 Cactus</option>
+                  <option>Hyundai Elantra 2018</option>
+                  <option>Haval Jolion 2026</option>
+                  <option>Mitsubishi Eclipse Cross 2018</option>
+                  <option>Volkswagen Polo 2019</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="bookingPickup">Pick-up date</label>
+                <input id="bookingPickup" name="bookingPickup" type="date" required />
+              </div>
+              <div class="field">
+                <label for="bookingReturn">Return date</label>
+                <input id="bookingReturn" name="bookingReturn" type="date" required />
+              </div>
+              <div class="field full">
+                <label for="bookingNotes">Notes</label>
+                <textarea id="bookingNotes" name="bookingNotes" placeholder="Pickup time, special requests, or any questions"></textarea>
+              </div>
+              <div class="form-status full" id="bookingStatus" role="status" aria-live="polite"></div>
+              <div class="booking-actions full">
+                <button class="button button-primary" type="submit">Send booking request</button>
+                <button class="button button-secondary" type="button" id="resetBookingButton">Reset form</button>
+              </div>
+            </form>
+
+            <div class="booking-confirmation" id="bookingConfirmation" aria-live="polite">
+              <div class="confirmation-top">
+                <div>
+                  <div class="confirmation-badge">Booking request created</div>
+                  <p class="copy" style="margin-top:10px;">Keep this reference for follow-up with Koala Keys.</p>
+                </div>
+                <div class="confirmation-ref" id="confirmationReference">KK-2026-0000</div>
+              </div>
+              <div class="confirmation-grid">
+                <div class="confirmation-item"><strong>Booking date</strong><span id="confirmationDate">—</span></div>
+                <div class="confirmation-item"><strong>Customer</strong><span id="confirmName">—</span></div>
+                <div class="confirmation-item"><strong>Email</strong><span id="confirmEmail">—</span></div>
+                <div class="confirmation-item"><strong>Phone</strong><span id="confirmPhone">—</span></div>
+                <div class="confirmation-item"><strong>Vehicle</strong><span id="confirmCar">—</span></div>
+                <div class="confirmation-item"><strong>Pick-up</strong><span id="confirmPickup">—</span></div>
+                <div class="confirmation-item"><strong>Return</strong><span id="confirmReturn">—</span></div>
+                <div class="confirmation-item"><strong>Notes</strong><span id="confirmNotes">No notes added</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="location">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Location</span>
+          <h2>Easy Darwin pickup.</h2>
+          <p>The live Google Map stays on the page so customers can confirm the pickup location before they book.</p>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=en&amp;q=75%20McMinn%20Street%2C%20Darwin%20City%20NT%200800&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            title="Koala Keys location — 75 McMinn Street, Darwin City NT 0800"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-shell">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="brand-mark"><img src="koala-keys-logo.jpg" alt="Koala Keys logo" /></span>
+            <div>
+              <strong>Koala Keys Car Hire Pty Ltd</strong>
+              <span>ABN 72 687 919 811</span>
+            </div>
+          </div>
+
+          <div class="footer-meta">
+            <p><a href="tel:0467474180">0467 474 180</a> · <a href="mailto:info@koalakeyscarhire.com.au">info@koalakeyscarhire.com.au</a></p>
+            <p class="footer-copy">Local Darwin car hire with a simple online experience, real fleet photos, and direct local support.</p>
+          </div>
+
+          <div class="socials" aria-label="Koala Keys social links">
+            <a class="social-pill" href="https://www.facebook.com/share/1EqHC7QZ9P/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Koala Keys Facebook">f</a>
+            <a class="social-pill" href="https://www.instagram.com/koalakeyscarhire/" target="_blank" rel="noopener" aria-label="Koala Keys Instagram">ig</a>
+          </div>
+        </div>
+        <p class="footer-bottom">75 Mcminn Street, Darwin City, NT<br>© 2025 - <span id="currentYear">2026</span> <span class="egg-trigger" id="eggTrigger" title="">Koala Keys Car Hire Pty Ltd</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      // ================ DOM refs ================
+      var header = document.querySelector('.site-header');
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.querySelectorAll('.nav-links a');
+      var currentYear = document.getElementById('currentYear');
+      var searchForm = document.getElementById('searchForm');
+      var searchStatus = document.getElementById('searchStatus');
+      var searchLocation = document.getElementById('searchLocation');
+      var searchPickup = document.getElementById('searchPickup');
+      var searchReturn = document.getElementById('searchReturn');
+      var searchCarType = document.getElementById('searchCarType');
+      var fleetTabs = document.querySelectorAll('[data-fleet-tab]');
+      var rentPanel = document.getElementById('rentPanel');
+      var buyPanel = document.getElementById('buyPanel');
+      var bookingForm = document.getElementById('bookingForm');
+      var bookingStatus = document.getElementById('bookingStatus');
+      var bookingCar = document.getElementById('bookingCar');
+      var bookingPickup = document.getElementById('bookingPickup');
+      var bookingReturn = document.getElementById('bookingReturn');
+      var bookingConfirmation = document.getElementById('bookingConfirmation');
+      var confirmationReference = document.getElementById('confirmationReference');
+      var confirmationDate = document.getElementById('confirmationDate');
+      var confirmName = document.getElementById('confirmName');
+      var confirmEmail = document.getElementById('confirmEmail');
+      var confirmPhone = document.getElementById('confirmPhone');
+      var confirmCar = document.getElementById('confirmCar');
+      var confirmPickup = document.getElementById('confirmPickup');
+      var confirmReturn = document.getElementById('confirmReturn');
+      var confirmNotes = document.getElementById('confirmNotes');
+      var resetBookingButton = document.getElementById('resetBookingButton');
+      var bookButtons = document.querySelectorAll('.vehicle-book');
+      var vehicleCards = document.querySelectorAll('.vehicle-card[data-car-id]');
+      var eggTrigger = document.getElementById('eggTrigger');
+      var adminModal = document.getElementById('adminModal');
+      var adminClose = document.getElementById('adminClose');
+      var adminTabs = adminModal ? adminModal.querySelectorAll('.admin-tab') : [];
+      var adminViews = adminModal ? adminModal.querySelectorAll('.admin-view') : [];
+
+      var AVAILABILITY_KEY = 'kk_availability_v1';
+      var BOOKINGS_KEY = 'kk_bookings_v1';
+      var SERVICE_KEY = 'kk_service_v1';
+      var ADMIN_PASSWORD = 'koala2025';
+
+      // Fleet directory (id -> display name). Cards derive from DOM but this is the master list.
+      var FLEET = [
+        { id: 'ford-ranger-2019', name: 'Ford Ranger 2019' },
+        { id: 'suzuki-vitara-2019', name: 'Suzuki Vitara 2019' },
+        { id: 'mazda-cx3-2017', name: 'Mazda CX-3 2017' },
+        { id: 'mitsubishi-mirage-2017', name: 'Mitsubishi Mirage 2017' },
+        { id: 'hyundai-i20-2012', name: 'Hyundai i20 2012' },
+        { id: 'citroen-c4-cactus-2018', name: 'Citroën C4 Cactus 2018' },
+        { id: 'hyundai-elantra-2018', name: 'Hyundai Elantra 2018' },
+        { id: 'haval-jolion-2026', name: 'Haval Jolion 2026' },
+        { id: 'mitsubishi-eclipse-cross-2018', name: 'Mitsubishi Eclipse Cross 2018' },
+        { id: 'volkswagen-polo-2019', name: 'Volkswagen Polo 2019' }
+      ];
+      var FLEET_BY_ID = {};
+      FLEET.forEach(function (c) { FLEET_BY_ID[c.id] = c; });
+
+      // ================ Helpers ================
+      if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+      function safeParse(raw, fallback) {
+        try { return raw ? JSON.parse(raw) : fallback; }
+        catch (err) { return fallback; }
+      }
+      function loadJSON(key, fallback) {
+        try { return safeParse(localStorage.getItem(key), fallback); }
+        catch (err) { return fallback; }
+      }
+      function saveJSON(key, value) {
+        try { localStorage.setItem(key, JSON.stringify(value)); } catch (err) {}
+      }
+      function newId(prefix) {
+        return prefix + '-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 6);
+      }
+      function todayISO() { return new Date().toISOString().slice(0, 10); }
+      function formatDisplayDate(value) {
+        if (!value) return '—';
+        var d = new Date(value + 'T00:00:00');
+        return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+      }
+      function shortDate(value) {
+        if (!value) return '';
+        var d = new Date(value + 'T00:00:00');
+        return d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short' });
+      }
+      function overlaps(aStart, aEnd, bStart, bEnd) {
+        return aStart <= bEnd && bStart <= aEnd;
+      }
+      function escapeHtml(str) {
+        return String(str == null ? '' : str)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      // ================ Nav ================
+      function closeNav() {
+        if (!header || !navToggle) return;
+        header.classList.remove('menu-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '☰<span class="sr-only">Open navigation</span>';
+      }
+      if (navToggle && header) {
+        navToggle.addEventListener('click', function () {
+          var open = header.classList.toggle('menu-open');
+          navToggle.setAttribute('aria-expanded', String(open));
+          navToggle.innerHTML = (open ? '✕' : '☰') + '<span class="sr-only">Toggle navigation</span>';
+        });
+        document.addEventListener('click', function (event) {
+          if (!header.classList.contains('menu-open')) return;
+          if (header.contains(event.target)) return;
+          closeNav();
+        });
+        window.addEventListener('resize', function () {
+          if (window.innerWidth > 760) closeNav();
+        });
+      }
+      navLinks.forEach(function (link) { link.addEventListener('click', closeNav); });
+
+      // Set today's date as min on all date inputs
+      var minToday = todayISO();
+      [searchPickup, searchReturn, bookingPickup, bookingReturn].forEach(function (input) {
+        if (input) input.setAttribute('min', minToday);
+      });
+
+      function validateDates(pickupInput, returnInput, statusEl) {
+        var pickup = pickupInput && pickupInput.value;
+        var dropoff = returnInput && returnInput.value;
+        if (!pickup || !dropoff) {
+          if (statusEl) statusEl.textContent = 'Please choose both your pick-up and return dates.';
+          return null;
+        }
+        if (new Date(dropoff) <= new Date(pickup)) {
+          if (statusEl) statusEl.textContent = 'Your return date must be at least one day after the pick-up date.';
+          return null;
+        }
+        return { pickup: pickup, dropoff: dropoff };
+      }
+
+      // ================ Fleet tabs (Rent/Sales) ================
+      if (fleetTabs.length && rentPanel && buyPanel) {
+        fleetTabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            var target = tab.getAttribute('data-fleet-tab');
+            var showRent = target === 'rent';
+            fleetTabs.forEach(function (item) {
+              var isActive = item === tab;
+              item.classList.toggle('active', isActive);
+              item.setAttribute('aria-selected', String(isActive));
+            });
+            rentPanel.hidden = !showRent;
+            buyPanel.hidden = showRent;
+          });
+        });
+      }
+
+      // ================ Availability model ================
+      function getBookings() { return loadJSON(BOOKINGS_KEY, []); }
+      function getService() { return loadJSON(SERVICE_KEY, []); }
+      function getManualAvail() { return loadJSON(AVAILABILITY_KEY, {}); }
+
+      // Compute status for a car for a given date window (both optional).
+      // Returns { state, message, dates } where state ∈ available|booked|in_service|manual_unavailable
+      function computeStatus(carId, windowStart, windowEnd) {
+        var manual = getManualAvail();
+        if (manual[carId] === false) {
+          return { state: 'manual_unavailable', message: 'Unavailable' };
+        }
+
+        var service = getService().filter(function (s) { return s.carId === carId; });
+        var bookings = getBookings().filter(function (b) {
+          return b.carId === carId && b.status === 'active';
+        });
+
+        if (windowStart && windowEnd) {
+          var clashService = service.find(function (s) {
+            return overlaps(windowStart, windowEnd, s.startDate, s.endDate);
+          });
+          if (clashService) {
+            return {
+              state: 'in_service',
+              message: 'In Service ' + shortDate(clashService.startDate) + '–' + shortDate(clashService.endDate)
+            };
+          }
+          var clashBooking = bookings.find(function (b) {
+            return overlaps(windowStart, windowEnd, b.pickupDate, b.returnDate);
+          });
+          if (clashBooking) {
+            return {
+              state: 'booked',
+              message: 'Unavailable ' + shortDate(clashBooking.pickupDate) + '–' + shortDate(clashBooking.returnDate)
+            };
+          }
+          return { state: 'available', message: 'Available' };
+        }
+
+        // No window → surface currently-active service if today falls in range
+        var today = todayISO();
+        var activeService = service.find(function (s) {
+          return today >= s.startDate && today <= s.endDate;
+        });
+        if (activeService) {
+          return {
+            state: 'in_service',
+            message: 'In Service until ' + shortDate(activeService.endDate)
+          };
+        }
+        return { state: 'available', message: 'Available' };
+      }
+
+      function applyCardStatus(card) {
+        var id = card.getAttribute('data-car-id');
+        var winStart = null, winEnd = null;
+        if (searchPickup && searchPickup.value && searchReturn && searchReturn.value &&
+            new Date(searchReturn.value) > new Date(searchPickup.value)) {
+          winStart = searchPickup.value; winEnd = searchReturn.value;
+        } else if (bookingPickup && bookingPickup.value && bookingReturn && bookingReturn.value &&
+            new Date(bookingReturn.value) > new Date(bookingPickup.value)) {
+          winStart = bookingPickup.value; winEnd = bookingReturn.value;
+        }
+        var status = computeStatus(id, winStart, winEnd);
+        var badge = card.querySelector('[data-availability-badge]');
+        var button = card.querySelector('.vehicle-book');
+        var unavailable = status.state !== 'available';
+        card.classList.toggle('is-unavailable', unavailable);
+        if (badge) {
+          badge.className = 'availability-badge ' + status.state;
+          badge.setAttribute('data-availability-badge', '');
+          badge.textContent = status.message;
+        }
+        if (button) {
+          button.disabled = unavailable;
+          if (unavailable) {
+            if (status.state === 'in_service') button.textContent = 'In Service';
+            else if (status.state === 'booked') button.textContent = 'Not Available';
+            else button.textContent = 'Currently Unavailable';
+          } else {
+            button.textContent = 'Book Now';
+          }
+        }
+      }
+      function refreshAvailability() {
+        vehicleCards.forEach(applyCardStatus);
+      }
+      refreshAvailability();
+
+      [searchPickup, searchReturn, bookingPickup, bookingReturn].forEach(function (input) {
+        if (input) input.addEventListener('change', refreshAvailability);
+      });
+
+      // ================ Fleet filter by type ================
+      function filterFleet(type) {
+        var visible = 0;
+        vehicleCards.forEach(function (card) {
+          var classes = card.className;
+          var matches = type === 'all'
+            || (type === 'suv' && classes.indexOf('category-suv') !== -1)
+            || (type === 'sedan' && classes.indexOf('category-sedan') !== -1)
+            || (type === 'ute' && classes.indexOf('category-ute') !== -1);
+          card.style.display = matches ? '' : 'none';
+          if (matches) visible++;
+        });
+        return visible;
+      }
+
+      // ================ Hero search ================
+      if (searchForm) {
+        searchForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          searchStatus.textContent = '';
+          var dates = validateDates(searchPickup, searchReturn, searchStatus);
+          if (!dates) return;
+
+          var type = searchCarType ? searchCarType.value : 'all';
+          var location = searchLocation.value || 'Darwin City, NT';
+          if (bookingPickup) bookingPickup.value = dates.pickup;
+          if (bookingReturn) bookingReturn.value = dates.dropoff;
+
+          if (rentPanel && buyPanel) {
+            rentPanel.hidden = false;
+            buyPanel.hidden = true;
+            fleetTabs.forEach(function (t) {
+              var isRent = t.getAttribute('data-fleet-tab') === 'rent';
+              t.classList.toggle('active', isRent);
+              t.setAttribute('aria-selected', String(isRent));
+            });
+          }
+
+          refreshAvailability();
+          var visibleCount = filterFleet(type);
+          var availableCount = 0;
+          vehicleCards.forEach(function (card) {
+            if (card.style.display !== 'none' && !card.classList.contains('is-unavailable')) availableCount++;
+          });
+          var typeLabel = (type === 'all') ? 'cars'
+            : (type === 'suv') ? 'SUVs'
+            : (type === 'sedan') ? 'sedans / hatchbacks'
+            : 'utes / 4WDs';
+          searchStatus.textContent = availableCount + ' of ' + visibleCount + ' ' + typeLabel
+            + ' available for ' + location + ' between ' + formatDisplayDate(dates.pickup)
+            + ' and ' + formatDisplayDate(dates.dropoff) + '.';
+
+          var fleetSection = document.getElementById('fleet');
+          if (fleetSection) fleetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // ================ Book buttons ================
+      bookButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          if (button.disabled) return;
+          var car = button.getAttribute('data-car');
+          if (bookingCar) bookingCar.value = car;
+          var bookingSection = document.getElementById('booking');
+          if (bookingSection) bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // ================ Booking form ================
+      function showBookingStatus(kind, message) {
+        if (!bookingStatus) return;
+        bookingStatus.className = 'form-status show ' + kind;
+        bookingStatus.textContent = message;
+      }
+      function clearBookingStatus() {
+        if (!bookingStatus) return;
+        bookingStatus.className = 'form-status';
+        bookingStatus.textContent = '';
+      }
+      function carIdFromDisplayName(name) {
+        var match = FLEET.find(function (c) {
+          return c.name === name || c.name.replace('Volkswagen', 'VW') === name || name.indexOf(c.name.split(' ')[0]) !== -1 && c.name.indexOf(name) !== -1;
+        });
+        if (match) return match.id;
+        // Fallback: fuzzy match by lowercase substring
+        var key = String(name || '').toLowerCase();
+        var fb = FLEET.find(function (c) { return key.indexOf(c.name.toLowerCase().split(' ')[0]) !== -1; });
+        return fb ? fb.id : null;
+      }
+
+      if (bookingForm) {
+        bookingForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          clearBookingStatus();
+
+          var name = document.getElementById('bookingName').value.trim();
+          var email = document.getElementById('bookingEmail').value.trim();
+          var phone = document.getElementById('bookingPhone').value.trim();
+          var car = bookingCar.value;
+          var notes = document.getElementById('bookingNotes').value.trim();
+
+          if (!name || !email || !phone) {
+            showBookingStatus('error', 'Please fill in your name, email and phone before submitting.');
+            return;
+          }
+          if (!car) {
+            showBookingStatus('error', 'Please pick a car.');
+            return;
+          }
+          var dates = validateDates(bookingPickup, bookingReturn, { textContent: '' });
+          if (!dates) {
+            var pickup = bookingPickup && bookingPickup.value;
+            var dropoff = bookingReturn && bookingReturn.value;
+            if (!pickup || !dropoff) {
+              showBookingStatus('error', 'Please choose both a pick-up and a return date.');
+            } else {
+              showBookingStatus('error', 'Your return date must be at least one day after the pick-up date.');
+            }
+            return;
+          }
+
+          // Availability guard
+          var carId = carIdFromDisplayName(car);
+          if (carId) {
+            var st = computeStatus(carId, dates.pickup, dates.dropoff);
+            if (st.state !== 'available') {
+              showBookingStatus('error', 'Sorry, this car is ' + st.message.toLowerCase() + '. Please pick another car or different dates.');
+              return;
+            }
+          }
+
+          var year = new Date().getFullYear();
+          var bookingRef = 'KK-' + year + '-' + String(Math.floor(1000 + Math.random() * 9000));
+          var createdAt = new Date().toLocaleString('en-AU', {
+            day: 'numeric', month: 'short', year: 'numeric', hour: 'numeric', minute: '2-digit'
+          });
+
+          if (confirmationReference) confirmationReference.textContent = bookingRef;
+          if (confirmationDate) confirmationDate.textContent = createdAt;
+          if (confirmName) confirmName.textContent = name;
+          if (confirmEmail) confirmEmail.textContent = email;
+          if (confirmPhone) confirmPhone.textContent = phone;
+          if (confirmCar) confirmCar.textContent = car;
+          if (confirmPickup) confirmPickup.textContent = formatDisplayDate(dates.pickup);
+          if (confirmReturn) confirmReturn.textContent = formatDisplayDate(dates.dropoff);
+          if (confirmNotes) confirmNotes.textContent = notes || 'No notes added';
+
+          // Save to localStorage
+          if (carId) {
+            var list = getBookings();
+            list.push({
+              id: bookingRef,
+              carId: carId,
+              customerName: name,
+              email: email,
+              phone: phone,
+              pickupDate: dates.pickup,
+              returnDate: dates.dropoff,
+              notes: notes,
+              status: 'active',
+              source: 'customer',
+              createdAt: new Date().toISOString()
+            });
+            saveJSON(BOOKINGS_KEY, list);
+            refreshAvailability();
+          }
+
+          showBookingStatus('loading', 'Sending your booking request…');
+
+          var payload = new FormData();
+          payload.append('reference', bookingRef);
+          payload.append('name', name);
+          payload.append('email', email);
+          payload.append('phone', phone);
+          payload.append('car', car);
+          payload.append('pickup_date', dates.pickup);
+          payload.append('return_date', dates.dropoff);
+          payload.append('notes', notes || 'No notes added');
+          payload.append('_subject', 'New Booking Request ' + bookingRef);
+          payload.append('_replyto', email);
+
+          fetch(bookingForm.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: payload
+          }).then(function (response) {
+            if (response.ok) {
+              showBookingStatus('success',
+                'Booking request sent! Your reference is ' + bookingRef +
+                '. Koala Keys will be in touch shortly.');
+              if (bookingConfirmation) {
+                bookingConfirmation.classList.add('show');
+                bookingConfirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              }
+            } else {
+              return response.json().then(function (data) {
+                var msg = (data && data.error) || 'We could not send your request right now.';
+                showBookingStatus('error', msg + ' Please email info@koalakeyscarhire.com.au directly.');
+              }).catch(function () {
+                showBookingStatus('error',
+                  'We could not send your request right now. Please email info@koalakeyscarhire.com.au directly.');
+              });
+            }
+          }).catch(function () {
+            showBookingStatus('error',
+              'Network error. Please try again or email info@koalakeyscarhire.com.au.');
+          });
+        });
+      }
+
+      if (resetBookingButton && bookingForm) {
+        resetBookingButton.addEventListener('click', function () {
+          bookingForm.reset();
+          if (bookingConfirmation) bookingConfirmation.classList.remove('show');
+          clearBookingStatus();
+          refreshAvailability();
+        });
+      }
+
+      // ================ Carousels ================
+      document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+        var slides = carousel.querySelectorAll('.carousel-slide');
+        var dots = carousel.querySelectorAll('.dot');
+        var prev = carousel.querySelector('.carousel-prev');
+        var next = carousel.querySelector('.carousel-next');
+        var index = 0;
+        function show(i) {
+          index = (i + slides.length) % slides.length;
+          slides.forEach(function (s, k) { s.classList.toggle('active', k === index); });
+          dots.forEach(function (d, k) { d.classList.toggle('active', k === index); });
+        }
+        if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); show(index - 1); });
+        if (next) next.addEventListener('click', function (e) { e.stopPropagation(); show(index + 1); });
+        dots.forEach(function (dot, i) {
+          dot.addEventListener('click', function (e) { e.stopPropagation(); show(i); });
+        });
+      });
+
+      // ================ Admin (CRM) ================
+      var activeTab = 'bookings';
+
+      function fleetOptionsHTML(selected) {
+        return FLEET.map(function (c) {
+          return '<option value="' + c.id + '"' + (c.id === selected ? ' selected' : '') + '>' + escapeHtml(c.name) + '</option>';
+        }).join('');
+      }
+
+      function renderBookingsView() {
+        var view = adminModal.querySelector('[data-view="bookings"]');
+        var bookings = getBookings().slice().sort(function (a, b) {
+          return a.pickupDate < b.pickupDate ? 1 : -1;
+        });
+        var rows;
+        if (!bookings.length) {
+          rows = '<div class="admin-empty">No bookings yet. Add one below or wait for a customer to submit the form.</div>';
+        } else {
+          rows =
+            '<div class="admin-table-wrap"><table class="admin-table">' +
+              '<thead><tr>' +
+                '<th>Reference</th><th>Car</th><th>Customer</th><th>Phone</th><th>Dates</th><th>Status</th><th>Notes</th><th>Actions</th>' +
+              '</tr></thead><tbody>' +
+              bookings.map(function (b) {
+                var carName = FLEET_BY_ID[b.carId] ? FLEET_BY_ID[b.carId].name : b.carId;
+                return '<tr>' +
+                  '<td><strong>' + escapeHtml(b.id) + '</strong></td>' +
+                  '<td>' + escapeHtml(carName) + '</td>' +
+                  '<td>' + escapeHtml(b.customerName || '—') + '</td>' +
+                  '<td>' + escapeHtml(b.phone || '—') + '</td>' +
+                  '<td>' + escapeHtml(formatDisplayDate(b.pickupDate)) + '<br>→ ' + escapeHtml(formatDisplayDate(b.returnDate)) + '</td>' +
+                  '<td><span class="row-status ' + b.status + '">' + b.status + '</span></td>' +
+                  '<td>' + escapeHtml(b.notes || '') + '</td>' +
+                  '<td><div class="actions">' +
+                    (b.status !== 'completed' ? '<button type="button" class="btn-mini primary" data-action="complete" data-id="' + escapeHtml(b.id) + '">Complete</button>' : '') +
+                    (b.status !== 'cancelled' ? '<button type="button" class="btn-mini" data-action="cancel" data-id="' + escapeHtml(b.id) + '">Cancel</button>' : '') +
+                    '<button type="button" class="btn-mini danger" data-action="delete" data-id="' + escapeHtml(b.id) + '">Delete</button>' +
+                  '</div></td>' +
+                '</tr>';
+              }).join('') +
+            '</tbody></table></div>';
+        }
+        var form =
+          '<form class="admin-form wide-notes" data-form="add-booking">' +
+            '<label>Car<select name="carId" required>' + fleetOptionsHTML() + '</select></label>' +
+            '<label>Customer name<input type="text" name="customerName" required></label>' +
+            '<label>Phone<input type="tel" name="phone" required></label>' +
+            '<label>Pickup date<input type="date" name="pickupDate" required></label>' +
+            '<label>Return date<input type="date" name="returnDate" required></label>' +
+            '<label>Notes <span class="optional">(optional)</span><textarea name="notes"></textarea></label>' +
+            '<div class="admin-submit"><button type="submit">Add booking</button></div>' +
+          '</form>';
+        view.innerHTML = form + rows;
+      }
+
+      function renderServiceView() {
+        var view = adminModal.querySelector('[data-view="service"]');
+        var service = getService().slice().sort(function (a, b) {
+          return a.startDate < b.startDate ? 1 : -1;
+        });
+        var rows;
+        if (!service.length) {
+          rows = '<div class="admin-empty">No service or maintenance periods logged.</div>';
+        } else {
+          rows =
+            '<div class="admin-table-wrap"><table class="admin-table">' +
+              '<thead><tr><th>Car</th><th>Start</th><th>End</th><th>Reason</th><th>Actions</th></tr></thead><tbody>' +
+              service.map(function (s) {
+                var carName = FLEET_BY_ID[s.carId] ? FLEET_BY_ID[s.carId].name : s.carId;
+                return '<tr>' +
+                  '<td>' + escapeHtml(carName) + '</td>' +
+                  '<td>' + escapeHtml(formatDisplayDate(s.startDate)) + '</td>' +
+                  '<td>' + escapeHtml(formatDisplayDate(s.endDate)) + '</td>' +
+                  '<td>' + escapeHtml(s.reason || '') + '</td>' +
+                  '<td><button type="button" class="btn-mini danger" data-action="delete-service" data-id="' + escapeHtml(s.id) + '">Delete</button></td>' +
+                '</tr>';
+              }).join('') +
+            '</tbody></table></div>';
+        }
+        var form =
+          '<form class="admin-form" data-form="add-service">' +
+            '<label>Car<select name="carId" required>' + fleetOptionsHTML() + '</select></label>' +
+            '<label>Start date<input type="date" name="startDate" required></label>' +
+            '<label>End date<input type="date" name="endDate" required></label>' +
+            '<label>Reason<input type="text" name="reason" placeholder="Annual service, Repair, etc." required></label>' +
+            '<div class="admin-submit"><button type="submit">Log service</button></div>' +
+          '</form>';
+        view.innerHTML = form + rows;
+      }
+
+      function renderFleetView() {
+        var view = adminModal.querySelector('[data-view="fleet"]');
+        var manual = getManualAvail();
+        var today = todayISO();
+        var cards = FLEET.map(function (c) {
+          var status = computeStatus(c.id);
+          // Also show upcoming booking window if any
+          var upcoming = getBookings()
+            .filter(function (b) { return b.carId === c.id && b.status === 'active' && b.returnDate >= today; })
+            .sort(function (a, b) { return a.pickupDate < b.pickupDate ? -1 : 1; })[0];
+          var detail = '';
+          if (status.state === 'in_service') detail = status.message;
+          else if (status.state === 'manual_unavailable') detail = 'Manually marked unavailable';
+          else if (upcoming) detail = 'Next booking ' + shortDate(upcoming.pickupDate) + '–' + shortDate(upcoming.returnDate);
+          else detail = 'No upcoming bookings';
+          var manualOn = manual[c.id] !== false;
+          return '<div class="fleet-status-card">' +
+            '<h4>' + escapeHtml(c.name) + '</h4>' +
+            '<span class="fsc-state ' + status.state + '">' + escapeHtml(status.message) + '</span>' +
+            '<div class="fsc-detail">' + escapeHtml(detail) + '</div>' +
+            '<div class="fsc-toggle"><span>Manual: mark available</span>' +
+              '<button type="button" class="toggle' + (manualOn ? ' on' : '') + '" data-action="toggle-manual" data-id="' + c.id + '" aria-pressed="' + manualOn + '"></button>' +
+            '</div>' +
+          '</div>';
+        }).join('');
+        view.innerHTML = '<div class="fleet-status-grid">' + cards + '</div>';
+      }
+
+      function renderAdmin() {
+        if (!adminModal) return;
+        if (activeTab === 'bookings') renderBookingsView();
+        else if (activeTab === 'service') renderServiceView();
+        else if (activeTab === 'fleet') renderFleetView();
+      }
+
+      function openAdmin() {
+        if (!adminModal) return;
+        adminModal.hidden = false;
+        adminModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        renderAdmin();
+      }
+      function closeAdmin() {
+        if (!adminModal) return;
+        adminModal.classList.remove('show');
+        adminModal.hidden = true;
+        document.body.style.overflow = '';
+      }
+      function requestAdmin(auto) {
+        if (sessionStorage.getItem('kk_admin_ok') === '1') { openAdmin(); return; }
+        var pass = prompt('Admin password:');
+        if (pass === null) return;
+        if (pass === ADMIN_PASSWORD) {
+          sessionStorage.setItem('kk_admin_ok', '1');
+          openAdmin();
+        } else if (!auto) {
+          alert('Incorrect password.');
+        }
+      }
+
+      if (adminModal) {
+        adminClose.addEventListener('click', closeAdmin);
+        adminModal.addEventListener('click', function (e) {
+          if (e.target === adminModal) closeAdmin();
+        });
+        adminTabs.forEach(function (t) {
+          t.addEventListener('click', function () {
+            activeTab = t.getAttribute('data-tab');
+            adminTabs.forEach(function (tab) {
+              var isActive = tab === t;
+              tab.classList.toggle('active', isActive);
+              tab.setAttribute('aria-selected', String(isActive));
+            });
+            adminViews.forEach(function (v) {
+              v.classList.toggle('hidden', v.getAttribute('data-view') !== activeTab);
+            });
+            renderAdmin();
+          });
+        });
+
+        adminModal.addEventListener('click', function (e) {
+          var btn = e.target.closest('[data-action]');
+          if (!btn) return;
+          var action = btn.getAttribute('data-action');
+          var id = btn.getAttribute('data-id');
+          if (action === 'complete' || action === 'cancel') {
+            var list = getBookings().map(function (b) {
+              if (b.id === id) b.status = (action === 'complete' ? 'completed' : 'cancelled');
+              return b;
+            });
+            saveJSON(BOOKINGS_KEY, list);
+          } else if (action === 'delete') {
+            if (!confirm('Delete this booking?')) return;
+            saveJSON(BOOKINGS_KEY, getBookings().filter(function (b) { return b.id !== id; }));
+          } else if (action === 'delete-service') {
+            if (!confirm('Delete this service entry?')) return;
+            saveJSON(SERVICE_KEY, getService().filter(function (s) { return s.id !== id; }));
+          } else if (action === 'toggle-manual') {
+            var manual = getManualAvail();
+            manual[id] = manual[id] === false ? true : false;
+            saveJSON(AVAILABILITY_KEY, manual);
+          }
+          refreshAvailability();
+          renderAdmin();
+        });
+
+        adminModal.addEventListener('submit', function (e) {
+          if (e.target.getAttribute('data-form') === 'add-booking') {
+            e.preventDefault();
+            var f = e.target;
+            var data = new FormData(f);
+            var startDate = data.get('pickupDate');
+            var endDate = data.get('returnDate');
+            if (!startDate || !endDate || new Date(endDate) <= new Date(startDate)) {
+              alert('Return date must be later than pick-up date.');
+              return;
+            }
+            var carId = data.get('carId');
+            var b = {
+              id: 'KK-' + new Date().getFullYear() + '-' + String(Math.floor(1000 + Math.random() * 9000)),
+              carId: carId,
+              customerName: (data.get('customerName') || '').trim(),
+              phone: (data.get('phone') || '').trim(),
+              pickupDate: startDate,
+              returnDate: endDate,
+              notes: (data.get('notes') || '').trim(),
+              status: 'active',
+              source: 'admin',
+              createdAt: new Date().toISOString()
+            };
+            var list = getBookings();
+            list.push(b);
+            saveJSON(BOOKINGS_KEY, list);
+            f.reset();
+            refreshAvailability();
+            renderAdmin();
+          } else if (e.target.getAttribute('data-form') === 'add-service') {
+            e.preventDefault();
+            var f2 = e.target;
+            var d = new FormData(f2);
+            var sd = d.get('startDate');
+            var ed = d.get('endDate');
+            if (!sd || !ed || new Date(ed) < new Date(sd)) {
+              alert('End date must be the same or later than start date.');
+              return;
+            }
+            var s = {
+              id: newId('svc'),
+              carId: d.get('carId'),
+              startDate: sd,
+              endDate: ed,
+              reason: (d.get('reason') || '').trim(),
+              createdAt: new Date().toISOString()
+            };
+            var list2 = getService();
+            list2.push(s);
+            saveJSON(SERVICE_KEY, list2);
+            f2.reset();
+            refreshAvailability();
+            renderAdmin();
+          }
+        });
+      }
+
+      // Footer easter egg (5 quick clicks within 3s)
+      if (eggTrigger) {
+        var eggClicks = 0;
+        var eggTimer = null;
+        eggTrigger.addEventListener('click', function () {
+          eggClicks++;
+          if (eggTimer) clearTimeout(eggTimer);
+          eggTimer = setTimeout(function () { eggClicks = 0; }, 3000);
+          if (eggClicks >= 5) {
+            eggClicks = 0;
+            requestAdmin(false);
+          }
+        });
+      }
+
+      // URL param trigger
+      try {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('admin') === '1') {
+          setTimeout(function () { requestAdmin(false); }, 200);
+        }
+      } catch (err) {}
+
+      // Keyboard shortcut Ctrl+Alt+A
+      document.addEventListener('keydown', function (e) {
+        if (e.ctrlKey && e.altKey && (e.key === 'a' || e.key === 'A')) {
+          e.preventDefault();
+          requestAdmin(false);
+        }
+        if (e.key === 'Escape' && adminModal && !adminModal.hidden) closeAdmin();
+      });
+    })();
+  </script>
+
+    <div class="admin-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle" hidden>
+      <div class="admin-modal">
+        <div class="admin-head">
+          <h2 id="adminTitle">Koala Keys — Admin</h2>
+          <button type="button" class="admin-close" id="adminClose" aria-label="Close admin panel">×</button>
+        </div>
+        <div class="admin-tabs" role="tablist">
+          <button type="button" class="admin-tab active" data-tab="bookings" role="tab" aria-selected="true">Bookings</button>
+          <button type="button" class="admin-tab" data-tab="service" role="tab" aria-selected="false">Service</button>
+          <button type="button" class="admin-tab" data-tab="fleet" role="tab" aria-selected="false">Fleet Status</button>
+        </div>
+        <div class="admin-body">
+          <div class="admin-view" data-view="bookings"></div>
+          <div class="admin-view hidden" data-view="service"></div>
+          <div class="admin-view hidden" data-view="fleet"></div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
