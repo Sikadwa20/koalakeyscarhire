@@ -691,11 +691,43 @@
       grid-column: 1 / -1;
     }
 
+    .booking-form .full {
+      grid-column: 1 / -1;
+    }
+
     .booking-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 18px;
+    }
+
+    .button-whatsapp {
+      background: #25D366;
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.28);
+    }
+
+    .button-whatsapp:hover,
+    .button-whatsapp:focus-visible {
+      background: #1ebe5d;
+      color: var(--white);
+    }
+
+    .button-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .button-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
     }
 
     .support-list {
@@ -1071,6 +1103,51 @@
     .form-status.error { background: #fdecea; color: #8f1a10; border: 1px solid #f4b8b0; }
     .form-status.loading { background: #E8F1FA; color: #2860A0; border: 1px solid #B8D3F0; }
 
+    /* WhatsApp contact buttons */
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 850;
+      width: 62px;
+      height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: #25D366;
+      color: var(--white);
+      box-shadow: 0 16px 32px rgba(37, 211, 102, 0.34), 0 6px 18px rgba(16, 36, 56, 0.18);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .whatsapp-float:hover,
+    .whatsapp-float:focus-visible {
+      transform: translateY(-3px) scale(1.04);
+      background: #1ebe5d;
+      box-shadow: 0 20px 38px rgba(37, 211, 102, 0.42), 0 8px 22px rgba(16, 36, 56, 0.2);
+    }
+
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 560px) {
+      .whatsapp-float {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+      }
+
+      .whatsapp-float svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
     /* Footer copyright easter egg cursor */
     .footer-bottom { cursor: default; }
     .footer-bottom .egg-trigger { cursor: pointer; user-select: none; }
@@ -1115,8 +1192,19 @@
     .admin-table .btn-mini:hover { background: #f1f5f9; }
     .admin-table .btn-mini.primary { border-color: var(--primary); color: var(--primary-dark); }
     .admin-table .btn-mini.danger { border-color: #fca5a5; color: #b91c1c; }
-    .admin-table .btn-mini.danger:hover { background: #fef2f2; }
+      .admin-table .btn-mini.danger:hover { background: #fef2f2; }
     .admin-empty { padding: 24px; text-align: center; color: #64748b; font-style: italic; background: #f8fafc; border-radius: 10px; border: 1px dashed #cbd5e1; }
+
+    /* Availability checker (booking form) */
+    .avail-checker { display: none; padding: 10px 14px; border-radius: 10px; font-size: 14px; font-weight: 600; margin-bottom: 0; }
+    .avail-checker.show { display: block; }
+    .avail-checker.checking { background: #E8F1FA; color: #2860A0; border: 1px solid #B8D3F0; }
+    .avail-checker.available { background: #e6f6ee; color: #14733e; border: 1px solid #a8e0c1; }
+    .avail-checker.unavailable { background: #fdecea; color: #8f1a10; border: 1px solid #f4b8b0; }
+    .admin-sync-btn { margin-bottom: 14px; display: inline-flex; align-items: center; gap: 6px; }
+    .sheet-bookings-note { font-size: 13px; color: #64748b; margin-bottom: 12px; padding: 10px 14px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; }
+
+    /* ---- end additions ---- */
 
     .fleet-status-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
     .fleet-status-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
@@ -1140,7 +1228,6 @@
       .admin-form { padding: 12px; }
       .admin-table th, .admin-table td { padding: 8px; }
     }
-    /* ---- end additions ---- */
 
   </style>
 </head>
@@ -1211,7 +1298,7 @@
         </div>
 
         <div class="hero-meta">
-          <span><strong>Phone:</strong> 0467 474 180</span>
+          <span><strong>Phone:</strong> <a href="tel:+61467474180">0467 474 180</a></span>
           <span><strong>Email:</strong> info@koalakeyscarhire.com.au</span>
         </div>
       </div>
@@ -1232,8 +1319,8 @@
         <div class="fleet-panel" id="rentPanel" role="tabpanel">
           <div class="fleet-grid">
           <div class="fleet-category fleet-category-suv">
-            <h3>SUVs (5- to 7-seater)</h3>
-            <p>Compare compact, mid-size and family-friendly SUV options if one vehicle is already booked offline.</p>
+            <h3>SUVs (5-seater)</h3>
+            <p>Compare compact and mid-size SUV alternatives if one vehicle is already booked offline.</p>
           </div>
 
           <div class="fleet-category fleet-category-sedan">
@@ -1247,10 +1334,10 @@
           </div>
 
           <article class="vehicle-card category-ute" data-car-id="ford-ranger-2019">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_040430db-bb4f-4781-90fa-a9c5ced991ix.jpg" alt="Ford Ranger 2019 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_0ea4d99d-1144-47b4-af39-d1668b8232ix.jpg" alt="Ford Ranger 2019 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_f2189a3d-3c23-4130-868f-46461b94eeix.jpg" alt="Ford Ranger 2019 or similar photo 3" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/ford-ranger-2019.jpg" alt="Ford Ranger 2019 photo" loading="lazy" /></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Ford Ranger 2019 or similar</h3>
+                <h3>Ford Ranger or similar</h3>
                 <div class="rate">$95/day<small>$500/week</small></div>
               </div>
               <div class="card-meta">
@@ -1259,32 +1346,15 @@
               </div>
               <p>Dual cab ute with a spacious cabin and 4WD-ready capability, great for families or outback adventures.</p>
               <div class="tags"><span>Automatic</span><span>Diesel</span><span>Dual Cab</span><span>Cold A/C</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Ford Ranger 2019">Book Now</button>
-            </div>
-          </article>
-
-          <article class="vehicle-card category-suv" data-car-id="suzuki-vitara-2019">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_c2124434-84e7-4f97-a081-535db0ea74ix.jpg" alt="2019 Suzuki Vitara or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_4a34aedf-0b53-40f9-a01b-1409a4d5fbix.jpg" alt="2019 Suzuki Vitara or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_2251b332-614b-4e5a-ae6d-914c2c3a4bix.jpg" alt="2019 Suzuki Vitara or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_3b2ec53f-8c7d-41c9-88d7-4218c8be33ix.jpg" alt="2019 Suzuki Vitara or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_3a9bf179-1385-4967-a88f-548782d997ix.jpg" alt="2019 Suzuki Vitara or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
-            <div class="vehicle-body">
-              <div class="vehicle-head">
-                <h3>2019 Suzuki Vitara or similar</h3>
-                <div class="rate">$60/day<small>$370/week</small></div>
-              </div>
-              <div class="card-meta">
-                <span class="category-badge">SUV · 5 seats · 200 km/day</span>
-                <span class="similar-note">Not available? See similar cars in this category.</span>
-              </div>
-              <p>Stylish, comfortable and fuel-efficient SUV. Perfect for city driving, airport transfers, road trips or weekend getaways around Darwin.</p>
-              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>1.6L Petrol</span><span>Cold A/C</span><span>Large Boot</span><span>Insurance Included</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="2019 Suzuki Vitara">Book Now</button>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Ford Ranger">Book Now</button>
             </div>
           </article>
 
           <article class="vehicle-card category-suv" data-car-id="mazda-cx3-2017">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_ac0979b3-2646-4513-941c-514bd2dd59ix.jpg" alt="Mazda CX-3 2017 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_287dcee5-f4af-4a9f-beaf-45f8299023ix.jpg" alt="Mazda CX-3 2017 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_4456e585-a610-4dce-816f-f584549d42ix.jpg" alt="Mazda CX-3 2017 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_de81b658-6204-4996-a228-4281f618acix.jpg" alt="Mazda CX-3 2017 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/mazda-cx3-2017.jpg" alt="Mazda CX-3 2017 photo" loading="lazy" /></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Mazda CX-3 2017 or similar</h3>
+                <h3>Mazda CX-3 or similar</h3>
                 <div class="rate">$43/day<small>$300/week</small></div>
               </div>
               <div class="card-meta">
@@ -1293,66 +1363,32 @@
               </div>
               <p>Fuel-efficient compact SUV that is easy to drive and ideal for getting around Darwin city.</p>
               <div class="tags"><span>Manual</span><span>Petrol</span><span>Compact SUV</span><span>Cold A/C</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mazda CX-3 2017">Book Now</button>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mazda CX-3">Book Now</button>
             </div>
           </article>
 
-          <article class="vehicle-card category-sedan" data-car-id="mitsubishi-mirage-2017">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_54c13696-6829-4d5d-916c-3fe75f2f30ix.jpg" alt="2017 Mitsubishi Mirage or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_dabbd5e0-9f06-45ad-beea-c0ed7a2beeix.jpg" alt="2017 Mitsubishi Mirage or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_8496cc31-89dd-48b8-8f6d-06a84511e5ix.jpg" alt="2017 Mitsubishi Mirage or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_3a528aff-d958-4109-94af-9366b0ad3dix.jpg" alt="2017 Mitsubishi Mirage or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_7d0d5944-27ca-40e8-bbba-39b1d0f677ix.jpg" alt="2017 Mitsubishi Mirage or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+          <article class="vehicle-card category-suv" data-car-id="suzuki-vitara-2019">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/suzuki-vitara-1.jpg" alt="Suzuki Vitara photo 1" loading="lazy" /><img class="carousel-slide" src="assets/suzuki-vitara-2.jpg" alt="Suzuki Vitara photo 2" loading="lazy" /><img class="carousel-slide" src="assets/suzuki-vitara-3.jpg" alt="Suzuki Vitara photo 3" loading="lazy" /></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>2017 Mitsubishi Mirage or similar</h3>
-                <div class="rate">$30/day<small>$210/week</small></div>
+                <h3>Suzuki Vitara or similar</h3>
+                <div class="rate">$60/day<small>$370/week</small></div>
               </div>
               <div class="card-meta">
-                <span class="category-badge">Hatchback · 5 seats · Unlimited km within Darwin</span>
+                <span class="category-badge">SUV · 5 seats</span>
                 <span class="similar-note">Not available? See similar cars in this category.</span>
               </div>
-              <p>Compact, economical and easy to drive. Perfect for city driving, daily errands, or weekend trips around Darwin.</p>
-              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>1.2L Petrol</span><span>Cold A/C</span><span>Easy to Park</span><span>Insurance Included</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="2017 Mitsubishi Mirage">Book Now</button>
-            </div>
-          </article>
-
-          <article class="vehicle-card category-sedan" data-car-id="hyundai-i20-2012">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_dc6e7842-709f-44c0-9756-61f724378dix.jpg" alt="2012 Hyundai i20 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_936e1b64-0e8b-448d-a318-543c6cd60cix.jpg" alt="2012 Hyundai i20 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_d0c6f6b3-e790-4ee9-988e-0c2a533380ix.jpg" alt="2012 Hyundai i20 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_dc972483-a1dc-4aaa-8d21-fd659d593bix.jpg" alt="2012 Hyundai i20 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
-            <div class="vehicle-body">
-              <div class="vehicle-head">
-                <h3>2012 Hyundai i20 or similar</h3>
-                <div class="rate">$35/day<small>$230/week</small></div>
-              </div>
-              <div class="card-meta">
-                <span class="category-badge">Hatchback · 5 seats · 200 km/day</span>
-                <span class="similar-note">Not available? See similar cars in this category.</span>
-              </div>
-              <p>Reliable, economical and easy to drive. Great for city driving, airport transfers, daily commuting or weekend trips around Darwin.</p>
-              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>1.4L Petrol</span><span>Cold A/C</span><span>Easy to Park</span><span>Insurance Included</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="2012 Hyundai i20">Book Now</button>
-            </div>
-          </article>
-
-          <article class="vehicle-card category-sedan" data-car-id="citroen-c4-cactus-2018">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02157_5419a875-11dc-4eb4-a3ee-533687817aix.jpg" alt="2018 Citroën C4 Cactus or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02157_795ca66f-ef11-4f53-ab52-3b4a92f6bdix.jpg" alt="2018 Citroën C4 Cactus or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_05d9288c-8fa2-4462-9a9c-f90d71d116ix.jpg" alt="2018 Citroën C4 Cactus or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_843e73b4-c39d-48a3-b170-469e46c1c8ix.jpg" alt="2018 Citroën C4 Cactus or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02157_b4e2148c-33c1-41e5-9ac1-e7858f2e68ix.jpg" alt="2018 Citroën C4 Cactus or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
-            <div class="vehicle-body">
-              <div class="vehicle-head">
-                <h3>2018 Citroën C4 Cactus or similar</h3>
-                <div class="rate">$45/day<small>$300/week</small></div>
-              </div>
-              <div class="card-meta">
-                <span class="category-badge">Hatchback · 5 seats</span>
-                <span class="similar-note">Not available? See similar cars in this category.</span>
-              </div>
-              <p>Reliable, comfortable and economical. Great for city driving, airport transfers, road trips or weekend getaways around Darwin.</p>
-              <div class="tags"><span>Automatic</span><span>5 Seats</span><span>Cold A/C</span><span>Reverse Camera</span><span>Cruise Control</span><span>Insurance Included</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="2018 Citroën C4 Cactus">Book Now</button>
+              <p>Stylish, comfortable and fuel-efficient SUV that works well for Darwin city driving, airport pickups and relaxed weekend trips.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Suzuki Vitara">Book Now</button>
             </div>
           </article>
 
           <article class="vehicle-card category-sedan" data-car-id="hyundai-elantra-2018">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_9d0814f4-4c30-494d-890e-906f950297ix.jpg" alt="Hyundai Elantra 2018 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_04cfcf45-17b0-4a10-8745-e59b227202ix.jpg" alt="Hyundai Elantra 2018 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_34fb5af3-048b-45b5-9be7-1e89c6aa72ix.jpg" alt="Hyundai Elantra 2018 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_d3a26200-12c0-461a-8a4a-017c811f0dix.jpg" alt="Hyundai Elantra 2018 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/hyundai-elantra-2018.jpg" alt="Hyundai Elantra 2018 photo" loading="lazy" /></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Hyundai Elantra 2018 or similar</h3>
+                <h3>Hyundai Elantra or similar</h3>
                 <div class="rate">$45/day<small>$300/week</small></div>
               </div>
               <div class="card-meta">
@@ -1361,15 +1397,15 @@
               </div>
               <p>Comfortable sedan with a smooth ride, well suited to business trips or relaxed leisure driving.</p>
               <div class="tags"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Hyundai Elantra 2018">Book Now</button>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Hyundai Elantra">Book Now</button>
             </div>
           </article>
 
           <article class="vehicle-card category-suv" data-car-id="haval-jolion-2026">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_e7997d9a-9b4d-4808-bb98-08e85cb9f5ix.jpg" alt="Haval Jolion 2026 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_11d62847-afc0-418a-91d9-7afa042441ix.jpg" alt="Haval Jolion 2026 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_267d9fc6-3fac-465c-a3c7-12b8c7dca7ix.jpg" alt="Haval Jolion 2026 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_63254ffb-af50-4d2b-b51b-fe97744bf6ix.jpg" alt="Haval Jolion 2026 or similar photo 4" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_a45b280f-0e45-4522-b9fd-cc26899089ix.jpg" alt="Haval Jolion 2026 or similar photo 5" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button><button type="button" class="dot" data-index="4" aria-label="Show photo 5"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/haval-jolion-2026.jpg" alt="Haval Jolion 2026 photo" loading="lazy" /></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Haval Jolion 2026 or similar</h3>
+                <h3>Haval Jolion or similar</h3>
                 <div class="rate">$65/day<small>$450/week</small></div>
               </div>
               <div class="card-meta">
@@ -1378,15 +1414,15 @@
               </div>
               <p>Modern SUV with the latest features, a spacious interior, and strong value for everyday rental use.</p>
               <div class="tags"><span>Automatic</span><span>Petrol</span><span>SUV</span><span>Cold A/C</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Haval Jolion 2026">Book Now</button>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Haval Jolion">Book Now</button>
             </div>
           </article>
 
           <article class="vehicle-card category-suv" data-car-id="mitsubishi-eclipse-cross-2018">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_b7c4d97b-a00f-4c80-8711-6c8c4d5546ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_48da6a55-b8d9-4b09-8daa-e715e061c3ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_7321c03a-ddbe-44f5-b1ce-6eb3497134ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_dd9fbbd1-c7c6-4be6-81e8-7f1ace64f3ix.jpg" alt="Mitsubishi Eclipse Cross 2018 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/mitsubishi-eclipse-cross-2018.jpg" alt="Mitsubishi Eclipse Cross 2018 photo" loading="lazy" /></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Mitsubishi Eclipse Cross 2018 or similar</h3>
+                <h3>Mitsubishi Eclipse Cross or similar</h3>
                 <div class="rate">$85/day<small>$450/week</small></div>
               </div>
               <div class="card-meta">
@@ -1395,15 +1431,32 @@
               </div>
               <p>Stylish SUV that feels comfortable for couples or small families on local drives and short getaways.</p>
               <div class="tags"><span>Automatic</span><span>Petrol</span><span>SUV</span><span>Cold A/C</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mitsubishi Eclipse Cross 2018">Book Now</button>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mitsubishi Eclipse Cross">Book Now</button>
+            </div>
+          </article>
+
+          <article class="vehicle-card category-sedan" data-car-id="mitsubishi-mirage-2017">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/mitsubishi-mirage-1.jpg" alt="Mitsubishi Mirage photo 1" loading="lazy" /><img class="carousel-slide" src="assets/mitsubishi-mirage-2.jpg" alt="Mitsubishi Mirage photo 2" loading="lazy" /><img class="carousel-slide" src="assets/mitsubishi-mirage-3.jpg" alt="Mitsubishi Mirage photo 3" loading="lazy" /></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><div class="availability-badge available" data-availability-badge>Available</div></div>
+            <div class="vehicle-body">
+              <div class="vehicle-head">
+                <h3>Mitsubishi Mirage or similar</h3>
+                <div class="rate">$30/day<small>$210/week</small></div>
+              </div>
+              <div class="card-meta">
+                <span class="category-badge">Hatchback · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
+              </div>
+              <p>Compact, economical and easy to drive — a practical hatchback for daily errands, airport runs and city driving around Darwin.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mitsubishi Mirage">Book Now</button>
             </div>
           </article>
 
           <article class="vehicle-card category-sedan" data-car-id="volkswagen-polo-2019">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/img_v3_02155_42a470c8-d9c4-4b40-92b1-64fb2fc69cix.jpg" alt="Volkswagen Polo 2019 or similar photo 1" class="carousel-slide active"><img src="assets/img_v3_02155_c020a08a-eb5e-4769-aee1-8cac5b6b35ix.jpg" alt="Volkswagen Polo 2019 or similar photo 2" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_d2352941-92a8-44fa-8357-f6f3789cb4ix.jpg" alt="Volkswagen Polo 2019 or similar photo 3" class="carousel-slide" loading="lazy"><img src="assets/img_v3_02155_e81b4921-84a9-465f-adbf-2c65ba7facix.jpg" alt="Volkswagen Polo 2019 or similar photo 4" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button><button type="button" class="dot" data-index="3" aria-label="Show photo 4"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/volkswagen-polo-2019.jpg" alt="Volkswagen Polo 2019 photo" loading="lazy" /></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Volkswagen Polo 2019 or similar</h3>
+                <h3>Volkswagen Polo or similar</h3>
                 <div class="rate">$35/day<small>$250/week</small></div>
               </div>
               <div class="card-meta">
@@ -1412,58 +1465,41 @@
               </div>
               <p>Compact hatchback with great fuel economy, easy parking, and simple practicality for city use.</p>
               <div class="tags"><span>Automatic</span><span>1.0L Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Volkswagen Polo 2019">Book Now</button>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Volkswagen Polo">Book Now</button>
             </div>
           </article>
 
-          <article class="vehicle-card category-suv" data-car-id="mitsubishi-outlander-7-seater">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/outlander-1.jpg" alt="Mitsubishi Outlander 7-Seater photo 1" class="carousel-slide active"><img src="assets/outlander-2.jpg" alt="Mitsubishi Outlander 7-Seater photo 2" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+          <article class="vehicle-card category-sedan" data-car-id="hyundai-i20-2012">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/hyundai-i20-front.jpg" alt="Hyundai i20 photo 1" loading="lazy" /><img class="carousel-slide" src="assets/hyundai-i20-side.jpg" alt="Hyundai i20 photo 2" loading="lazy" /><img class="carousel-slide" src="assets/hyundai-i20-rear.jpg" alt="Hyundai i20 photo 3" loading="lazy" /></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Mitsubishi Outlander 7-Seater</h3>
-                <div class="rate">$65/day<small>$395/week</small></div>
+                <h3>Hyundai i20 or similar</h3>
+                <div class="rate">$35/day<small>$230/week</small></div>
               </div>
               <div class="card-meta">
-                <span class="category-badge">SUV · 7 seats · 200 km/day</span>
-                <span class="similar-note">Minimum 1 week preferred. Flexible pickup and competitive rates for longer hires.</span>
+                <span class="category-badge">Hatchback · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
               </div>
-              <p>Spacious family-friendly SUV with cold A/C, a large cargo area and insurance included, making it a strong option for longer Darwin stays.</p>
-              <div class="tags"><span>Automatic (CVT)</span><span>2.0L Petrol</span><span>7 Seats</span><span>Large Cargo Area</span><span>Insurance Included</span><span>Lower Excess</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Mitsubishi Outlander 7-Seater">Book Now</button>
+              <p>Reliable, economical and easy to drive, making it a smart option for city driving, airport transfers and everyday use in Darwin.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Hyundai i20">Book Now</button>
             </div>
           </article>
 
-          <article class="vehicle-card category-suv" data-car-id="haval-h6-suv">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/haval-h6-1.jpg" alt="Haval H6 SUV photo 1" class="carousel-slide active"><img src="assets/haval-h6-2.jpg" alt="Haval H6 SUV photo 2" class="carousel-slide" loading="lazy"><img src="assets/haval-h6-3.jpg" alt="Haval H6 SUV photo 3" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
+          <article class="vehicle-card category-sedan" data-car-id="citroen-c4-cactus-2018">
+            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img class="carousel-slide active" src="assets/citroen-c4-cactus-1.jpg" alt="Citroën C4 Cactus photo 1" loading="lazy" /><img class="carousel-slide" src="assets/citroen-c4-cactus-2.jpg" alt="Citroën C4 Cactus photo 2" loading="lazy" /><img class="carousel-slide" src="assets/citroen-c4-cactus-3.jpg" alt="Citroën C4 Cactus photo 3" loading="lazy" /></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><div class="availability-badge available" data-availability-badge>Available</div></div>
             <div class="vehicle-body">
               <div class="vehicle-head">
-                <h3>Haval H6 SUV</h3>
-                <div class="rate">$100/day<small>$450/week</small></div>
+                <h3>Citroën C4 Cactus or similar</h3>
+                <div class="rate">$45/day<small>$300/week</small></div>
               </div>
               <div class="card-meta">
-                <span class="category-badge">SUV · 5 seats · 200 km/day</span>
-                <span class="similar-note">$400 refundable bond. Discount available for extended bookings with flexible pickup.</span>
+                <span class="category-badge">Hatchback · 5 seats</span>
+                <span class="similar-note">Not available? See similar cars in this category.</span>
               </div>
-              <p>Well-maintained SUV with a smooth drive, cold A/C and a roomy interior and cargo area for airport runs, family travel or longer bookings.</p>
-              <div class="tags"><span>Automatic</span><span>Fuel-Efficient Petrol</span><span>5 Seats</span><span>Spacious Interior</span><span>Cold A/C</span><span>$400 Bond</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Haval H6 SUV">Book Now</button>
-            </div>
-          </article>
-
-          <article class="vehicle-card category-suv" data-car-id="holden-captiva-7-seater">
-            <div class="vehicle-media" data-carousel><div class="carousel-slides"><img src="assets/captiva-1.jpg" alt="Holden Captiva 7-Seater photo 1" class="carousel-slide active"><img src="assets/captiva-2.jpg" alt="Holden Captiva 7-Seater photo 2" class="carousel-slide" loading="lazy"><img src="assets/captiva-3.jpg" alt="Holden Captiva 7-Seater photo 3" class="carousel-slide" loading="lazy"></div><button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">‹</button><button type="button" class="carousel-btn carousel-next" aria-label="Next photo">›</button><div class="carousel-dots"><button type="button" class="dot active" data-index="0" aria-label="Show photo 1"></button><button type="button" class="dot" data-index="1" aria-label="Show photo 2"></button><button type="button" class="dot" data-index="2" aria-label="Show photo 3"></button></div><span class="availability-badge available" data-availability-badge>Available</span></div>
-            <div class="vehicle-body">
-              <div class="vehicle-head">
-                <h3>Holden Captiva 7-Seater</h3>
-                <div class="rate">$400/week<small>Minimum 1 week preferred</small></div>
-              </div>
-              <div class="card-meta">
-                <span class="category-badge">SUV · 7 seats · 200 km/day</span>
-                <span class="similar-note">$400 refundable bond. Flexible pickup with better weekly and longer-term rates.</span>
-              </div>
-              <p>Comfortable 7-seater with full leather seats, cold A/C, generous interior space and ample cargo room, with insurance included and a lower excess.</p>
-              <div class="tags"><span>Automatic</span><span>2.0L Turbo Diesel</span><span>7 Seats</span><span>Full Leather Seats</span><span>Insurance Included</span><span>Lower Excess</span></div>
-              <button class="button button-primary button-small vehicle-book" type="button" data-car="Holden Captiva 7-Seater">Book Now</button>
+              <p>Comfortable and economical with a distinctive design, well suited to airport pickups, city driving and short road trips.</p>
+              <div class="tags"><span>Automatic</span><span>Petrol</span><span>5 Seats</span><span>Cold A/C</span></div>
+              <button class="button button-primary button-small vehicle-book" type="button" data-car="Citroën C4 Cactus">Book Now</button>
             </div>
           </article>
           </div>
@@ -1539,7 +1575,10 @@
             <h3>Booking request</h3>
             <p class="copy">Complete the form below. A confirmation reference is generated instantly and your request is sent to Koala Keys — no email app required.</p>
 
-            <form class="booking-form" id="bookingForm" action="https://formspree.io/f/xpznvkod" method="POST" novalidate>
+            <form class="booking-form" id="bookingForm" action="https://formspree.io/f/mkjnpvdj" method="POST" novalidate>
+              <input type="hidden" name="_subject" id="fsSubject" value="New Koala Keys Booking" />
+              <input type="hidden" name="_replyto" id="fsReplyTo" value="" />
+              <input type="hidden" name="_cc" id="fsCc" value="" />
               <div class="field">
                 <label for="bookingName">Full name</label>
                 <input id="bookingName" name="bookingName" type="text" placeholder="Your full name" required />
@@ -1556,16 +1595,16 @@
                 <label for="bookingCar">Selected car</label>
                 <select id="bookingCar" name="bookingCar" required>
                   <option value="">Select a car</option>
-                  <option>Ford Ranger 2019</option>
-                  <option>2019 Suzuki Vitara</option>
-                  <option>Mazda CX-3 2017</option>
-                  <option>2017 Mitsubishi Mirage</option>
-                  <option>2012 Hyundai i20</option>
-                  <option>2018 Citroën C4 Cactus</option>
-                  <option>Hyundai Elantra 2018</option>
-                  <option>Haval Jolion 2026</option>
-                  <option>Mitsubishi Eclipse Cross 2018</option>
-                  <option>Volkswagen Polo 2019</option>
+                  <option>Ford Ranger</option>
+                  <option>Mazda CX-3</option>
+                  <option>Suzuki Vitara</option>
+                  <option>Hyundai Elantra</option>
+                  <option>Haval Jolion</option>
+                  <option>Mitsubishi Eclipse Cross</option>
+                  <option>Mitsubishi Mirage</option>
+                  <option>Volkswagen Polo</option>
+                  <option>Hyundai i20</option>
+                  <option>Citroën C4 Cactus</option>
                 </select>
               </div>
               <div class="field">
@@ -1576,6 +1615,7 @@
                 <label for="bookingReturn">Return date</label>
                 <input id="bookingReturn" name="bookingReturn" type="date" required />
               </div>
+              <div class="avail-checker full" id="availChecker" role="status" aria-live="polite"></div>
               <div class="field full">
                 <label for="bookingNotes">Notes</label>
                 <textarea id="bookingNotes" name="bookingNotes" placeholder="Pickup time, special requests, or any questions"></textarea>
@@ -1583,6 +1623,10 @@
               <div class="form-status full" id="bookingStatus" role="status" aria-live="polite"></div>
               <div class="booking-actions full">
                 <button class="button button-primary" type="submit">Send booking request</button>
+                <a class="button button-whatsapp" href="https://wa.me/61467474180?text=Hi%20Koala%20Keys!%20I%27d%20like%20to%20hire%20a%20car%20%F0%9F%90%A8%F0%9F%94%91" target="_blank" rel="noopener" aria-label="Chat with Koala Keys on WhatsApp">
+                  <span class="button-icon" aria-hidden="true"><svg viewBox="0 0 32 32" role="img"><path d="M16.04 3C9.01 3 3.3 8.7 3.3 15.72c0 2.25.59 4.44 1.72 6.37L3.2 28.8l6.88-1.8a12.67 12.67 0 0 0 5.96 1.52h.01c7.02 0 12.73-5.71 12.73-12.73C28.78 8.76 23.07 3 16.04 3Zm0 23.38h-.01c-1.88 0-3.72-.5-5.33-1.46l-.38-.23-4.08 1.07 1.09-3.98-.25-.41a10.54 10.54 0 0 1-1.61-5.65c0-5.84 4.74-10.58 10.58-10.58 2.83 0 5.49 1.1 7.49 3.11a10.52 10.52 0 0 1 3.1 7.48c0 5.84-4.75 10.65-10.6 10.65Zm5.81-7.93c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.11 1.08-1.11 2.64s1.14 3.07 1.3 3.28c.16.21 2.24 3.42 5.42 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37Z"/></svg></span>
+                  Chat on WhatsApp
+                </a>
                 <button class="button button-secondary" type="button" id="resetBookingButton">Reset form</button>
               </div>
             </form>
@@ -1644,7 +1688,7 @@
           </div>
 
           <div class="footer-meta">
-            <p><a href="tel:0467474180">0467 474 180</a> · <a href="mailto:info@koalakeyscarhire.com.au">info@koalakeyscarhire.com.au</a></p>
+            <p><a href="tel:+61467474180">0467 474 180</a> · <a href="mailto:info@koalakeyscarhire.com.au">info@koalakeyscarhire.com.au</a></p>
             <p class="footer-copy">Local Darwin car hire with a simple online experience, real fleet photos, and direct local support.</p>
           </div>
 
@@ -1690,6 +1734,7 @@
       var confirmReturn = document.getElementById('confirmReturn');
       var confirmNotes = document.getElementById('confirmNotes');
       var resetBookingButton = document.getElementById('resetBookingButton');
+      var availChecker = document.getElementById('availChecker');
       var bookButtons = document.querySelectorAll('.vehicle-book');
       var vehicleCards = document.querySelectorAll('.vehicle-card[data-car-id]');
       var eggTrigger = document.getElementById('eggTrigger');
@@ -1698,6 +1743,15 @@
       var adminTabs = adminModal ? adminModal.querySelectorAll('.admin-tab') : [];
       var adminViews = adminModal ? adminModal.querySelectorAll('.admin-view') : [];
 
+      // ============================================================
+      //  GOOGLE SHEETS BACKEND — paste your Apps Script URL here
+      // ============================================================
+      // After deploying your Google Apps Script web app (see setup guide),
+      // replace the placeholder below with your deployment URL.
+      // Example: 'https://script.google.com/macros/s/AKfycb.../exec'
+      var APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+      // ============================================================
+
       var AVAILABILITY_KEY = 'kk_availability_v1';
       var BOOKINGS_KEY = 'kk_bookings_v1';
       var SERVICE_KEY = 'kk_service_v1';
@@ -1705,16 +1759,16 @@
 
       // Fleet directory (id -> display name). Cards derive from DOM but this is the master list.
       var FLEET = [
-        { id: 'ford-ranger-2019', name: 'Ford Ranger 2019' },
-        { id: 'suzuki-vitara-2019', name: 'Suzuki Vitara 2019' },
-        { id: 'mazda-cx3-2017', name: 'Mazda CX-3 2017' },
-        { id: 'mitsubishi-mirage-2017', name: 'Mitsubishi Mirage 2017' },
-        { id: 'hyundai-i20-2012', name: 'Hyundai i20 2012' },
-        { id: 'citroen-c4-cactus-2018', name: 'Citroën C4 Cactus 2018' },
-        { id: 'hyundai-elantra-2018', name: 'Hyundai Elantra 2018' },
-        { id: 'haval-jolion-2026', name: 'Haval Jolion 2026' },
-        { id: 'mitsubishi-eclipse-cross-2018', name: 'Mitsubishi Eclipse Cross 2018' },
-        { id: 'volkswagen-polo-2019', name: 'Volkswagen Polo 2019' }
+        { id: 'ford-ranger-2019', name: 'Ford Ranger' },
+        { id: 'mazda-cx3-2017', name: 'Mazda CX-3' },
+        { id: 'suzuki-vitara-2019', name: 'Suzuki Vitara' },
+        { id: 'hyundai-elantra-2018', name: 'Hyundai Elantra' },
+        { id: 'haval-jolion-2026', name: 'Haval Jolion' },
+        { id: 'mitsubishi-eclipse-cross-2018', name: 'Mitsubishi Eclipse Cross' },
+        { id: 'mitsubishi-mirage-2017', name: 'Mitsubishi Mirage' },
+        { id: 'volkswagen-polo-2019', name: 'Volkswagen Polo' },
+        { id: 'hyundai-i20-2012', name: 'Hyundai i20' },
+        { id: 'citroen-c4-cactus-2018', name: 'Citroën C4 Cactus' }
       ];
       var FLEET_BY_ID = {};
       FLEET.forEach(function (c) { FLEET_BY_ID[c.id] = c; });
@@ -1788,6 +1842,25 @@
       [searchPickup, searchReturn, bookingPickup, bookingReturn].forEach(function (input) {
         if (input) input.setAttribute('min', minToday);
       });
+
+      // Update return date min dynamically based on pickup date
+      function syncReturnMin(pickupInput, returnInput) {
+        if (pickupInput && returnInput) {
+          pickupInput.addEventListener('change', function () {
+            if (this.value) {
+              var d = new Date(this.value);
+              d.setDate(d.getDate() + 1);
+              var nextDay = d.toISOString().split('T')[0];
+              returnInput.setAttribute('min', nextDay);
+              if (returnInput.value && returnInput.value < nextDay) {
+                returnInput.value = nextDay;
+              }
+            }
+          });
+        }
+      }
+      syncReturnMin(searchPickup, searchReturn);
+      syncReturnMin(bookingPickup, bookingReturn);
 
       function validateDates(pickupInput, returnInput, statusEl) {
         var pickup = pickupInput && pickupInput.value;
@@ -1977,6 +2050,12 @@
           if (button.disabled) return;
           var car = button.getAttribute('data-car');
           if (bookingCar) bookingCar.value = car;
+          // Trigger availability check if dates are already filled
+          if (bookingCar && bookingPickup && bookingReturn && bookingPickup.value && bookingReturn.value) {
+            checkSheetAvailability(car, bookingPickup.value, bookingReturn.value);
+          } else {
+            hideAvail();
+          }
           var bookingSection = document.getElementById('booking');
           if (bookingSection) bookingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
@@ -2003,6 +2082,88 @@
         var fb = FLEET.find(function (c) { return key.indexOf(c.name.toLowerCase().split(' ')[0]) !== -1; });
         return fb ? fb.id : null;
       }
+
+      // ================ Google Sheets availability checker ================
+      var availCheckTimeout = null;
+      var lastAvailCheck = { car: '', pickup: '', return: '', result: null };
+
+      function showAvail(status, message) {
+        if (!availChecker) return;
+        availChecker.className = 'avail-checker full show ' + status;
+        availChecker.textContent = message;
+      }
+      function hideAvail() {
+        if (!availChecker) return;
+        availChecker.className = 'avail-checker full';
+        availChecker.textContent = '';
+      }
+
+      function checkSheetAvailability(car, pickup, ret) {
+        if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+          // Apps Script not configured — fall back to local-only check
+          hideAvail();
+          return;
+        }
+        if (!car || !pickup || !ret) { hideAvail(); return; }
+        if (new Date(ret) <= new Date(pickup)) { hideAvail(); return; }
+
+        // Debounce
+        if (availCheckTimeout) clearTimeout(availCheckTimeout);
+        showAvail('checking', 'Checking availability…');
+        lastAvailCheck = { car: car, pickup: pickup, return: ret, result: null };
+
+        availCheckTimeout = setTimeout(function () {
+          var url = APPS_SCRIPT_URL
+            + '?car=' + encodeURIComponent(car)
+            + '&startDate=' + encodeURIComponent(pickup)
+            + '&endDate=' + encodeURIComponent(ret);
+          fetch(url, { method: 'GET', mode: 'cors' })
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+              if (data.available) {
+                showAvail('available', '✅ Available! Proceed to book.');
+                lastAvailCheck.result = true;
+              } else {
+                showAvail('unavailable', '❌ This car is already booked for those dates — please choose different dates or another car.');
+                lastAvailCheck.result = false;
+              }
+            })
+            .catch(function () {
+              // Network error — hide checker and rely on local check
+              hideAvail();
+            });
+        }, 600);
+      }
+
+      function postToSheet(bookingData) {
+        if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+          return Promise.resolve({ skipped: true });
+        }
+        return fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(bookingData)
+        }).then(function (res) { return res.json(); });
+      }
+
+      // Trigger availability check when car/dates change in the booking form
+      [bookingCar, bookingPickup, bookingReturn].forEach(function (input) {
+        if (input) input.addEventListener('change', function () {
+          if (!bookingCar || !bookingPickup || !bookingReturn) return;
+          var car = bookingCar.value;
+          var p = bookingPickup.value;
+          var r = bookingReturn.value;
+          checkSheetAvailability(car, p, r);
+        });
+        if (input) input.addEventListener('input', function () {
+          if (!bookingCar || !bookingPickup || !bookingReturn) return;
+          var car = bookingCar.value;
+          var p = bookingPickup.value;
+          var r = bookingReturn.value;
+          checkSheetAvailability(car, p, r);
+        });
+      });
 
       if (bookingForm) {
         bookingForm.addEventListener('submit', function (event) {
@@ -2035,7 +2196,7 @@
             return;
           }
 
-          // Availability guard
+          // Availability guard (local)
           var carId = carIdFromDisplayName(car);
           if (carId) {
             var st = computeStatus(carId, dates.pickup, dates.dropoff);
@@ -2043,6 +2204,16 @@
               showBookingStatus('error', 'Sorry, this car is ' + st.message.toLowerCase() + '. Please pick another car or different dates.');
               return;
             }
+          }
+
+          // Google Sheets availability guard (if configured)
+          var sheetOk = true;
+          if (lastAvailCheck.car === car && lastAvailCheck.pickup === dates.pickup && lastAvailCheck.return === dates.dropoff) {
+            if (lastAvailCheck.result === false) {
+              showBookingStatus('error', 'This car is already booked for those dates — please choose different dates or another car.');
+              return;
+            }
+            sheetOk = lastAvailCheck.result === true;
           }
 
           var year = new Date().getFullYear();
@@ -2083,39 +2254,75 @@
 
           showBookingStatus('loading', 'Sending your booking request…');
 
+          // Prepare Formspree payload
           var payload = new FormData();
+          var subjectStr = 'New Koala Keys Booking - ' + car + ' on ' + formatDisplayDate(dates.pickup);
+          document.getElementById('fsSubject').value = subjectStr;
+          document.getElementById('fsReplyTo').value = email;
+          document.getElementById('fsCc').value = '';
+
           payload.append('reference', bookingRef);
           payload.append('name', name);
           payload.append('email', email);
           payload.append('phone', phone);
           payload.append('car', car);
-          payload.append('pickup_date', dates.pickup);
-          payload.append('return_date', dates.dropoff);
+          payload.append('pickup_date', formatDisplayDate(dates.pickup));
+          payload.append('return_date', formatDisplayDate(dates.dropoff));
           payload.append('notes', notes || 'No notes added');
-          payload.append('_subject', 'New Booking Request ' + bookingRef);
+          payload.append('_subject', subjectStr);
           payload.append('_replyto', email);
+          payload.append('_cc', '');
 
-          fetch(bookingForm.action, {
+          // Sheet booking data
+          var sheetPayload = {
+            reference: bookingRef,
+            car: car,
+            name: name,
+            email: email,
+            phone: phone,
+            pickupDate: dates.pickup,
+            returnDate: dates.dropoff,
+            notes: notes || ''
+          };
+
+          // Post to both Formspree (email) and Google Sheets (database) in parallel
+          var formspreePromise = fetch(bookingForm.action, {
             method: 'POST',
             headers: { 'Accept': 'application/json' },
             body: payload
-          }).then(function (response) {
-            if (response.ok) {
-              showBookingStatus('success',
-                'Booking request sent! Your reference is ' + bookingRef +
-                '. Koala Keys will be in touch shortly.');
+          });
+          var sheetPromise = postToSheet(sheetPayload);
+
+          Promise.allSettled([formspreePromise, sheetPromise]).then(function (results) {
+            var fsResult = results[0];
+            var shResult = results[1];
+            var fsOk = fsResult.status === 'fulfilled' && fsResult.value && fsResult.value.ok;
+            var shData = (shResult.status === 'fulfilled' && shResult.value) ? shResult.value : null;
+            var shOk = shData && shData.success;
+
+            if (fsOk) {
+              var msg = 'Booking request sent! Your reference is ' + bookingRef + '. Koala Keys will be in touch shortly.';
+              if (APPS_SCRIPT_URL && APPS_SCRIPT_URL !== 'PASTE_YOUR_APPS_SCRIPT_URL_HERE' && !shOk) {
+                msg += ' (Note: Sheet sync may have failed — Koala Keys will confirm manually.)';
+              }
+              showBookingStatus('success', msg);
               if (bookingConfirmation) {
                 bookingConfirmation.classList.add('show');
                 bookingConfirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
               }
             } else {
-              return response.json().then(function (data) {
-                var msg = (data && data.error) || 'We could not send your request right now.';
-                showBookingStatus('error', msg + ' Please email info@koalakeyscarhire.com.au directly.');
-              }).catch(function () {
-                showBookingStatus('error',
-                  'We could not send your request right now. Please email info@koalakeyscarhire.com.au directly.');
-              });
+              // Formspree failed
+              var errorMsg = 'We could not send your email request right now.';
+              if (shOk) {
+                errorMsg += ' Your booking was saved to our system (ref ' + bookingRef + ') — we will contact you shortly.';
+                showBookingStatus('success', errorMsg);
+                if (bookingConfirmation) {
+                  bookingConfirmation.classList.add('show');
+                  bookingConfirmation.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+              } else {
+                showBookingStatus('error', errorMsg + ' Please email info@koalakeyscarhire.com.au directly.');
+              }
             }
           }).catch(function () {
             showBookingStatus('error',
@@ -2129,6 +2336,7 @@
           bookingForm.reset();
           if (bookingConfirmation) bookingConfirmation.classList.remove('show');
           clearBookingStatus();
+          hideAvail();
           refreshAvailability();
         });
       }
@@ -2270,11 +2478,72 @@
         view.innerHTML = '<div class="fleet-status-grid">' + cards + '</div>';
       }
 
+      // ================ Sheet Bookings tab (fetches from Google Sheet) ================
+      function renderSheetBookingsView() {
+        var view = adminModal.querySelector('[data-view="sheet-bookings"]');
+        if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+          view.innerHTML = '<div class="sheet-bookings-note">⚠️ Google Sheets is not configured yet. Please paste your Apps Script URL in <code>koala_keys_index.html</code> at the <code>APPS_SCRIPT_URL</code> variable to enable this tab.</div>';
+          return;
+        }
+        view.innerHTML = '<div class="admin-sync-btn"><button type="button" class="button button-primary button-small" id="refreshSheetBtn">🔄 Refresh from Sheet</button></div>'
+          + '<div id="sheetBookingsContent"><div class="admin-empty">Loading bookings from Google Sheet…</div></div>';
+
+        function loadSheet() {
+          var content = document.getElementById('sheetBookingsContent');
+          if (!content) return;
+          content.innerHTML = '<div class="admin-empty">Loading bookings from Google Sheet…</div>';
+          fetch(APPS_SCRIPT_URL + '?action=list', { method: 'GET', mode: 'cors' })
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+              if (!data.success) {
+                content.innerHTML = '<div class="sheet-bookings-note">❌ Error loading from sheet: ' + escapeHtml(data.error || 'Unknown error') + '</div>';
+                return;
+              }
+              var bookings = data.bookings || [];
+              if (!bookings.length) {
+                content.innerHTML = '<div class="admin-empty">No bookings found in the Google Sheet yet.</div>';
+                return;
+              }
+              bookings.sort(function (a, b) { return a.pickupDate < b.pickupDate ? 1 : -1; });
+              var rows = bookings.map(function (b) {
+                var statusClass = 'active';
+                if (b.status === 'completed') statusClass = 'completed';
+                else if (b.status === 'cancelled') statusClass = 'cancelled';
+                return '<tr>' +
+                  '<td><strong>' + escapeHtml(b.reference || '—') + '</strong></td>' +
+                  '<td>' + escapeHtml(b.car || '—') + '</td>' +
+                  '<td>' + escapeHtml(b.customerName || '—') + '</td>' +
+                  '<td>' + escapeHtml(b.email || '—') + '<br>' + escapeHtml(b.phone || '') + '</td>' +
+                  '<td>' + escapeHtml(formatDisplayDate(b.pickupDate)) + '<br>→ ' + escapeHtml(formatDisplayDate(b.returnDate)) + '</td>' +
+                  '<td><span class="row-status ' + statusClass + '">' + escapeHtml(b.status || 'active') + '</span></td>' +
+                  '<td>' + escapeHtml(b.createdAt || '') + '</td>' +
+                  '<td>' + escapeHtml(b.notes || '') + '</td>' +
+                '</tr>';
+              }).join('');
+              content.innerHTML = '<div class="sheet-bookings-note">Showing ' + bookings.length + ' booking(s) from the Google Sheet.</div>'
+                + '<div class="admin-table-wrap"><table class="admin-table">' +
+                  '<thead><tr>' +
+                    '<th>Reference</th><th>Car</th><th>Customer</th><th>Contact</th><th>Dates</th><th>Status</th><th>Created</th><th>Notes</th>' +
+                  '</tr></thead><tbody>' + rows + '</tbody></table></div>';
+            })
+            .catch(function (err) {
+              content.innerHTML = '<div class="sheet-bookings-note">❌ Could not load from Google Sheet. Check that your Apps Script URL is correct and that the web app is deployed with "Anyone" access.</div>';
+            });
+        }
+
+        loadSheet();
+        var refreshBtn = document.getElementById('refreshSheetBtn');
+        if (refreshBtn) {
+          refreshBtn.addEventListener('click', loadSheet);
+        }
+      }
+
       function renderAdmin() {
         if (!adminModal) return;
         if (activeTab === 'bookings') renderBookingsView();
         else if (activeTab === 'service') renderServiceView();
         else if (activeTab === 'fleet') renderFleetView();
+        else if (activeTab === 'sheet-bookings') renderSheetBookingsView();
       }
 
       function openAdmin() {
@@ -2440,6 +2709,10 @@
     })();
   </script>
 
+    <a class="whatsapp-float" href="https://wa.me/61467474180?text=Hi%20Koala%20Keys!%20I%27d%20like%20to%20hire%20a%20car%20%F0%9F%90%A8%F0%9F%94%91" target="_blank" rel="noopener" aria-label="Chat with Koala Keys on WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.01 3 3.3 8.7 3.3 15.72c0 2.25.59 4.44 1.72 6.37L3.2 28.8l6.88-1.8a12.67 12.67 0 0 0 5.96 1.52h.01c7.02 0 12.73-5.71 12.73-12.73C28.78 8.76 23.07 3 16.04 3Zm0 23.38h-.01c-1.88 0-3.72-.5-5.33-1.46l-.38-.23-4.08 1.07 1.09-3.98-.25-.41a10.54 10.54 0 0 1-1.61-5.65c0-5.84 4.74-10.58 10.58-10.58 2.83 0 5.49 1.1 7.49 3.11a10.52 10.52 0 0 1 3.1 7.48c0 5.84-4.75 10.65-10.6 10.65Zm5.81-7.93c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.59-1.9-1.78-2.22-.18-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.18.21-.32.32-.53.11-.21.05-.4-.03-.55-.08-.16-.71-1.71-.98-2.35-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.4-.29.32-1.11 1.08-1.11 2.64s1.14 3.07 1.3 3.28c.16.21 2.24 3.42 5.42 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.38.18-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+    </a>
+
     <div class="admin-backdrop" id="adminModal" role="dialog" aria-modal="true" aria-labelledby="adminTitle" hidden>
       <div class="admin-modal">
         <div class="admin-head">
@@ -2450,11 +2723,13 @@
           <button type="button" class="admin-tab active" data-tab="bookings" role="tab" aria-selected="true">Bookings</button>
           <button type="button" class="admin-tab" data-tab="service" role="tab" aria-selected="false">Service</button>
           <button type="button" class="admin-tab" data-tab="fleet" role="tab" aria-selected="false">Fleet Status</button>
+          <button type="button" class="admin-tab" data-tab="sheet-bookings" role="tab" aria-selected="false">📊 Sheet Bookings</button>
         </div>
         <div class="admin-body">
           <div class="admin-view" data-view="bookings"></div>
           <div class="admin-view hidden" data-view="service"></div>
           <div class="admin-view hidden" data-view="fleet"></div>
+          <div class="admin-view hidden" data-view="sheet-bookings"></div>
         </div>
       </div>
     </div>
