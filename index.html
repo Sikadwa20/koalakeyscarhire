@@ -1229,6 +1229,20 @@
       .admin-table th, .admin-table td { padding: 8px; }
     }
 
+  
+    .hero-inner { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px 40px; align-items: center; text-align: left; }
+    .hero-copy { width: 100%; }
+    .hero h1 { font-size: clamp(2rem, 3.8vw, 3.5rem); }
+    .hero-destination { position: relative; margin: 0; width: 100%; border-radius: 24px; overflow: hidden; box-shadow: 0 18px 50px rgba(17, 44, 65, .18); background: #10283a; }
+    .hero-destination img { width: 100%; height: 480px; object-fit: cover; object-position: 52% center; }
+    .hero-destination figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 24px 24px; background: linear-gradient(transparent, rgba(4, 19, 31, .85)); color: #fff; }
+    .hero-destination strong { display: block; font-size: 1.5rem; margin-bottom: 6px; }
+    .hero-destination span { font-size: .95rem; }
+    .hero-bar, .hero-meta { grid-column: 1 / -1; }
+    .photo-credit { margin-top: 14px; font-size: .75rem; color: var(--muted); }
+    .photo-credit a { text-decoration: underline; }
+    @media (max-width: 800px) { .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 24px; } .hero-destination { text-align: left; } .hero-destination img { height: 300px; } }
+
   </style>
 </head>
 <body>
@@ -1268,6 +1282,11 @@
           <p class="hero-tagline">Reliable cars. Easy hire. Friendly service. 🚗</p>
           <p class="hero-cta-line">Book your vehicle today and let Koala Keys take you where you need to go!</p>
         </div>
+
+        <figure class="hero-destination">
+          <img src="assets/darwin-waterfront.webp" alt="Palm trees and city lights reflected in the lagoon at Darwin Waterfront" width="1600" height="900" fetchpriority="high" decoding="async" />
+          <figcaption><strong>Discover Darwin.</strong><span>Waterfront evenings. City adventures. Your journey starts with the keys.</span></figcaption>
+        </figure>
 
         <div class="hero-bar">
           <form class="hero-form" id="searchForm">
@@ -1698,6 +1717,7 @@
           </div>
         </div>
         <p class="footer-bottom">75 Mcminn Street, Darwin City, NT<br>© 2025 - <span id="currentYear">2026</span> <span class="egg-trigger" id="eggTrigger" title="">Koala Keys Car Hire Pty Ltd</span>. All rights reserved.</p>
+        <p class="photo-credit">Darwin Waterfront photo: <a href="https://commons.wikimedia.org/wiki/File:Darwin_(AU),_Darwin_Waterfront_--_2019_--_4429-31.jpg" target="_blank" rel="noopener">Dietmar Rabich / Wikimedia Commons</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped for display.</p>
       </div>
     </div>
   </footer>
