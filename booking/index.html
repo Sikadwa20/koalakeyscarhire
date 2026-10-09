@@ -1376,7 +1376,7 @@
           <p>Ready to hit the road? Explore the Koala Keys Car Hire fleet and find the perfect vehicle for your trip. From compact cars for city adventures to spacious SUVs for family getaways, we've got a ride to suit your needs. Choose your car. Pack your bags. Let the adventure begin!</p>
         </div>
 
-<nav class="vehicle-type-nav" aria-label="Vehicle categories"><a class="button" data-type-link="all" href="/booking/">All cars</a><a class="button" data-type-link="suv" href="/booking/?type=suv">SUVs</a><a class="button" data-type-link="ute" href="/booking/?type=ute">Pickups</a><a class="button" data-type-link="sedan" href="/booking/?type=sedan">Small Cars & Sedans</a></nav>
+<nav class="vehicle-type-nav" aria-label="Vehicle categories"><a class="button" data-type-link="all" href="/booking/">All cars</a><a class="button" data-type-link="suv" href="/booking/?type=suv">SUVs</a><a class="button" data-type-link="ute" href="/booking/?type=ute">UTEs</a><a class="button" data-type-link="sedan" href="/booking/?type=sedan">Small Cars & Sedans</a></nav>
         <div class="fleet-tabs-wrap" role="tablist" aria-label="Fleet options">
           <button class="fleet-tab active" type="button" role="tab" aria-selected="true" aria-controls="rentPanel" data-fleet-tab="rent">Rental Fleet</button>
           <button class="fleet-tab" type="button" role="tab" aria-selected="false" aria-controls="buyPanel" data-fleet-tab="buy">Sales Fleet</button>
@@ -2075,7 +2075,7 @@
       document.querySelectorAll('.fleet-category').forEach(function (heading) {
         heading.hidden = fleetType !== 'all' && !heading.classList.contains('fleet-category-' + fleetType);
       });
-      var fleetLabels = {all:'Choose from our fleet.', suv:'Choose your SUV.', ute:'Choose your pickup.', sedan:'Choose your small car or sedan.'};
+      var fleetLabels = {all:'Choose from our fleet.', suv:'Choose your SUV.', ute:'Choose your UTE.', sedan:'Choose your small car or sedan.'};
       document.querySelector('#fleet h1').textContent = fleetLabels[fleetType];
       document.querySelectorAll('[data-type-link]').forEach(function (link) {
         if (link.getAttribute('data-type-link') === fleetType) link.setAttribute('aria-current','page');
