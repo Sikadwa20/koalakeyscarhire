@@ -1269,7 +1269,7 @@
 
   
 .hero, .about-section, #why-us, #location { display:none; }
-</style>
+.vehicle-type-nav{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 26px}.vehicle-type-nav a{border:1px solid #d9e2ea;background:#fff;color:#2860A0}.vehicle-type-nav a[aria-current="page"]{background:#2860A0;color:#fff}#fleet .section-head h1{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em}[hidden]{display:none!important}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1376,6 +1376,7 @@
           <p>Ready to hit the road? Explore the Koala Keys Car Hire fleet and find the perfect vehicle for your trip. From compact cars for city adventures to spacious SUVs for family getaways, we've got a ride to suit your needs. Choose your car. Pack your bags. Let the adventure begin!</p>
         </div>
 
+<nav class="vehicle-type-nav" aria-label="Vehicle categories"><a class="button" data-type-link="all" href="/booking/">All cars</a><a class="button" data-type-link="suv" href="/booking/?type=suv">SUVs</a><a class="button" data-type-link="ute" href="/booking/?type=ute">Pickups</a><a class="button" data-type-link="sedan" href="/booking/?type=sedan">Small Cars & Sedans</a></nav>
         <div class="fleet-tabs-wrap" role="tablist" aria-label="Fleet options">
           <button class="fleet-tab active" type="button" role="tab" aria-selected="true" aria-controls="rentPanel" data-fleet-tab="rent">Rental Fleet</button>
           <button class="fleet-tab" type="button" role="tab" aria-selected="false" aria-controls="buyPanel" data-fleet-tab="buy">Sales Fleet</button>
@@ -2067,6 +2068,18 @@
         });
         return visible;
       }
+
+      var fleetType = new URLSearchParams(window.location.search).get('type') || 'all';
+      if (!['all','suv','ute','sedan'].includes(fleetType)) fleetType = 'all';
+      filterFleet(fleetType);
+      document.querySelectorAll('.fleet-category').forEach(function (heading) {
+        heading.hidden = fleetType !== 'all' && !heading.classList.contains('fleet-category-' + fleetType);
+      });
+      var fleetLabels = {all:'Choose from our fleet.', suv:'Choose your SUV.', ute:'Choose your pickup.', sedan:'Choose your small car or sedan.'};
+      document.querySelector('#fleet h1').textContent = fleetLabels[fleetType];
+      document.querySelectorAll('[data-type-link]').forEach(function (link) {
+        if (link.getAttribute('data-type-link') === fleetType) link.setAttribute('aria-current','page');
+      });
 
       // ================ Hero search ================
       if (searchForm) {
