@@ -1243,7 +1243,31 @@
     .photo-credit a { text-decoration: underline; }
     @media (max-width: 800px) { .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 24px; } .hero-destination { text-align: left; } .hero-destination img { height: 300px; } }
 
-  </style>
+  
+    .hero { background: linear-gradient(90deg, rgba(5,23,38,.88) 0%, rgba(5,23,38,.63) 52%, rgba(5,23,38,.25) 100%), url('assets/darwin-waterfront.webp') center 48% / cover; color: #fff; }
+    .hero::before { display: none; }
+    .hero-inner { display: flex; flex-direction: column; align-items: stretch; text-align: left; padding: 78px 0 36px; gap: 32px; }
+    .hero-copy { max-width: 780px; }
+    .hero h1 { font-size: clamp(2.7rem, 5.4vw, 4.9rem); line-height: 1.06; color: #fff; letter-spacing: -.045em; margin: 20px 0 22px; }
+    .hero-eyebrow { display: inline-block; padding: 9px 16px; border-radius: 999px; background: #f4cb71; color: #112c41; font-size: .76rem; font-weight: 800; letter-spacing: .08em; }
+    .hero-subtext { max-width: 660px; color: rgba(255,255,255,.9); font-size: 1.1rem; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+    .hero-actions .button { min-height: 52px; padding: 0 28px; }
+    .hero-call { background: #fff; color: #173a57; }
+    .hero-bar { width: 100%; max-width: none; margin-top: 12px; color: #1b2630; }
+    .hero-meta { color: rgba(255,255,255,.9); justify-content: flex-start; }
+    .hero-meta strong, .hero-meta a { color: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .about-photo { margin: 0; border-radius: 22px; overflow: hidden; }
+    .about-photo img { width: 100%; height: 400px; object-fit: cover; }
+    .about-grid h2 { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.15; margin: 12px 0 22px; }
+    .about-grid p:not(.eyebrow) { color: #526270; line-height: 1.8; margin-bottom: 18px; }
+    .about-grid .button { margin-top: 10px; }
+    @media(max-width:800px) { .hero-inner { padding: 50px 0 30px; text-align: left; } .hero-copy { width: 100%; } .hero h1 { font-size: clamp(2.45rem, 9vw, 3.5rem); } .hero { background-position: center; } .about-grid { grid-template-columns: 1fr; gap: 28px; } .about-photo img { height: 270px; } .hero-actions .button { flex: 1 1 180px; } }
+
+  
+.hero-bar, #fleet, #booking { display:none; }
+.destinations{background:#f4f8fb}.destination-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}.destination-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(16,44,70,.07)}.destination-card img{display:block;width:100%;height:280px;object-fit:cover}.destination-copy{padding:24px}.destination-copy h3{font-size:1.35rem;margin:0 0 9px}.destination-copy p{color:#5a6874;margin:0;line-height:1.6}.destination-bottom{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-top:30px}.photo-credits{font-size:.8rem;color:#61717d;max-width:550px}.photo-credits summary{cursor:pointer}.photo-credits li{margin:8px 0}@media(max-width:650px){.destination-grid{grid-template-columns:1fr}.destination-card img{height:230px}.destination-bottom{flex-direction:column}}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1276,14 +1300,14 @@
       </a>
 
       <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
-        <a href="#fleet">Fleet</a>
+        <a href="/booking/">Fleet</a>
         <a href="#why-us">Why Choose Us</a>
-        <a href="#booking">Booking</a>
+        <a href="/booking/">Booking</a>
         <a href="#location">Location</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="button button-primary button-small nav-cta" href="#booking">Book Now</a>
+      <a class="button button-primary button-small nav-cta" href="/booking/">Book Now</a>
       <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
         ☰
         <span class="sr-only">Open navigation</span>
@@ -1295,17 +1319,11 @@
     <section class="hero" aria-label="Koala Keys hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1>KOALA KEYS CAR HIRE PTY LTD</h1>
-          <p class="hero-subheading">Your journey starts here.</p>
-          <p class="hero-subtext">At Koala Keys Car Hire, we make getting on the road simple, affordable and stress-free. Whether you're exploring the local sights, heading away for the weekend, visiting family, or need a reliable vehicle while yours is off the road, we're here to help. With friendly service, reliable vehicles and flexible hire options, you can pick up the keys and enjoy the freedom of the road.</p>
-          <p class="hero-tagline">Reliable cars. Easy hire. Friendly service. 🚗</p>
-          <p class="hero-cta-line">Book your vehicle today and let Koala Keys take you where you need to go!</p>
+          <p class="hero-eyebrow">LOCAL CAR HIRE · DARWIN, NT</p>
+          <h1>Explore Darwin.<br>Drive with Koala Keys.</h1>
+          <p class="hero-subtext">From waterfront evenings to weekend adventures, find a reliable car for your Darwin journey. Easy hire, flexible options and friendly local service.</p>
+          <div class="hero-actions"><a class="button button-primary" href="/booking/">Find your car →</a><a class="button hero-call" href="tel:+61467474180">Call 0467 474 180</a></div>
         </div>
-
-        <figure class="hero-destination">
-          <img src="assets/darwin-waterfront.webp" alt="Palm trees and city lights reflected in the lagoon at Darwin Waterfront" width="1600" height="900" fetchpriority="high" decoding="async" />
-          <figcaption><strong>Discover Darwin.</strong><span>Waterfront evenings. City adventures. Your journey starts with the keys.</span></figcaption>
-        </figure>
 
         <div class="hero-bar">
           <form class="hero-form" id="searchForm">
@@ -1342,6 +1360,14 @@
       </div>
     </section>
 
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <figure class="about-photo"><img src="assets/darwin-waterfront.webp" alt="Darwin Waterfront city lights and palm trees reflected in the lagoon" width="1600" height="900" loading="lazy" decoding="async" /></figure>
+        <div><p class="eyebrow">YOUR LOCAL DARWIN CAR HIRE</p><h2>Your journey starts here.</h2><p>At Koala Keys Car Hire, we make getting on the road simple, affordable and stress-free. Whether you’re exploring Darwin’s local sights, heading away for the weekend, visiting family or need a vehicle while yours is off the road, we’re here to help.</p><p>Choose from our real fleet, send a booking request and speak directly with our local team. Friendly service, reliable vehicles and flexible hire options help you pick up the keys and enjoy the freedom of the road.</p><a class="button button-primary" href="/booking/">Request your booking →</a></div>
+      </div>
+    </section>
+
+<section class="section destinations" id="explore"><div class="container"><div class="section-head"><div><span class="badge">DISCOVER THE TOP END</span><h2>See more of Darwin.</h2><p>City sights, coastal sunsets and wildlife encounters. Make your next drive part of the adventure.</p></div></div><div class="destination-grid"><article class="destination-card"><img src="assets/darwin-beach.webp" alt="Mindil Beach — Darwin travel inspiration" width="1000" height="650" loading="lazy"><div class="destination-copy"><h3>Mindil Beach</h3><p>Make time for a spectacular Darwin sunset.</p></div></article><article class="destination-card"><img src="assets/darwin-city.webp" alt="Darwin city — Darwin travel inspiration" width="1000" height="650" loading="lazy"><div class="destination-copy"><h3>Darwin city</h3><p>Discover the skyline and explore the city at your own pace.</p></div></article><article class="destination-card"><img src="assets/darwin-wildlife.webp" alt="Crocodylus Park — Darwin travel inspiration" width="1000" height="650" loading="lazy"><div class="destination-copy"><h3>Crocodylus Park</h3><p>Add a wildlife stop to your Darwin itinerary.</p></div></article><article class="destination-card"><img src="assets/darwin-airport.webp" alt="Darwin Airport — terminal exterior" width="1000" height="650" loading="lazy"><div class="destination-copy"><h3>Darwin Airport</h3><p>Your Darwin adventure starts here.</p></div></article></div><div class="destination-bottom"><a class="button button-primary" href="/booking/">Explore our fleet →</a><details class="photo-credits"><summary>Photo credits</summary><ul><li><a href="https://commons.wikimedia.org/wiki/File:Sunset_over_Darwin&#x27;s_Mindil_beach.jpg" target="_blank" rel="noopener">Mindil Beach</a> — Kendra Baker, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped for display.</li><li><a href="https://commons.wikimedia.org/wiki/File:City_landscape_of_Darwin,_Northern_Territory.jpg" target="_blank" rel="noopener">Darwin city</a> — Jeremy De Guzman, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>. Resized and cropped for display.</li><li><a href="https://commons.wikimedia.org/wiki/File:Crocodylus_Park,_Darwin,_September_2025_01.jpg" target="_blank" rel="noopener">Crocodylus Park</a> — DaHuzyBru, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Resized and cropped for display.</li><li><a href="https://commons.wikimedia.org/wiki/File:Darwin&#x27;s_Airport_Terminal_Exit_April_2010.jpg" target="_blank" rel="noopener">Darwin Airport</a> — kenhodge13, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>. Resized and cropped for display.</li></ul></details></div></div></section>
     <section class="section" id="fleet">
       <div class="container">
         <div class="section-head">
